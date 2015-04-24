@@ -2,7 +2,7 @@
     "features": [
       { "type": "Feature",
         "geometry": {"type": "Point", "coordinates": [102.0, 0]},
-        "properties": {"prop0": "<a click='asdf\"aaa\"asdfasdfaasdf!@#'>aaaaaaa</a>"}
+        "properties": {"prop0": "<a id=test1 name=test1>aaaaaaa</a><command command=test1>aaa</command>"}
         },
       { "type": "Feature",
         "geometry": {
