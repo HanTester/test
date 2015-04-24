@@ -1,7 +1,7 @@
 { "type": "FeatureCollection",
     "features": [
       { "type": "Feature",
-        "geometry": {"type": "AAAA", "coordinates": [102.0, 'aa']},
+        "geometry": {"type": "AAAA", "coordinates": [102.0, "aaa"]},
         "properties": {"prop0": "<a click='asdf\"aaa\"asdfasdfaasdf!@#'>aaaaaaa</a>"}
         },
       { "type": "Feature",
