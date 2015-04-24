@@ -2,7 +2,7 @@
     "features": [
       { "type": "Feature",
         "geometry": {"type": "Point", "coordinates": [102.0, 0]},
-        "properties": {"prop0": "<a class=`1\"1` class=`2\"2`><data id=test name=test>asdfasdf</data></a>"}
+        "properties": {"prop0": "<ul class='js-view-modes render-view-modes'><li data-mode='slider' class='js-view-mode-item'><data id='mode'>aa</data>Revision Slider</li><li data-mode='highlight' class='js-view-mode-item active'><data id='highlight'>highlight</data>Highlight</li></ul>"}
         },
       { "type": "Feature",
         "geometry": {
