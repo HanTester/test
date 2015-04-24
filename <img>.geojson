@@ -2,7 +2,7 @@
     "features": [
       { "type": "Feature",
         "geometry": {"type": "Point", "coordinates": [102.0, 0]},
-        "properties": {"prop0": "<a class=`1\"1` class=`2\"2`>asdfasdf</a>"}
+        "properties": {"prop0": "<a class=`1\"1` class=`2\"2`><data id=test name=test>asdfasdf</data></a>"}
         },
       { "type": "Feature",
         "geometry": {
