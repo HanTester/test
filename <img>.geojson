@@ -2,7 +2,7 @@
     "features": [
       { "type": "Feature",
         "geometry": {"type": "Point", "coordinates": [102.0, 0]},
-        "properties": {"prop0": "<a href!_href!=a>aaaaaaaaaaaaaaaa</a>"}
+        "properties": {"prop0": "<a href class>aaaaaaaaaaaaaaaa</a>"}
         },
       { "type": "Feature",
         "geometry": {
