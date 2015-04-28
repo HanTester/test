@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>files</key>
+	<dict>
+		<key>Resources/AppleScripts/ReadMe AppleScripts Folder.rtf</key>
+		<data>
+		67niVFSF6rik9wwztZEAm9Rwngs=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Email.url</key>
+		<data>
+		i7QQzGwmFVHPoW0/fTk6qZ+geIY=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Home.url</key>
+		<data>
+		fFirl5HxqkNEBAT9Indb/eyboM4=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Order.url</key>
+		<data>
+		6250ZVKlGzduBapG07h7Z1Z1lk0=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software StoreOrder.url</key>
+		<data>
+		I7QJaq0cXti6laxAOxjTRBrFGJU=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software StoreSupport.url</key>
+		<data>
+		KYub3H5Vs2GPgO2V0U5MhfRw+9s=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Support.url</key>
+		<data>
+		W12w6aUeijuN4dNaHaly400q49c=
+		</data>
+		<key>Resources/Carnation Software Web/MacWise Registration Form.url</key>
+		<data>
+		QWUNGGju8ZVPn39rOagVKHP4jSs=
+		</data>
+		<key>Resources/Carnation Software Web/iPhone.url</key>
+		<data>
+		Ng6VSQdTNdpel5Q4FXOrhH4xf0g=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Préférences.rtf</key>
+		<data>
+		edsZUwC/gRR6ClBK5FwynG59bQA=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Telnet.rtf</key>
+		<data>
+		ceV7IPZLND3+igkQMTZb4v8PSoc=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Touches fléchées.rtf</key>
+		<data>
+		gwvGhkN9ry/OAJJofrKaXhQrsK4=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide caractères internationaux.rtf</key>
+		<data>
+		cHd+ooiFNzcPyTdjSWnZf6EeU4Q=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide interpréteur de commandes Unix du Mac.rtf</key>
+		<data>
+		VaWlGN64wfWed02i7OjoE6AEIzk=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide interpréteur de commandes sécurisé.rtf</key>
+		<data>
+		ITC/WZCoyXvWK0QsScrliJ8wE6k=
+		</data>
+		<key>Resources/Dialog Help Files - French/Lisez-moi Dossier AppleScripts.rtf</key>
+		<data>
+		wxTV1QMoMErIjf+aEQjqrUIKj08=
+		</data>
+		<key>Resources/Dialog Help Files - French/Lisez-moi.rtf</key>
+		<data>
+		3KJd4YCAhPMmVIsj+ZQkfK4w8s0=
+		</data>
+		<key>Resources/Dialog Help Files - French/Prise en main rapide de Telnet.rtf</key>
+		<data>
+		lZxt7ivkh981Vu7oN8ruoSAbcuQ=
+		</data>
+		<key>Resources/Dialog Help Files - French/Transferts de fichier FTP.rtf</key>
+		<data>
+		kae1g8416PnNDwdGyqNcA9M+N9M=
+		</data>
+		<key>Resources/Dialog Help Files/Arrow Keys Help.rtf</key>
+		<data>
+		VqkKTkYvW3HpDwiy7vdSnEPz8kk=
+		</data>
+		<key>Resources/Dialog Help Files/FTP File Transfers.rtf</key>
+		<data>
+		hN0cBM+ZhbX+WoOo9XJL0g72py4=
+		</data>
+		<key>Resources/Dialog Help Files/International Help.rtf</key>
+		<data>
+		8/Oyo/3DORpFd0Xhoi5+isA0b28=
+		</data>
+		<key>Resources/Dialog Help Files/Mac Unix Shell Help.rtf</key>
+		<data>
+		CxPV3s6vA78GXcBr+gNWgseSQ8Y=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 1.pict</key>
+		<data>
+		HgS2OTzdZGMhD0EH1KHBX7Y1CbE=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 2.pict</key>
+		<data>
+		YvBVie4JhACyN8HzMxlWTnZVkzU=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 3.pict</key>
+		<data>
+		meUAhzQiWA3FJwP4RaxyCWRTSss=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 4.pict</key>
+		<data>
+		kmOuTTnrdWU7HZBd/ihqKNMeauE=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic.pict</key>
+		<data>
+		XXBcr2THiY4NCcXM2dT7XKZeGxo=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/TXT.rtf</key>
+		<data>
+		YeMn6sALlPUP5bg00vazF5M5e0g=
+		</data>
+		<key>Resources/Dialog Help Files/Preferences Help.rtf</key>
+		<data>
+		iRScseoLJG0LEEZlQQwNrKdTgJs=
+		</data>
+		<key>Resources/Dialog Help Files/Secure Shell Help.rtf</key>
+		<data>
+		5Q1wdnIZnTniZOdAL0egmAXQUzU=
+		</data>
+		<key>Resources/Dialog Help Files/Secure Shell Login Options.rtf</key>
+		<data>
+		AICVa3UvT1FtC3mTwdd52z6RMTc=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet Help.rtf</key>
+		<data>
+		UY/L+YZXZpTgtTg21o5q0Ud1z4E=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet Login Options.rtf</key>
+		<data>
+		p7KsPB12kwpYbWU5NEXlujfUX2g=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet QuickStart.rtf</key>
+		<data>
+		+M33R/aXbJDog1RK3WIOlG3VdKs=
+		</data>
+		<key>Resources/Fkeys/Clinicare Fkeys</key>
+		<data>
+		l8Y79hIHEnP3Q+gJgc+x9cpVWl4=
+		</data>
+		<key>Resources/Fkeys/Mac unix fkeys</key>
+		<data>
+		kRGPOJsIMWxk7NuPHjhwQXSpRKs=
+		</data>
+		<key>Resources/Fkeys/NWMLS Fkeys</key>
+		<data>
+		1HNd8J3pZyYTjAQCVm6D6fKsGAE=
+		</data>
+		<key>Resources/Fkeys/SCO ANSI Fkeys</key>
+		<data>
+		pG2F8emF3DO7AKKedjFLZSpQ6WM=
+		</data>
+		<key>Resources/Fkeys/Sco Ansi Alphacom Fkeys</key>
+		<data>
+		BjRnalJ7COlD3q1lImd4Gz76xwo=
+		</data>
+		<key>Resources/Fkeys/Triad TV925 Fkeys</key>
+		<data>
+		2KoEQRRniz5K+H+ZP427TQN37ks=
+		</data>
+		<key>Resources/Fkeys/Triad Wyse Fkeys</key>
+		<data>
+		Z2ehsCIAvJ64y10nom+3cEa62uY=
+		</data>
+		<key>Resources/Fkeys/VT100 Fkeys</key>
+		<data>
+		inyp8PUOHRGM1NB6FEIqO6nFF24=
+		</data>
+		<key>Resources/Fkeys/VT100 MLS Fkeys</key>
+		<data>
+		0qKNrVDqMszEnqVVjS3JAggZ/LE=
+		</data>
+		<key>Resources/Fkeys/VT220 Alphacom Fkeys</key>
+		<data>
+		B/2zBXR/F68HnzjRzBPBs7kPJtw=
+		</data>
+		<key>Resources/Fkeys/VT220 Fkeys</key>
+		<data>
+		kyK5F65ElO+93RkW/7V0BwPGHKI=
+		</data>
+		<key>Resources/Fkeys/VT220 Fkeys W:Do Key</key>
+		<data>
+		CuGxkwF1D4jtpeUUWE97dFIQK0Y=
+		</data>
+		<key>Resources/Fkeys/VT220 MLS Fkeys</key>
+		<data>
+		AyDGkgn9DIgEL6IFSNbvcPKm4Ow=
+		</data>
+		<key>Resources/Fkeys/Viewpoint Fkeys</key>
+		<data>
+		SFnQwiuX2DEBJRh7kZBtup5a3lw=
+		</data>
+		<key>Resources/Fkeys/Viewpoint Fkeys W:Page Up</key>
+		<data>
+		eZYkq3iCrvuKTlv0p/r4/LetsEo=
+		</data>
+		<key>Resources/Fkeys/Wyse Fkeys</key>
+		<data>
+		EnLJLKTc+eNbaKEv00IOQumu8WY=
+		</data>
+		<key>Resources/Fkeys/Xymox Fkeys</key>
+		<data>
+		uNgQNwYVMXhSq9ma1TOO6WnbFZ4=
+		</data>
+		<key>Resources/Fonts/MacWiseFontDF.nfnt</key>
+		<data>
+		cHmEih3l9IrkJSh7nsK6N3vcgxo=
+		</data>
+		<key>Resources/Fonts/MacWiseIBMPrinterFont.ttf</key>
+		<data>
+		vgl+JYdoitivBgpnU8Iwr2D/UHw=
+		</data>
+		<key>Resources/Fonts/MacWisePrinterFont.ttf</key>
+		<data>
+		2yQhcEPPy09u0aSRJiBXZaoMk0A=
+		</data>
+		<key>Resources/Function Key Icon.icns</key>
+		<data>
+		EsDDHsbGPejft2kdtOZyUNZDBYc=
+		</data>
+		<key>Resources/International</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>Resources/Kermit Help/Kermit File Transfers.rtf</key>
+		<data>
+		pxgEV1+u41BSa/kErxmrBvkV4MU=
+		</data>
+		<key>Resources/Kermit Help/Kermit Installation Instructions.rtf</key>
+		<data>
+		EQyl1MEnUSgmXJTic63LAD4AHho=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/Pasted Graphic 1.pict</key>
+		<data>
+		P2DZj8dobMie9O+k83zWKSo947A=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/Pasted Graphic.tiff</key>
+		<data>
+		xoyQgobrtkxbZ0jji8rchVwPtf8=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/TXT.rtf</key>
+		<data>
+		iKS9oVbKHmQ/DogoH0hY2QdTDS4=
+		</data>
+		<key>Resources/MacWise Icon.icns</key>
+		<data>
+		v4AY//YvydAyh3485C7xEpe8S4M=
+		</data>
+		<key>Resources/MacWise.rsrc</key>
+		<data>
+		Wf92wuFDeXjGvwjcLu6Ul+qxK3M=
+		</data>
+		<key>Resources/Phone Icon.icns</key>
+		<data>
+		XhYap2K31DMsH4eeF0zOmqqsIpw=
+		</data>
+		<key>Resources/QuickDial Icon.icns</key>
+		<data>
+		hpcAkL1e2EGq2OwwdqcUhVyXffA=
+		</data>
+		<key>Resources/Settings Icon.icns</key>
+		<data>
+		mxFdPIVUO6MNXztVjqQpFKC0Yyk=
+		</data>
+		<key>Resources/Text Icon.icns</key>
+		<data>
+		kFB7v48WUMu2aVedfkVqeJNZoCo=
+		</data>
+		<key>Resources/camera picture.aiff</key>
+		<data>
+		rNnsdFX0vrv1ppqJ44xapJxYfYs=
+		</data>
+		<key>Resources/camera.aiff</key>
+		<data>
+		R1y/wOh2WjDjMSdVgEdUo1z/7WI=
+		</data>
+		<key>Resources/en.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4Ks7WWWTIyVRQzlN84yr1bkd9Ro=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wKCR/jj9f2y6Z5vzCa5AVvLqcWg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			x9z09ucrSmfWpTeIBxFILNoWp/k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bCgckJVKLtCYqUR3XiLFNoyS9os=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GMxrBDkcCo0qDHiK/B4InaH0ofQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mG/Dpe2EHEDKiGI8zQkLTMRGZ7w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bCgckJVKLtCYqUR3XiLFNoyS9os=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IkC8ezwXK9h2uJozPig1kpZ7gJY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TzLK2FWquJXjcKqudZA/mLbFi88=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>files2</key>
+	<dict>
+		<key>Resources/AppleScripts/ReadMe AppleScripts Folder.rtf</key>
+		<data>
+		67niVFSF6rik9wwztZEAm9Rwngs=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Email.url</key>
+		<data>
+		i7QQzGwmFVHPoW0/fTk6qZ+geIY=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Home.url</key>
+		<data>
+		fFirl5HxqkNEBAT9Indb/eyboM4=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Order.url</key>
+		<data>
+		6250ZVKlGzduBapG07h7Z1Z1lk0=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software StoreOrder.url</key>
+		<data>
+		I7QJaq0cXti6laxAOxjTRBrFGJU=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software StoreSupport.url</key>
+		<data>
+		KYub3H5Vs2GPgO2V0U5MhfRw+9s=
+		</data>
+		<key>Resources/Carnation Software Web/Carnation Software Support.url</key>
+		<data>
+		W12w6aUeijuN4dNaHaly400q49c=
+		</data>
+		<key>Resources/Carnation Software Web/MacWise Registration Form.url</key>
+		<data>
+		QWUNGGju8ZVPn39rOagVKHP4jSs=
+		</data>
+		<key>Resources/Carnation Software Web/iPhone.url</key>
+		<data>
+		Ng6VSQdTNdpel5Q4FXOrhH4xf0g=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Préférences.rtf</key>
+		<data>
+		edsZUwC/gRR6ClBK5FwynG59bQA=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Telnet.rtf</key>
+		<data>
+		ceV7IPZLND3+igkQMTZb4v8PSoc=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide Touches fléchées.rtf</key>
+		<data>
+		gwvGhkN9ry/OAJJofrKaXhQrsK4=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide caractères internationaux.rtf</key>
+		<data>
+		cHd+ooiFNzcPyTdjSWnZf6EeU4Q=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide interpréteur de commandes Unix du Mac.rtf</key>
+		<data>
+		VaWlGN64wfWed02i7OjoE6AEIzk=
+		</data>
+		<key>Resources/Dialog Help Files - French/Aide interpréteur de commandes sécurisé.rtf</key>
+		<data>
+		ITC/WZCoyXvWK0QsScrliJ8wE6k=
+		</data>
+		<key>Resources/Dialog Help Files - French/Lisez-moi Dossier AppleScripts.rtf</key>
+		<data>
+		wxTV1QMoMErIjf+aEQjqrUIKj08=
+		</data>
+		<key>Resources/Dialog Help Files - French/Lisez-moi.rtf</key>
+		<data>
+		3KJd4YCAhPMmVIsj+ZQkfK4w8s0=
+		</data>
+		<key>Resources/Dialog Help Files - French/Prise en main rapide de Telnet.rtf</key>
+		<data>
+		lZxt7ivkh981Vu7oN8ruoSAbcuQ=
+		</data>
+		<key>Resources/Dialog Help Files - French/Transferts de fichier FTP.rtf</key>
+		<data>
+		kae1g8416PnNDwdGyqNcA9M+N9M=
+		</data>
+		<key>Resources/Dialog Help Files/Arrow Keys Help.rtf</key>
+		<data>
+		VqkKTkYvW3HpDwiy7vdSnEPz8kk=
+		</data>
+		<key>Resources/Dialog Help Files/FTP File Transfers.rtf</key>
+		<data>
+		hN0cBM+ZhbX+WoOo9XJL0g72py4=
+		</data>
+		<key>Resources/Dialog Help Files/International Help.rtf</key>
+		<data>
+		8/Oyo/3DORpFd0Xhoi5+isA0b28=
+		</data>
+		<key>Resources/Dialog Help Files/Mac Unix Shell Help.rtf</key>
+		<data>
+		CxPV3s6vA78GXcBr+gNWgseSQ8Y=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 1.pict</key>
+		<data>
+		HgS2OTzdZGMhD0EH1KHBX7Y1CbE=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 2.pict</key>
+		<data>
+		YvBVie4JhACyN8HzMxlWTnZVkzU=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 3.pict</key>
+		<data>
+		meUAhzQiWA3FJwP4RaxyCWRTSss=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic 4.pict</key>
+		<data>
+		kmOuTTnrdWU7HZBd/ihqKNMeauE=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/Pasted Graphic.pict</key>
+		<data>
+		XXBcr2THiY4NCcXM2dT7XKZeGxo=
+		</data>
+		<key>Resources/Dialog Help Files/PICK Data Transfers.rtfd/TXT.rtf</key>
+		<data>
+		YeMn6sALlPUP5bg00vazF5M5e0g=
+		</data>
+		<key>Resources/Dialog Help Files/Preferences Help.rtf</key>
+		<data>
+		iRScseoLJG0LEEZlQQwNrKdTgJs=
+		</data>
+		<key>Resources/Dialog Help Files/Secure Shell Help.rtf</key>
+		<data>
+		5Q1wdnIZnTniZOdAL0egmAXQUzU=
+		</data>
+		<key>Resources/Dialog Help Files/Secure Shell Login Options.rtf</key>
+		<data>
+		AICVa3UvT1FtC3mTwdd52z6RMTc=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet Help.rtf</key>
+		<data>
+		UY/L+YZXZpTgtTg21o5q0Ud1z4E=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet Login Options.rtf</key>
+		<data>
+		p7KsPB12kwpYbWU5NEXlujfUX2g=
+		</data>
+		<key>Resources/Dialog Help Files/Telnet QuickStart.rtf</key>
+		<data>
+		+M33R/aXbJDog1RK3WIOlG3VdKs=
+		</data>
+		<key>Resources/Fkeys/Clinicare Fkeys</key>
+		<data>
+		l8Y79hIHEnP3Q+gJgc+x9cpVWl4=
+		</data>
+		<key>Resources/Fkeys/Mac unix fkeys</key>
+		<data>
+		kRGPOJsIMWxk7NuPHjhwQXSpRKs=
+		</data>
+		<key>Resources/Fkeys/NWMLS Fkeys</key>
+		<data>
+		1HNd8J3pZyYTjAQCVm6D6fKsGAE=
+		</data>
+		<key>Resources/Fkeys/SCO ANSI Fkeys</key>
+		<data>
+		pG2F8emF3DO7AKKedjFLZSpQ6WM=
+		</data>
+		<key>Resources/Fkeys/Sco Ansi Alphacom Fkeys</key>
+		<data>
+		BjRnalJ7COlD3q1lImd4Gz76xwo=
+		</data>
+		<key>Resources/Fkeys/Triad TV925 Fkeys</key>
+		<data>
+		2KoEQRRniz5K+H+ZP427TQN37ks=
+		</data>
+		<key>Resources/Fkeys/Triad Wyse Fkeys</key>
+		<data>
+		Z2ehsCIAvJ64y10nom+3cEa62uY=
+		</data>
+		<key>Resources/Fkeys/VT100 Fkeys</key>
+		<data>
+		inyp8PUOHRGM1NB6FEIqO6nFF24=
+		</data>
+		<key>Resources/Fkeys/VT100 MLS Fkeys</key>
+		<data>
+		0qKNrVDqMszEnqVVjS3JAggZ/LE=
+		</data>
+		<key>Resources/Fkeys/VT220 Alphacom Fkeys</key>
+		<data>
+		B/2zBXR/F68HnzjRzBPBs7kPJtw=
+		</data>
+		<key>Resources/Fkeys/VT220 Fkeys</key>
+		<data>
+		kyK5F65ElO+93RkW/7V0BwPGHKI=
+		</data>
+		<key>Resources/Fkeys/VT220 Fkeys W:Do Key</key>
+		<data>
+		CuGxkwF1D4jtpeUUWE97dFIQK0Y=
+		</data>
+		<key>Resources/Fkeys/VT220 MLS Fkeys</key>
+		<data>
+		AyDGkgn9DIgEL6IFSNbvcPKm4Ow=
+		</data>
+		<key>Resources/Fkeys/Viewpoint Fkeys</key>
+		<data>
+		SFnQwiuX2DEBJRh7kZBtup5a3lw=
+		</data>
+		<key>Resources/Fkeys/Viewpoint Fkeys W:Page Up</key>
+		<data>
+		eZYkq3iCrvuKTlv0p/r4/LetsEo=
+		</data>
+		<key>Resources/Fkeys/Wyse Fkeys</key>
+		<data>
+		EnLJLKTc+eNbaKEv00IOQumu8WY=
+		</data>
+		<key>Resources/Fkeys/Xymox Fkeys</key>
+		<data>
+		uNgQNwYVMXhSq9ma1TOO6WnbFZ4=
+		</data>
+		<key>Resources/Fonts/MacWiseFontDF.nfnt</key>
+		<data>
+		cHmEih3l9IrkJSh7nsK6N3vcgxo=
+		</data>
+		<key>Resources/Fonts/MacWiseIBMPrinterFont.ttf</key>
+		<data>
+		vgl+JYdoitivBgpnU8Iwr2D/UHw=
+		</data>
+		<key>Resources/Fonts/MacWisePrinterFont.ttf</key>
+		<data>
+		2yQhcEPPy09u0aSRJiBXZaoMk0A=
+		</data>
+		<key>Resources/Function Key Icon.icns</key>
+		<data>
+		EsDDHsbGPejft2kdtOZyUNZDBYc=
+		</data>
+		<key>Resources/International</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		</data>
+		<key>Resources/Kermit Help/Kermit File Transfers.rtf</key>
+		<data>
+		pxgEV1+u41BSa/kErxmrBvkV4MU=
+		</data>
+		<key>Resources/Kermit Help/Kermit Installation Instructions.rtf</key>
+		<data>
+		EQyl1MEnUSgmXJTic63LAD4AHho=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/Pasted Graphic 1.pict</key>
+		<data>
+		P2DZj8dobMie9O+k83zWKSo947A=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/Pasted Graphic.tiff</key>
+		<data>
+		xoyQgobrtkxbZ0jji8rchVwPtf8=
+		</data>
+		<key>Resources/MacWise 14 Manual.rtfd/TXT.rtf</key>
+		<data>
+		iKS9oVbKHmQ/DogoH0hY2QdTDS4=
+		</data>
+		<key>Resources/MacWise Icon.icns</key>
+		<data>
+		v4AY//YvydAyh3485C7xEpe8S4M=
+		</data>
+		<key>Resources/MacWise.rsrc</key>
+		<data>
+		Wf92wuFDeXjGvwjcLu6Ul+qxK3M=
+		</data>
+		<key>Resources/Phone Icon.icns</key>
+		<data>
+		XhYap2K31DMsH4eeF0zOmqqsIpw=
+		</data>
+		<key>Resources/QuickDial Icon.icns</key>
+		<data>
+		hpcAkL1e2EGq2OwwdqcUhVyXffA=
+		</data>
+		<key>Resources/Settings Icon.icns</key>
+		<data>
+		mxFdPIVUO6MNXztVjqQpFKC0Yyk=
+		</data>
+		<key>Resources/Text Icon.icns</key>
+		<data>
+		kFB7v48WUMu2aVedfkVqeJNZoCo=
+		</data>
+		<key>Resources/camera picture.aiff</key>
+		<data>
+		rNnsdFX0vrv1ppqJ44xapJxYfYs=
+		</data>
+		<key>Resources/camera.aiff</key>
+		<data>
+		R1y/wOh2WjDjMSdVgEdUo1z/7WI=
+		</data>
+		<key>Resources/en.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4Ks7WWWTIyVRQzlN84yr1bkd9Ro=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wKCR/jj9f2y6Z5vzCa5AVvLqcWg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			x9z09ucrSmfWpTeIBxFILNoWp/k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bCgckJVKLtCYqUR3XiLFNoyS9os=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GMxrBDkcCo0qDHiK/B4InaH0ofQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_CA.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mG/Dpe2EHEDKiGI8zQkLTMRGZ7w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bCgckJVKLtCYqUR3XiLFNoyS9os=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/Localized.rsrc</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/classes.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hHdyI93ghhOIialt+n93ognlOK4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/info.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IkC8ezwXK9h2uJozPig1kpZ7gJY=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/fr_FR.lproj/MacWiseResources.nib/objects.xib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TzLK2FWquJXjcKqudZA/mLbFi88=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>rules</key>
+	<dict>
+		<key>^Resources/</key>
+		<true/>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^version.plist$</key>
+		<true/>
+	</dict>
+	<key>rules2</key>
+	<dict>
+		<key>.*\.dSYM($|/)</key>
+		<dict>
+			<key>weight</key>
+			<real>11</real>
+		</dict>
+		<key>^(.*/)?\.DS_Store$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>2000</real>
+		</dict>
+		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^.*</key>
+		<true/>
+		<key>^Info\.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^PkgInfo$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^[^/]+$</key>
+		<dict>
+			<key>nested</key>
+			<true/>
+			<key>weight</key>
+			<real>10</real>
+		</dict>
+		<key>^embedded\.provisionprofile$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+		<key>^version\.plist$</key>
+		<dict>
+			<key>weight</key>
+			<real>20</real>
+		</dict>
+	</dict>
+</dict>
+</plist>
