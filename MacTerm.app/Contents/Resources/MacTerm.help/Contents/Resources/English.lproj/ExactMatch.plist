@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>helpcreatingsessions</key>
+	<string>helpcreatingsessions</string>
+	<key>helpsearchingfortext</key>
+	<string>helpsearchingfortext</string>
+	<key>helpsettingthescreensize</key>
+	<string>helpsettingthescreensize</string>
+	<key>helpusingthefloatingcommandline</key>
+	<string>helpusingthefloatingcommandline</string>
+	<key>helpwithpreferences</key>
+	<string>helpwithpreferences</string>
+	<key>helpwithscreenformatting</key>
+	<string>helpwithscreenformatting</string>
+	<key>helpwithterminalsettings</key>
+	<string>helpwithterminalsettings</string>
+</dict>
+</plist>

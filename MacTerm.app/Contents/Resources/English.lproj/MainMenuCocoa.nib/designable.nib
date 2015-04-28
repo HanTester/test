@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1060" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="945" id="998"/>
+                <outlet property="dockMenu" destination="1075" id="1094"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <menu title="Main Menu" systemMenu="main" id="29">
+            <items>
+                <menuItem title="MacTerm" tag="512" id="56">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="MacTerm" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About MacTerm" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontAbout:" target="945" id="995"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="920"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="921">
+                                <connections>
+                                    <action selector="orderFrontPreferences:" target="945" id="946"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="794"/>
+                            <menuItem title="Check for Updates…" id="795">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performCheckForUpdates:" target="945" id="949"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="MacTerm Web Site" id="797">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performGoToMainWebSite:" target="945" id="953"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Provide MacTerm Feedback" id="798">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performProvideFeedback:" target="945" id="951"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="922"/>
+                            <menuItem title="Services" id="923">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="930"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="924"/>
+                            <menuItem title="Hide MacTerm" keyEquivalent="h" id="925">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="937"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="926">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="938"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="927">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="939"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="928"/>
+                            <menuItem title="Quit MacTerm" keyEquivalent="q" id="929">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="940"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" tag="513" id="83">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="81">
+                        <items>
+                            <menuItem title="New Session:" enabled="NO" id="799">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="New Session:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="New Session in New Workspace:" enabled="NO" alternate="YES" id="1172">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="New Session in New Workspace:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                            </menuItem>
+                            <menuItem title="Default" keyEquivalent="n" indentationLevel="1" id="82">
+                                <connections>
+                                    <action selector="performNewDefault:" target="945" id="992"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Log-In Shell" keyEquivalent="n" indentationLevel="1" id="801">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performNewLogInShell:" target="945" id="991"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Shell" alternate="YES" keyEquivalent="n" indentationLevel="1" id="800">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performNewShell:" target="945" id="990"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom New Session…" keyEquivalent="N" indentationLevel="1" id="802">
+                                <connections>
+                                    <action selector="performNewCustom:" target="945" id="993"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="New From Workspace:" enabled="NO" id="1152">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="New From Workspace:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Default" indentationLevel="1" id="1153">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performRestoreWorkspaceDefault:" target="945" id="1157"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open…" keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="performOpen:" target="945" id="989"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="79"/>
+                            <menuItem title="Close" keyEquivalent="w" id="73">
+                                <connections>
+                                    <action selector="performCloseSetup:" target="945" id="1102"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Force-Quit and Keep Window" alternate="YES" keyEquivalent="w" id="1183">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performKill:" target="945" id="1185"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As…" keyEquivalent="s" id="80">
+                                <connections>
+                                    <action selector="performSaveAs:" target="945" id="1064"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="804"/>
+                            <menuItem title="Duplicate Session" keyEquivalent="d" id="803">
+                                <connections>
+                                    <action selector="performDuplicate:" target="945" id="994"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Restart Session" id="1147">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                <connections>
+                                    <action selector="performRestart:" target="945" id="1151"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open URL" keyEquivalent="u" id="805">
+                                <connections>
+                                    <action selector="performOpenURL:" target="945" id="988"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save Selection…" keyEquivalent="S" id="806">
+                                <connections>
+                                    <action selector="performSaveSelection:" target="945" id="1065"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="808"/>
+                            <menuItem title="Begin Capture to File…" keyEquivalent="b" id="807">
+                                <connections>
+                                    <action selector="performCaptureBegin:" target="945" id="1066"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="End Capture to File" enabled="NO" alternate="YES" keyEquivalent="b" id="809">
+                                <connections>
+                                    <action selector="performCaptureEnd:" target="945" id="1067"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="74"/>
+                            <menuItem title="Print…" keyEquivalent="p" id="78">
+                                <connections>
+                                    <action selector="performPrintSelection:" target="945" id="1068"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Print Screen…" keyEquivalent="" id="810">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performPrintScreen:" target="945" id="1069"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" tag="514" id="681">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="682">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="683">
+                                <connections>
+                                    <action selector="performUndo:" target="945" id="999"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="684">
+                                <connections>
+                                    <action selector="performRedo:" target="945" id="1000"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="685"/>
+                            <menuItem title="Cut" keyEquivalent="x" id="686">
+                                <connections>
+                                    <action selector="performCut:" target="945" id="1001"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="687">
+                                <connections>
+                                    <action selector="performCopy:" target="945" id="1002"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy with Tab Substitution" keyEquivalent="C" id="812">
+                                <connections>
+                                    <action selector="performCopyWithTabSubstitution:" target="945" id="1003"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy &amp; Paste" keyEquivalent="V" id="814">
+                                <connections>
+                                    <action selector="performCopyAndPaste:" target="945" id="1004"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="688">
+                                <connections>
+                                    <action selector="performPaste:" target="945" id="1005"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="690">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performDelete:" target="945" id="1006"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="692"/>
+                            <menuItem title="Select All" keyEquivalent="a" id="691">
+                                <connections>
+                                    <action selector="performSelectAll:" target="945" id="1009"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select Nothing" alternate="YES" keyEquivalent="A" id="825">
+                                <connections>
+                                    <action selector="performSelectNothing:" target="945" id="1010"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select Entire Scrollback Buffer" alternate="YES" keyEquivalent="a" id="833">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performSelectEntireScrollbackBuffer:" target="945" id="1011"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Find…" tag="1" keyEquivalent="f" id="815">
+                                <connections>
+                                    <action selector="performFind:" target="945" id="1012"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Find Next" tag="2" keyEquivalent="g" id="817">
+                                <connections>
+                                    <action selector="performFindNext:" target="945" id="1013"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Find Previous" tag="3" alternate="YES" keyEquivalent="G" id="819">
+                                <connections>
+                                    <action selector="performFindPrevious:" target="945" id="1014"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Completions" id="pjc-CU-PR9">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                <connections>
+                                    <action selector="performShowCompletions:" target="945" id="RoX-6l-ubK"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="828"/>
+                            <menuItem title="Find Cursor" keyEquivalent="*" id="827">
+                                <connections>
+                                    <action selector="performFindCursor:" target="945" id="1015"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Clipboard" id="829">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontClipboard:" target="945" id="1044"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" tag="515" id="295">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="View" id="296">
+                        <items>
+                            <menuItem title="Make Screen Wider" keyEquivalent="" id="834">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performScreenResizeWider:" target="945" id="1016"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Screen Narrower" keyEquivalent="" id="837">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performScreenResizeNarrower:" target="945" id="1017"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Screen Taller" keyEquivalent="" id="838">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performScreenResizeTaller:" target="945" id="1018"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Screen Shorter" keyEquivalent="" id="836">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performScreenResizeShorter:" target="945" id="1019"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Screen Size:" enabled="NO" id="839">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Screen Size:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Standard (80 × 24)" indentationLevel="1" id="840">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performScreenResizeStandard:" target="945" id="1020"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Tall (80 × 40)" indentationLevel="1" id="841">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performScreenResizeTall:" target="945" id="1021"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Wide (132 × 24)" indentationLevel="1" id="842">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performScreenResizeWide:" target="945" id="1022"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom Screen Size…" keyEquivalent="k" indentationLevel="1" id="843">
+                                <connections>
+                                    <action selector="performScreenResizeCustom:" target="945" id="1023"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="845"/>
+                            <menuItem title="Make Text Bigger" keyEquivalent="+" id="844">
+                                <connections>
+                                    <action selector="performFormatTextBigger:" target="945" id="1024"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Text as Big as Possible" id="846">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performFormatTextMaximum:" target="945" id="1025"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Make Text Smaller" keyEquivalent="-" id="847">
+                                <connections>
+                                    <action selector="performFormatTextSmaller:" target="945" id="1026"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Format:" enabled="NO" id="849">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Format:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Default" indentationLevel="1" id="850">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performFormatDefault:" target="945" id="1028"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom Format…" keyEquivalent="t" indentationLevel="1" id="851">
+                                <connections>
+                                    <action selector="performFormatCustom:" target="945" id="1027"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="853"/>
+                            <menuItem title="New TEK Page" keyEquivalent="p" id="852">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performNewTEKPage:" target="945" id="1032"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Clear TEK Canvas on Page" id="854">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performPageClearToggle:" target="945" id="1034"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="835"/>
+                            <menuItem title="Show/Hide Toolbar" id="297">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleToolbarShownSetup:" target="945" id="1103"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Customize Toolbar…" id="298">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="runToolbarCustomizationPaletteSetup:" target="945" id="1104"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="qEn-qd-UhT"/>
+                            <menuItem title="-" keyEquivalent="f" id="f3l-9k-DmN">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="toggleFullScreen:" target="945" id="b0y-iI-BI7"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Terminal" tag="516" id="884">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Terminal" id="885">
+                        <items>
+                            <menuItem title="Suspend (Scroll Lock)" id="891">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSuspendToggle:" target="945" id="1035"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Interrupt Process" id="892">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performInterruptProcess:" target="945" id="1036"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="894"/>
+                            <menuItem title="Bell" id="895">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performBellToggle:" target="945" id="1037"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Local Echo" id="896">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performLocalEchoToggle:" target="945" id="1038"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Line Wrap" id="898">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performLineWrapToggle:" target="945" id="1039"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save Lines on Clear" id="897">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSaveOnClearToggle:" target="945" id="1040"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Jump Scrolling" keyEquivalent="j" id="899">
+                                <connections>
+                                    <action selector="performJumpScrolling:" target="945" id="1042"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom Terminal Setup…" id="900">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performTerminalCustomSetup:" target="945" id="1043"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="893"/>
+                            <menuItem title="Event Handling:" enabled="NO" id="886">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Event Handling:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="None" indentationLevel="1" id="887">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSetActivityHandlerNone:" target="945" id="1046"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Notify on Next Activity" indentationLevel="1" id="888">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSetActivityHandlerNotifyOnNext:" target="945" id="1047"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Notify on Inactivity (After Delay)" indentationLevel="1" id="889">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSetActivityHandlerNotifyOnIdle:" target="945" id="1049"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Send Keep-Alive on Inactivity" indentationLevel="1" id="890">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performSetActivityHandlerSendKeepAliveOnIdle:" target="945" id="1048"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="901"/>
+                            <menuItem title="Speak Incoming Lines of Text" keyEquivalent="v" id="902">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performSpeechToggle:" target="945" id="1050"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="903"/>
+                            <menuItem title="Delete Entire Scrollback Buffer" keyEquivalent="r" id="904">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performScrollbackClear:" target="945" id="1051"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset Terminal" keyEquivalent="r" id="906">
+                                <connections>
+                                    <action selector="performReset:" target="945" id="1053"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Map" tag="517" id="882">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Map" id="883">
+                        <items>
+                            <menuItem title="Delete Sends ←" keyEquivalent="[" id="907">
+                                <connections>
+                                    <action selector="performDeleteMapToBackspace:" target="945" id="1054"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete Sends ⌫" keyEquivalent="]" id="908">
+                                <connections>
+                                    <action selector="performDeleteMapToDelete:" target="945" id="1055"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Emacs Cursor (←→↑↓)" id="909">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performEmacsCursorModeToggle:" target="945" id="1056"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Local Page Control Keys (↖↘⇞⇟)" id="912">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performLocalPageKeysToggle:" target="945" id="1057"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom Key Sequences…" id="911">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performMappingCustom:" target="945" id="1059"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1182"/>
+                            <menuItem title="“Function Keys” Window Layout:" enabled="NO" id="1173">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="“Function Keys” Window Layout:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="VT220 / “multi-gnome-terminal”" state="on" indentationLevel="1" id="1174">
+                                <connections>
+                                    <action selector="performSetFunctionKeyLayoutVT220:" target="945" id="1178"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="XTerm (X11)" indentationLevel="1" id="1175">
+                                <connections>
+                                    <action selector="performSetFunctionKeyLayoutXTermX11:" target="945" id="1179"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="XTerm (XFree86) / “gnome-terminal” / GNU “screen”" indentationLevel="1" id="1176">
+                                <connections>
+                                    <action selector="performSetFunctionKeyLayoutXTermXFree86:" target="945" id="1180"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="“rxvt”" indentationLevel="1" id="1177">
+                                <connections>
+                                    <action selector="performSetFunctionKeyLayoutRxvt:" target="945" id="1181"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="910"/>
+                            <menuItem title="Text Translation:" enabled="NO" id="917">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Text Translation:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Default" indentationLevel="1" id="918">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performTranslationSwitchDefault:" target="945" id="1062"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Custom Text Translation…" indentationLevel="1" id="919">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performTranslationSwitchCustom:" target="945" id="1063"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Macros" tag="518" id="879">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Macros" id="880">
+                        <items>
+                            <menuItem title="&lt;macro&gt;" tag="1" id="1113">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1125"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="2" id="1114">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1126"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="3" id="1115">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1127"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="4" id="1116">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1128"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="5" id="1117">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1129"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="6" id="1118">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1130"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="7" id="1119">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1131"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="8" id="1120">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1132"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="9" id="1121">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1133"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="10" id="1122">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1134"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="11" id="1123">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1135"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="&lt;macro&gt;" tag="12" id="1124">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performActionForMacro:" target="945" id="1136"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1112"/>
+                            <menuItem title="Macro Set:" enabled="NO" id="1142">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Macro Set:">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="LucidaGrande-Bold"/>
+                                            <font key="NSOriginalFont" size="11" name="LucidaGrande-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="None" indentationLevel="1" id="1143">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performMacroSwitchNone:" target="945" id="1146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Default" indentationLevel="1" id="1144">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performMacroSwitchDefault:" target="945" id="1145"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" tag="519" id="19">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMinimizeSetup:" target="945" id="1105"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="239">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performZoomSetup:" target="945" id="1106"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Maximize" alternate="YES" id="855">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performMaximize:" target="945" id="962"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Move to New Workspace" id="856">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performMoveToNewWorkspace:" target="945" id="963"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Rename…" id="857">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performRename:" target="945" id="964"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="858"/>
+                            <menuItem title="Hide" id="859">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performHideWindow:" target="945" id="965"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Other Windows" id="860">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performHideOtherWindows:" target="945" id="966"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All Windows" keyEquivalent="a" id="861">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="performShowHiddenWindows:" target="945" id="967"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92"/>
+                            <menuItem title="Arrange All Windows in Front" id="866">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performArrangeInFront:" target="945" id="968"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bring Next to Front" keyEquivalent="`" id="862">
+                                <connections>
+                                    <action selector="orderFrontNextWindow:" target="945" id="971"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bring Next to Front, Hide Previous" alternate="YES" keyEquivalent="`" id="865">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="orderFrontNextWindowHidingPrevious:" target="945" id="973"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Bring Previous to Front" alternate="YES" keyEquivalent="~" id="864">
+                                <connections>
+                                    <action selector="orderFrontPreviousWindow:" target="945" id="974"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Nudge Window to the Right" keyEquivalent="" id="1161">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="performMoveWindowRight:" target="945" id="1162"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Nudge Window to the Left" keyEquivalent="" id="1163">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="performMoveWindowLeft:" target="945" id="1169"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Nudge Window Downward" keyEquivalent="" id="1165">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="performMoveWindowDown:" target="945" id="1170"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Nudge Window Upward" keyEquivalent="" id="1167">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="performMoveWindowUp:" target="945" id="1171"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="863"/>
+                            <menuItem title="Session Info" keyEquivalent="i" id="868">
+                                <connections>
+                                    <action selector="orderFrontSessionInfo:" target="945" id="947"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="869"/>
+                            <menuItem title="Command Line" keyEquivalent="l" id="870">
+                                <connections>
+                                    <action selector="orderFrontCommandLine:" target="945" id="957"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="IP Addresses of This Mac" keyEquivalent="i" id="871">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="orderFrontIPAddresses:" target="945" id="958"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Control Keys" keyEquivalent="1" id="872">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="orderFrontControlKeys:" target="945" id="959"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Function Keys" keyEquivalent="2" id="873">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="orderFrontVT220FunctionKeys:" target="945" id="960"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="VT220 Keypad" tag="123" keyEquivalent="3" id="874">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
+                                <connections>
+                                    <action selector="orderFrontVT220Keypad:" target="945" id="961"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" tag="520" id="931">
+                    <menu key="submenu" title="Help" id="932">
+                        <items>
+                            <menuItem title="MacTerm Help" keyEquivalent="?" id="941">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="942"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Contextual Help" keyEquivalent="?" id="933">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                <connections>
+                                    <action selector="orderFrontContextualHelp:" target="945" id="970"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem tag="521" id="875">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" id="876">
+                        <items>
+                            <menuItem title="Debugging Options" keyEquivalent="D" id="877">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="orderFrontDebuggingOptions:" target="945" id="969"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <menu id="1075" userLabel="Dock Menu">
+            <items>
+                <menuItem title="New Session: Shell" id="1080">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="performNewShell:" target="945" id="1083"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="New Session: Log-In Shell" id="1081">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="performNewLogInShell:" target="945" id="1082"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="New From Workspace: Default" id="1155">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="performRestoreWorkspaceDefault:" target="945" id="1158"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="1092"/>
+                <menuItem title="IP Addresses of This Mac" id="1085">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontIPAddresses:" target="945" id="1086"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="1091"/>
+                <menuItem title="About MacTerm" id="1087">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontAbout:" target="945" id="1088"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="1093"/>
+                <menuItem title="MacTerm Web Site" id="1089">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="performGoToMainWebSite:" target="945" id="1090"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="945" userLabel="Command Delegate" customClass="Commands_Executor"/>
+    </objects>
+</document>

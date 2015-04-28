@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Playing BBS Games (MacTerm Help)</title>
+<meta name="generator" content="Textile for Python" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="copyright" content="©1999-2015 by Kevin Grant" />
+<meta name="description" content="How to configure MacTerm to work better with games traditionally hosted on Bulletin-Board System servers." />
+<link rel="stylesheet" type="text/css" href="default.css" />
+</head><body>
+<div class="navigation">
+
+	<ul>
+		<li>MacTerm Help</li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+
+</div>
+
+	<h1 class="pagetitle">Playing <span class="caps">BBS</span> Games</h1>
+
+<div class="content">
+
+	<p id="abstract">While it is possible to configure MacTerm to work well with
+ typical games, the defaults will not work well at all!  This
+ tutorial will help you make settings appropriate for most games.</p>
+
+	<h2>Overview</h2>
+
+	<p>Historically, many so-called <span class="caps">BBS</span> (Bulletin Board System) games,
+ also known as MUDs (Multi-User Dungeons), expect to work on PCs
+ under <span class="caps">DOS</span>.  They also typically rely on non-standard extensions
+ to the VT100 terminal, that collectively are known as <span class="caps">ANSI-BBS</span>.</p>
+
+	<p>MacTerm&#8217;s default VT100 emulator has a few of the common
+ extensions that make it compatible with <span class="caps">ANSI-BBS</span>.  It also knows
+ how to translate characters from other character sets (<span class="caps">DOS</span> has
+ its own character set), and special graphics characters are
+ rendered with high quality.</p>
+
+	<h2>Configuration</h2>
+
+	<h3>Translation</h3>
+
+	<p>First, you must create a Translation collection (via Preferences)
+ that uses the same characters as <span class="caps">DOS</span> typically does, such as
+ special graphics.</p>
+
+	<ul>
+		<li>Open the Preferences window, and go to the Translations pane.</li>
+		<li>Either edit the default, or (recommended) use the &#8220;+&#8221; button in the drawer to create a new collection.</li>
+		<li>Select &#8220;Latin-US (<span class="caps">DOS</span>)&#8221; from the &#8220;Characters:&#8221; list.</li>
+	</ul>
+
+	<p>The list is based on what translation units are installed on your
+ computer.  While the <span class="caps">DOS</span> set is always available on Mac OS X when
+ sold in the U.S., it may not exist in international versions.</p>
+
+	<p>If you acquired a translation unit in some other way, it may have
+ some other name (such as, CP437 for Code Page 437).</p>
+
+	<h3>Format</h3>
+
+	<p>While you do not have to change fonts or colors (configured in
+ Format preferences), you should be aware of some side effects.</p>
+
+	<p>One, there is currently a bug in MacTerm where any font that is
+ not natively encoded as Mac Roman, may incorrectly display some
+ international characters.  If your game relies on things like
+ accented characters, be sure to choose a more basic font (like
+ Monaco).</p>
+
+	<p>Two, MacTerm automatically chooses a different color for text or
+ backgrounds that are considered &#8220;bold&#8221; and &#8220;blinking&#8221;.  If you do
+ not want this effect, you should configure the Format that you
+ use to have the same colors for bold, blinking, and normal text.</p>
+
+	<p>Three, if you have customized any of the 16 &#8220;<span class="caps">ANSI</span> Colors&#8221; in a
+ Format, note that games often draw graphics assuming that the
+ original colors are in use.  The &#8220;Set to the Standard Colors&#8230;&#8221;
+ button on the &#8220;<span class="caps">ANSI</span> Colors&#8221; tab of the Formats pane allows you to
+ make these 16 colors return to their expected defaults for a PC.</p>
+
+	<p>Four, MacTerm supports up to 256 colors, but programs that may use
+ them will often only attempt to do so when the terminal is
+ identified as &#8220;xterm-256color&#8221;.  Note that you cannot customize
+ these 256 colors, except for the 16 that are in the &#8220;<span class="caps">ANSI</span> Colors&#8221;
+ subset.  (Do not worry about 256 colors unless you know that your
+ game can use them.)</p>
+
+	<h3>Terminal</h3>
+
+	<p>You should have a Terminal set up in Preferences with a &#8220;Base
+ Emulator:&#8221; set to VT100.</p>
+
+	<p>MacTerm automatically recognizes certain ANSI-specific add-ons
+ to VT100, so if a game uses them they will be handled correctly.</p>
+
+	<p>Note that some games assume that the screen size is 80 &#215; 25.  If
+ necessary, ensure that the screen has these dimensions.</p>
+
+	<h3>Session</h3>
+
+	<p>Your game could be hosted anywhere, though it is typically on a
+ remote server accessible via a simple telnet connection.  You
+ probably have a &#8220;telnet://&#8221; <span class="caps">URL</span>, or information on a server host
+ name and port number to use.</p>
+
+	<p>If you will play this game often, you should create a new Session
+ collection in Preferences.  Otherwise, you could enter the same
+ configuration information in the &#8220;Custom New Session&#8221; sheet.</p>
+
+	<p>When the Sessions pane (or sheet) is visible, you will see a
+ command line field.  Either directly type in the command needed
+ to reach the game (such as some telnet setup), or use the button
+ &#8220;Remote Shell&#8230;&#8221; to help you compose a command.</p>
+
+	<p>The pane also has pop-up menus that will let you choose the
+ Terminal, Format and Translation that you created above.  This
+ causes appropriate defaults to be set before the server is even
+ contacted.</p>
+
+	<p>Note that &#8220;environment variables&#8221; on the server side sometimes
+ need to be manually synchronized with MacTerm settings.  Talk to
+ a server administrator to determine if this is true in your case.</p>
+
+	<h2>Game Play</h2>
+
+	<p>Some MacTerm features are particularly well suited to games.</p>
+
+	<p>The &#8220;No window close on process exit&#8221; preference prevents windows
+ from immediately closing at disconnect time.  Many game servers
+ display information during logout that would otherwise disappear
+ immediately.</p>
+
+	<p>&#8220;Enter Full Screen&#8221; in the View menu lets you focus entirely on
+ the game.  Depending on the current setting of &#8220;Window Resize
+ Effect&#8221;, this may either change the font or the terminal size;
+ hold down the Option key to temporarily do the opposite as you
+ enter Full Screen.</p>
+
+	<p>The &#8220;Command Line&#8221; window can be displayed using the Window menu.
+ This allows you to type text that is only sent to the server when
+ you press Return (or Enter).  It also maintains a history of the
+ commands entered from that window.</p>
+
+	<p>The Macros pane in the Preferences window can be used to create
+ sets of predefined actions mapped to keys (that can then be
+ enabled using the Map menu).</p>
+
+</div>
+
+</body></html>
+
