@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Emulating Keys From Other Keyboards (MacTerm Help)</title>
+<meta name="generator" content="Textile for Python" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="copyright" content="©1999-2015 by Kevin Grant" />
+<meta name="description" content="Information on keyboards from other environments, such as X11 and the VT220." />
+<link rel="stylesheet" type="text/css" href="default.css" />
+</head><body>
+<div class="navigation">
+
+	<ul>
+		<li>MacTerm Help</li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+
+</div>
+
+	<h1 class="pagetitle">Emulating Keys From Other Keyboards</h1>
+
+<div class="content">
+
+	<p id="abstract">Although you can use <a href="windows.html#keypads">palettes</a>
+ to help interact with certain programs in a terminal, you may need
+ keys that aren&#8217;t in any palette.  Fortunately, MacTerm&#8217;s
+ <a href="preferences.html#macros">Macro preferences</a> allow you to map anything
+ you want to your Mac&#8217;s keyboard, including key sequences that just
+ &#8220;do the right thing&#8221; on another computer.</p>
+
+	<h2>X11 Keyboard Reference</h2>
+
+	<p>Below are example macros that emulate function keys on Unix-like
+ operating systems.</p>
+
+	<p>Before using any of the following in a macro, be sure that the macro
+ is set to &#8220;Enter Text with Substitutions&#8221;.</p>
+
+	<p>Each sequence should be entered exactly into a macro, without any
+ spaces or other characters.</p>
+
+	<table class="deftable">
+		<tr class="def">
+			<th style="text-align:left;" class="key">Key</th>
+			<th style="text-align:left;" class="desc">No Modifier</th>
+			<th style="text-align:left;" class="desc">Shift</th>
+			<th style="text-align:left;" class="desc">Control</th>
+			<th style="text-align:left;" class="desc">Shift and Control</th>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F1</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[11~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[11^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F2</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[12~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[12^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F3</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[13~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[13^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F4</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[14~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[14^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F5</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[15~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[15^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F6</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[17~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[17^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F7</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[18~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[18^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F8</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[19~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[19^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F9</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[20~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[20^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F10</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[21~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[21^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34^</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F11</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[23</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F12</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[24</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F13</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[25</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F14</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[26</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F15</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[28</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F16</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[29</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F17</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[31</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F18</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[32</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F19</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[33</code>@</td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>F20</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34~</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34$</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34^</code></td>
+			<td style="text-align:left;" class="desc"><code>\e[34</code>@</td>
+		</tr>
+	</table>
+
+	<h2>VT220 Keyboard Reference</h2>
+
+	<p>The <a href="windows.html#keypads">palette of VT220 keys</a> can be used to send
+ VT220 keys, but you may also want to use them in macros.</p>
+
+	<p>VT220 function keys match the table above, with the exceptions of
+ PF1-PF4, which are defined as follows:</p>
+
+	<table class="deftable">
+		<tr class="def">
+			<th style="text-align:left;" class="key">Key</th>
+			<th style="text-align:left;" class="desc">Sequence</th>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>PF1</code></td>
+			<td style="text-align:left;" class="desc"><code>\eOP</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>PF2</code></td>
+			<td style="text-align:left;" class="desc"><code>\eOQ</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>PF3</code></td>
+			<td style="text-align:left;" class="desc"><code>\eOR</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key"><code>PF4</code></td>
+			<td style="text-align:left;" class="desc"><code>\eOS</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Find</td>
+			<td style="text-align:left;" class="desc"><code>\e[1~</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Insert</td>
+			<td style="text-align:left;" class="desc"><code>\e[2~</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Delete</td>
+			<td style="text-align:left;" class="desc"><code>\e[3~</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Select</td>
+			<td style="text-align:left;" class="desc"><code>\e[4~</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Page Up</td>
+			<td style="text-align:left;" class="desc"><code>\e[5~</code></td>
+		</tr>
+		<tr class="def">
+			<td style="text-align:left;" class="key">Page Down</td>
+			<td style="text-align:left;" class="desc"><code>\e[6~</code></td>
+		</tr>
+	</table>
+
+</div>
+
+</body></html>
+

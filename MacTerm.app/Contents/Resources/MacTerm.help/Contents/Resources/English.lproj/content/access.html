@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Application Access (MacTerm Help)</title>
+<meta name="generator" content="Textile for Python" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="copyright" content="©1999-2015 by Kevin Grant" />
+<meta name="description" content="Information on starting and managing sessions with terminal windows." />
+<link rel="stylesheet" type="text/css" href="default.css" />
+<meta name="robots" content="anchors" />
+</head><body>
+<div class="navigation">
+
+	<ul>
+		<li>MacTerm Help</li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+
+</div>
+
+	<h1 class="pagetitle">Running Applications</h1>
+
+<div class="content">
+
+<a id="helpcreatingsessions"></a><!-- must use this exact tag; see ExactMatch.kv -->
+
+	<h2 id="servers">Remote Sessions: Connecting to Servers</h2>
+
+	<p>Select File &gt;&gt; Custom New Session&#8230; to begin.</p>
+
+	<blockquote>
+		<p>Only your first sessions should require this
+ customization step.  In the future, it will be faster
+ to rely on a Favorite or a saved session file to hold
+ your preferences.  A Favorite can be opened directly
+ from the File menu; for others, use File &gt;&gt; Open.</p>
+	</blockquote>
+
+	<p>A Custom New Session opens a terminal window and a sheet to allow
+ configuration.</p>
+
+	<p>This sheet is identical to the equivalent panel of the Preferences
+ window, so just review the <a href="preferences.html#sessionresource">preferences documentation</a> for more.</p>
+
+	<p>Unlike Preferences, changes to the sheet are temporary and can
+ be either discarded or committed using the sheet&#8217;s buttons.</p>
+
+	<h2 id="unix">Local Sessions: Running Unix Commands</h2>
+
+	<p>As with remote applications, File &gt;&gt; Open&#8230; can be used to run a
+ command that you previously saved.</p>
+
+	<p>You have a few options for new commands:</p>
+
+	<ul>
+		<li>File &gt;&gt; Shell opens your default Unix shell, where you can type commands interactively.</li>
+	</ul>
+
+	<ul>
+		<li>File &gt;&gt; Default (or the name of any other Favorite from your Session Preferences) in the &#8220;New Session:&#8221; section of the File menu, will open that session.</li>
+	</ul>
+
+	<ul>
+		<li>File &gt;&gt; Custom New Session&#8230; can also be used; simply ignore the &#8220;Remote Shell&#8230;&#8221; button, and enter command line text.</li>
+	</ul>
+
+	<ul>
+		<li>Hold down Option to see File &gt;&gt; Log-In Shell.  This invokes a shell in log-in mode (with shell-dependent settings) that will not inherit any environment variable settings from MacTerm.</li>
+	</ul>
+
+	<blockquote>
+		<p>Most session creation commands are also available
+ from the MacTerm icon&#8217;s Dock menu.</p>
+	</blockquote>
+
+	<h2 id="workspaces">Workspaces: Starting Several Sessions</h2>
+
+	<p>Using Preferences, you can define Workspaces, which specify a set
+ of sessions that should all start at the same time, in a certain
+ window arrangement.</p>
+
+	<p>Once a workspace is defined, go to the &#8220;New From Workspace:&#8221;
+ section of the File menu, and use File &gt;&gt; Default (or the name of
+ any other Favorite from your Workspace Preferences), to create
+ the sessions of a workspace.</p>
+
+	<h2 id="dupwin">Replicating Windows</h2>
+
+	<p>You can use File &gt;&gt; Duplicate Session to spawn a new window that
+ is running the same command as the previous window.</p>
+
+	<p>Currently, only the command is duplicated; other window settings
+ may come from your defaults.  Once a window is duplicated, any
+ updates to the window will not affect its duplicate.</p>
+
+	<h2 id="restart">Restarting Commands</h2>
+
+	<p>If the &#8220;No window close on process exit&#8221; preference is set, a
+ session window will remain open when it quits by itself (that is,
+ if it was not explicitly terminated using File &gt;&gt; Close or your
+ mouse).  When the window is in this dead state, the special
+ File &gt;&gt; Restart Session command becomes available.</p>
+
+	<p>When you restart a session, the original local or remote command
+ line is run again in the same window, preserving your entire
+ scrollback buffer and other window settings.  Most programs do
+ not aggressively save their state, so a restart is unlikely to
+ let you simply resume where the program left off when it last
+ exited.</p>
+
+</div>
+
+</body></html>
+

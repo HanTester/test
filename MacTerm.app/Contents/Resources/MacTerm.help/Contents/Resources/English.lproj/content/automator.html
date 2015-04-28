@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Using Automator (MacTerm Help)</title>
+<meta name="generator" content="Textile for Python" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="copyright" content="©1999-2015 by Kevin Grant" />
+<meta name="description" content="How to include MacTerm capabilities in Automator workflows." />
+<link rel="stylesheet" type="text/css" href="default.css" />
+</head><body>
+<div class="navigation">
+
+	<ul>
+		<li>MacTerm Help</li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+
+</div>
+
+	<h1 class="pagetitle">Using Automator with MacTerm</h1>
+
+<div class="content">
+
+	<p id="abstract">MacTerm support for Automator is currently limited, however
+ there are ways to use existing actions that you may not have
+ realized.</p>
+
+	<h2 id="urls">Opening Sessions With URLs</h2>
+
+	<p>The default Internet actions in Automator (Mac OS X 10.4+) are
+ often named or described in terms of web pages, but in fact they
+ are general: opening sessions for URLs that MacTerm supports.</p>
+
+	<p>A simple workflow in Automator would be to connect (from the
+ Internet category) &#8220;Get Specified URLs&#8221; to &#8220;Display Webpages&#8221;.</p>
+
+	<p>Automator will call on MacTerm if MacTerm is the default
+ application for a particular type of <span class="caps">URL</span>.  Otherwise, different
+ applications will handle the <span class="caps">URL</span>.  (3rd party software such as
+ &#8220;Default Apps&#8221; can change the <span class="caps">URL</span> mappings on your system.)</p>
+
+	<p>MacTerm can handle several kinds of URLs, including:</p>
+
+	<ul>
+		<li>file</li>
+		<li>ftp</li>
+		<li>rlogin</li>
+		<li>sftp (non-standard)</li>
+		<li>ssh (non-standard)</li>
+		<li>telnet</li>
+		<li>x-man-page (non-standard)</li>
+	</ul>
+
+	<p>It is also possible to add or change <span class="caps">URL</span> handlers, through the
+ lower-level Python <span class="caps">API</span> in MacTerm.  For instance, you could add
+ a handler that runs a terminal-based browser for &#8220;http&#8221; URLs.</p>
+
+</div>
+
+</body></html>
+

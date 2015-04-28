@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Types of Windows (MacTerm Help)</title>
+<meta name="generator" content="Textile for Python" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="copyright" content="©1999-2015 by Kevin Grant" />
+<meta name="description" content="Reference to the unique types of windows in MacTerm." />
+<link rel="stylesheet" type="text/css" href="default.css" />
+</head><body>
+<div class="navigation">
+
+	<ul>
+		<li>MacTerm Help</li>
+		<li><a href="../index.html">Home</a></li>
+	</ul>
+
+</div>
+
+	<h1 class="pagetitle">Types of Windows</h1>
+
+<div class="content">
+
+	<h2 id="terminal">Terminal</h2>
+
+	<p>A terminal window is what you will use most in MacTerm.  It
+ displays a primarily-text interface to other applications.</p>
+
+	<p>There are so many things you can do with terminal windows that
+ there is a <a href="terminals.html">dedicated page</a> discussing them all!</p>
+
+	<h2 id="tek">Tektronix Vector Graphics</h2>
+
+	<p>If a session has a <span class="caps">TEK</span> graphics command set enabled, it will
+ automatically spawn Tektronix vector graphics drawings whenever
+ properly-formatted data is received from the session.  You may
+ also create pages using View &gt;&gt; New <span class="caps">TEK</span> Page.</p>
+
+	<p><b>Note:</b> Once a graphics window is opened, its terminal is tied
+ to the canvas and any typing in the terminal will be rendered in
+ the graphics window only.  To restore normal terminal behavior,
+ close the graphics window.</p>
+
+	<p>What you can do with a graphics window:</p>
+
+	<ul>
+		<li>Edit &gt;&gt; Copy to copy a bitmap of the graphic to the clipboard.</li>
+		<li>Magnify or shrink the image by resizing the window.</li>
+		<li>Focus on one part by dragging a rectangle with the mouse.  You can undo this focus by double-clicking the image.</li>
+	</ul>
+
+	<h2 id="serverbrowser">Server Browser</h2>
+
+	<p>The Servers panel appears when the &#8220;Remote Shell&#8230;&#8221; button is
+ clicked (either in the File &gt;&gt; Custom New Session&#8230; sheet, or
+ when editing the equivalent panel in the Preferences window).
+ Changes to the panel will automatically write an appropriate
+ command line, in the window whose button was most recently used
+ to activate the panel.</p>
+
+	<p>What you can do with the Servers panel:</p>
+
+	<ul>
+		<li>Browse for any services that were discovered by your computer.</li>
+		<li>Enter connection details manually.</li>
+	</ul>
+
+	<p>A remote application is accessed over a <strong>connection</strong> (which uses
+ a particular &#8220;protocol&#8221;) to an exact <strong>port</strong> (number) on a <strong>host</strong>
+ (computer).  You can also identify yourself with a <strong>user ID</strong>, if
+ the server requires one.</p>
+
+	<p>To start, make a selection from the &#8220;Connection:&#8221; menu.  This
+ will automatically assign a default port number.  (You may need
+ to ask an administrator which choice is appropriate.)</p>
+
+	<p>It may be possible to simply browse for a service instead of
+ entering connection details manually.  To try this, click the
+ &#8220;Find a Server&#8230;&#8221; button, which will display a drawer that
+ begins to list anything that was found by your computer for the
+ type of Connection you selected in the menu.  Click any item in
+ the list to copy its Host and Port information.  Double-click
+ to automatically close the drawer in the process.</p>
+
+	<p>If the service you want is not listed, you need to fill in the
+ panel manually.  (You may want to ask an administrator for help.)</p>
+
+	<p>In the Host field, you can enter a name like &#8220;apple.com&#8221; if one
+ is applicable; if you have only an address, like &#8220;123.45.67.123&#8221;,
+ enter that instead.  The Look Up button can be used to check if a
+ server name is valid (if so, it is transformed into a numeric
+ address; otherwise, it is unchanged).</p>
+
+	<blockquote>
+		<p>MacTerm supports IP version 6 addresses too, so
+ you could also enter something like
+ &#8220;0000:0000:0000:0000:0000:ffff:9d16:0164&#8221;.</p>
+	</blockquote>
+
+	<p>The Port field may not require changing&#8230;it is set automatically
+ when you choose a Connection type.  But some servers use a custom
+ port number, so adjust the value if necessary.</p>
+
+	<p>The User ID is how the server identifies you.  If not provided,
+ the name of your local Home folder is used (one-word,
+ all-lowercase).  Note that if a password is also required to
+ access the server, you will be prompted for that at connection
+ time; you cannot enter it initially in the configuration sheet.</p>
+
+	<h2 id="sessioninfo">Session Info</h2>
+
+	<p>Displays the status of all windows at once, including whether or
+ not processes are running.  There are icons in the Window menu
+ that show similar information.</p>
+
+	<p>To bring a window to the front, you can double-click its entry in
+ the Session Info list.</p>
+
+	<p>To rename a window, select the appropriate item in the list and
+ press Return to display an edit box (as you would in the Finder).
+ This is equivalent to using the Window &gt;&gt; Rename command.</p>
+
+	<p>Hovering the mouse over the Status column can show a few
+ different text descriptions:</p>
+
+	<ul>
+		<li><b>Running (just opened):</b> It has only been a few seconds since the window opened, so you can close it without warning.</li>
+		<li><b>Running:</b> The session has been open for awhile; MacTerm will confirm when you try to close it.</li>
+		<li><b>Not Running:</b> The application running in the window has quit, but the window is still open; only possible when you have set the &#8220;Don&#8217;t automatically close windows&#8221; preference.</li>
+	</ul>
+
+	<p>An icon is also displayed, and normally matches the text above;
+ but, it can sometimes change to show a transient state:</p>
+
+	<ul>
+		<li>A yellow caution icon indicates an open alert message, or that a notification is up (for example, a watch for activity in a window).</li>
+		<li>A &#8220;dimmed&#8221; icon indicates the window was hidden from view with the Hide command.  (Hidden windows can be redisplayed in many ways, including double-clicking Session Info list items.)</li>
+	</ul>
+
+	<p>You can rearrange the columns in this window and your preferred
+ order will be saved automatically.</p>
+
+	<p>Note that View &gt;&gt; Hide Toolbar and View &gt;&gt; Customize Toolbar also
+ work for the Session Info window, and can be used to change your
+ display preferences for the top of that window.</p>
+
+	<h2 id="commandline">Command Line</h2>
+
+	<p>The command line is a special interface to the active terminal
+ window.  See <a href="terminals.html#commandline">the terminals page</a> for more information.</p>
+
+	<h2 id="ipaddr">IP Addresses of This Mac</h2>
+
+	<p>Using Window &gt;&gt; IP Addresses of This Mac or the equivalent command
+ from MacTerm&#8217;s Dock menu, you can display a floating window
+ with a list of IPv4 and/or IPv6 addresses for your computer&#8217;s
+ network interfaces.</p>
+
+	<p>Each item in the list can be dragged with the mouse and dropped
+ (into a terminal window, for instance), to type in that address.</p>
+
+	<p>See also the Macros pane in the Preferences window, which can be
+ used to define macros with text substitution (of the <code>\i</code>
+ sequence) that include one of your computer&#8217;s IP addresses.</p>
+
+	<h2 id="keypads">Keypads</h2>
+
+	<p>MacTerm provides a number of powerful keypad windows.  Clicking
+ a keypad button is equivalent to typing the key or key sequence
+ it represents.  However, keypad buttons <i>always</i> send the right
+ character code or character sequence, even in cases where the
+ keyboard might not work (because of a terminal mode or a
+ conflicting Mac OS X keyboard mapping, etc.).</p>
+
+	<p><b>Tip:</b> On later versions of Mac OS X, MacTerm will allow you
+ to navigate keypad keys using the keyboard.  By default, you use
+ Control-F1 to turn on Full Keyboard Access and Control-F6 to give
+ keyboard focus to one of the floating keypad windows.</p>
+
+	<h3 id="controlkeys">Control Keys</h3>
+
+	<p>This is a floating window providing access to 32 control key
+ combinations, &#8220;invisible&#8221; characters of the <span class="caps">ASCII</span> character set.
+ These keys are frequently useful in terminals and therefore are
+ likely to trigger special responses when used.</p>
+
+	<p>The tooltips for these keys are especially useful because they
+ contain additional information about each key: its short name,
+ its numeric code (in hexadecimal), and a brief description of
+ the key&#8217;s usual purpose.</p>
+
+	<h3 id="functionkeys">Function Keys</h3>
+
+	<p>This is a floating window providing access to the function keys
+ of a VT220 terminal or an XTerm variant.  MacTerm does not
+ currently allow you to synchronize the function key layout with a
+ session, so be sure to pick the layout that works best for you.</p>
+
+	<p>The pop-up menu in the title bar of the &#8220;Function Keys&#8221; window
+ can be used to modify the layout and availability of function keys.
+ The possibilities are:</p>
+
+	<ul>
+		<li><b>VT220 / &#8220;multi-gnome-terminal&#8221;</b>: This is the default, and is actually the set used by &#8220;multi-gnome-terminal&#8221; (a superset of what VT220 requires).  It sets function keys F1-F4 to match the VT100&#8217;s PF1-PF4 keys (since the VT220 doesn&#8217;t use them), gives F5 the code that XTerm would use, and sets function keys F6-F20 to VT220 specifications.  Keys F21-F48 are unavailable.</li>
+		<li><b>XTerm (X11)</b>: This gives you access to 48 function keys, all of which have specific behavior according to the version of XTerm that comes with an ordinary X11R6 release.  Keys F1-F12 match the VT220.</li>
+		<li><b>XTerm (XFree86) / &#8220;gnome-terminal&#8221; / <span class="caps">GNU</span> &#8220;screen&#8221;</b>: This gives you access to 48 function keys, all of which have specific behavior according to the version of XTerm that comes with XFree86.  The keys unique to XFree86 are the ranges F1-F4, F13-F16, F25-F28 and F37-F40; all others match &#8220;XTerm (X11)&#8221;.  This is a superset of the keys used by &#8220;gnome-terminal&#8221; and <span class="caps">GNU</span> &#8220;screen&#8221;.</li>
+		<li><b>rxvt</b>: This gives you access to 48 function keys, all of which have specific behavior according to the &#8220;rxvt&#8221; terminal emulator.  This set has a few keys in common with XTerm, but is mostly unique.</li>
+	</ul>
+
+	<p>Unless you have used the macro editor to map your keyboard&#8217;s
+ function keys to macros, they will map to VT220 function keys by
+ default.  Each key is <i>offset by 5</i>, so your keyboard F1 maps
+ to the VT220 F6, and your keyboard F15 maps to the VT220 F20.</p>
+
+	<h3 id="vt220keypad">VT220 Keypad</h3>
+
+	<p>This is a floating window providing access to the special keypad
+ functions of a real VT220 terminal.  MacTerm will not prevent
+ their use when you have selected a terminal emulator other than
+ VT220, however your session may respond oddly to some of the
+ keys.</p>
+
+	<p>The tooltips for certain VT220 keys will give you descriptions.</p>
+
+</div>
+
+</body></html>
+
