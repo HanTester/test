@@ -1,0 +1,4 @@
+ZOC3.00 // TRANSLATE
+// CHARACTER TRANSLATION TABLE (CHANGED ENTRIES ONLY)
+// format: x|Old|New 
+//         x= I (inward) or O (outward), Old/New in hex

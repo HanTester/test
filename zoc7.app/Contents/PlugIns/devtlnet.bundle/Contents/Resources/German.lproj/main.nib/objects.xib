@@ -1,0 +1,326 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <string name="customClass">NSApplication</string>
+  </object>
+  <array count="33" name="allObjects">
+    <object class="IBCarbonWindow" id="180">
+      <string name="windowRect">0 0 260 330 </string>
+      <string name="title"></string>
+      <object name="rootControl" class="IBCarbonRootControl" id="181">
+        <string name="bounds">0 0 260 330 </string>
+        <string name="viewFrame">0 0 330 260 </string>
+      <array count="1" name="subviews">
+      <object class="IBCarbonUserPane" id="182">
+        <string name="bounds">0 0 260 330 </string>
+        <string name="viewFrame">0 0 330 260 </string>
+        <array count="9" name="subviews">
+          <object class="IBCarbonStaticText" id="183">
+            <string name="bounds">4 4 20 98 </string>
+            <string name="viewFrame">4 4 94 16 </string>
+            <string name="title">Socks4 Proxy:</string>
+          </object>
+          <object class="IBCarbonEditText" id="184">
+            <string name="bounds">4 104 20 326 </string>
+            <string name="viewFrame">104 4 222 16 </string>
+            <ostype name="controlSignature">EDIT</ostype>
+            <int name="controlID">7</int>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonCheckBox" id="185">
+            <string name="bounds">40 2 60 312 </string>
+            <string name="viewFrame">2 40 310 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">8</int>
+            <string name="title">Reine IP-Socket-Verbindung (kein Telnet)</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="186">
+            <string name="bounds">64 2 84 328 </string>
+            <string name="viewFrame">2 64 326 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">12</int>
+            <string name="title">Nur IP-V4 Verbingung</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="187">
+            <string name="bounds">88 2 108 214 </string>
+            <string name="viewFrame">2 88 212 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">3</int>
+            <string name="title">Mit lokalem Echo starten</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="188">
+            <string name="bounds">112 2 132 314 </string>
+            <string name="viewFrame">2 112 312 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">10</int>
+            <string name="title">Host darf lokales Echo des Terminals ändern</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="189">
+            <string name="bounds">136 2 156 236 </string>
+            <string name="viewFrame">2 136 234 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">5</int>
+            <string name="title">Verbindung bei Fehler halten</string>
+          </object>
+          <object class="IBCarbonButton" id="190">
+            <string name="bounds">182 4 202 316 </string>
+            <string name="viewFrame">4 182 312 20 </string>
+            <ostype name="controlSignature">PUSH</ostype>
+            <int name="controlID">2</int>
+            <string name="title">Erweiterte Telnet Optionen bearbeiten...</string>
+          </object>
+          <object class="IBCarbonButton" id="191">
+            <string name="bounds">226 4 246 316 </string>
+            <string name="viewFrame">4 226 312 20 </string>
+            <ostype name="controlSignature">PUSH</ostype>
+            <int name="controlID">1</int>
+            <string name="title">Globale Telnet Optionen bearbeiten...</string>
+          </object>
+        </array>
+        <int name="featureBits">2</int>
+      </object>
+      </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="scalingMode">1048576</int>
+    </object>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="183"/>
+    <reference idRef="184"/>
+    <reference idRef="185"/>
+    <reference idRef="186"/>
+    <reference idRef="187"/>
+    <reference idRef="188"/>
+    <reference idRef="189"/>
+    <reference idRef="190"/>
+    <reference idRef="191"/>
+    <object class="IBCarbonWindow" id="192">
+      <string name="windowRect">0 0 278 524 </string>
+      <string name="title">Erweiterte Telnet Optionen</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="193">
+        <string name="bounds">0 0 278 524 </string>
+        <string name="viewFrame">0 0 524 278 </string>
+        <array count="9" name="subviews">
+          <object class="IBCarbonCheckBox" id="194">
+            <string name="bounds">24 26 44 234 </string>
+            <string name="viewFrame">26 24 208 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">2</int>
+            <string name="title">CR/NULL immer senden</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="195">
+            <string name="bounds">48 26 68 330 </string>
+            <string name="viewFrame">26 48 304 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">1</int>
+            <string name="title">Host sendet CR/NULL im Binärmodus</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="196">
+            <string name="bounds">72 26 92 328 </string>
+            <string name="viewFrame">26 72 302 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">9</int>
+            <string name="title">Telnet Option &quot;Do SGA&quot; anbieten</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="197">
+            <string name="bounds">96 26 116 238 </string>
+            <string name="viewFrame">26 96 212 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">4</int>
+            <string name="title">Im Binärmodus starten</string>
+          </object>
+          <object class="IBCarbonStaticText" id="198">
+            <string name="bounds">134 28 150 324 </string>
+            <string name="viewFrame">28 134 296 16 </string>
+            <ostype name="controlSignature">TEXT</ostype>
+            <int name="controlID">1</int>
+            <string name="title">Eingehende Verbindungen annehmen:</string>
+          </object>
+          <object class="IBCarbonEditText" id="199">
+            <string name="bounds">160 110 176 372 </string>
+            <string name="viewFrame">110 160 262 16 </string>
+            <ostype name="controlSignature">EDIT</ostype>
+            <int name="controlID">1</int>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonStaticText" id="200">
+            <string name="bounds">186 110 202 482 </string>
+            <string name="viewFrame">110 186 372 16 </string>
+            <ostype name="controlSignature">TEXT</ostype>
+            <int name="controlID">2</int>
+            <string name="title">(port  oder  ipv4-addr:port  oder  [ipv6-addr]:port)</string>
+          </object>
+          <object class="IBCarbonButton" id="201">
+            <string name="bounds">18 410 38 510 </string>
+            <string name="viewFrame">410 18 100 20 </string>
+            <ostype name="controlSignature">OKAY</ostype>
+            <string name="title">OK</string>
+          </object>
+          <object class="IBCarbonButton" id="202">
+            <string name="bounds">52 410 72 510 </string>
+            <string name="viewFrame">410 52 100 20 </string>
+            <ostype name="controlSignature">BACK</ostype>
+            <string name="title">Abbrechen</string>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="scalingMode">1048576</int>
+    </object>
+    <reference idRef="193"/>
+    <reference idRef="194"/>
+    <reference idRef="195"/>
+    <reference idRef="196"/>
+    <reference idRef="197"/>
+    <reference idRef="198"/>
+    <reference idRef="199"/>
+    <reference idRef="200"/>
+    <reference idRef="201"/>
+    <reference idRef="202"/>
+    <object class="IBCarbonWindow" id="203">
+      <string name="windowRect">0 0 222 524 </string>
+      <string name="title">Globale Telnet Optionen (für alle Verbindungen gültig)</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="204">
+        <string name="bounds">0 0 222 524 </string>
+        <string name="viewFrame">0 0 524 222 </string>
+        <array count="8" name="subviews">
+          <object class="IBCarbonGroupBox" id="205">
+            <string name="bounds">22 24 198 378 </string>
+            <string name="viewFrame">24 22 354 176 </string>
+            <string name="title">Globale Telnet Optionen </string>
+          </object>
+          <object class="IBCarbonCheckBox" id="206">
+            <string name="bounds">52 42 72 364 </string>
+            <string name="viewFrame">42 52 322 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">7</int>
+            <string name="title">Keine Hostnamen zu IP Adressen suchen</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="207">
+            <string name="bounds">108 42 128 364 </string>
+            <string name="viewFrame">42 108 322 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">6</int>
+            <string name="title">Kein Ping vor Verbindungsaufbau</string>
+          </object>
+          <object class="IBCarbonStaticText" id="208">
+            <string name="bounds">138 70 154 288 </string>
+            <string name="viewFrame">70 138 218 16 </string>
+            <ostype name="controlSignature">TEXT</ostype>
+            <int name="controlID">2</int>
+            <string name="title">Max. Anzahl von Ping-Versuchen</string>
+          </object>
+          <object class="IBCarbonEditText" id="209">
+            <string name="bounds">138 296 154 328 </string>
+            <string name="viewFrame">296 138 32 16 </string>
+            <ostype name="controlSignature">EDIT</ostype>
+            <int name="controlID">4</int>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonCheckBox" id="210">
+            <string name="bounds">80 42 100 364 </string>
+            <string name="viewFrame">42 80 322 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">11</int>
+            <string name="title">TCP &apos;Keep Alive&apos; Option aktivieren</string>
+          </object>
+          <object class="IBCarbonButton" id="211">
+            <string name="bounds">18 410 38 510 </string>
+            <string name="viewFrame">410 18 100 20 </string>
+            <ostype name="controlSignature">OKAY</ostype>
+            <string name="title">OK</string>
+          </object>
+          <object class="IBCarbonButton" id="212">
+            <string name="bounds">52 410 72 510 </string>
+            <string name="viewFrame">410 52 100 20 </string>
+            <ostype name="controlSignature">BACK</ostype>
+            <string name="title">Abbrechen</string>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="scalingMode">1048576</int>
+    </object>
+    <reference idRef="204"/>
+    <reference idRef="205"/>
+    <reference idRef="206"/>
+    <reference idRef="207"/>
+    <reference idRef="208"/>
+    <reference idRef="209"/>
+    <reference idRef="210"/>
+    <reference idRef="211"/>
+    <reference idRef="212"/>
+  </array>
+  <array count="33" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="180"/>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="1"/>
+    <reference idRef="192"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="193"/>
+    <reference idRef="1"/>
+    <reference idRef="203"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+    <reference idRef="204"/>
+  </array>
+  <dictionary count="4" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>DLG_SUBSYS_OPTIONS_GERMAN</string>
+    <reference idRef="180"/>
+    <string>DLG_TELNET_ADVOPTS_GERMAN</string>
+    <reference idRef="192"/>
+    <string>DLG_TELNET_GLOBOPTS_GERMAN</string>
+    <reference idRef="203"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">213</unsigned_int>
+</object>

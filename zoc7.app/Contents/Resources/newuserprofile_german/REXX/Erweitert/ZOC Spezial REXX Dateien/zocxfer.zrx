@@ -1,0 +1,54 @@
+/*********************************************************************** 
+
+   EINE BESCHREIBUNG ZUR VERWENDUNG DIESER DATEI STEHT IN ZOCXFER.TXT
+
+***********************************************************************/
+
+/* Aufrufparameter tracen: PRE/POST UPLOAD/DOWNLOAD <dateiname> */
+PARSE ARG WITH "'"prepost"' '"upDOwnload"' '"file"'"
+
+/* Die folgende Zeile nicht löschen !!! */
+newfile= file
+
+/* Verzeichnis, Dateiname und Extension der Datei abfragen */
+filepath= FILESPEC("Path", file);
+filename= FILESPEC("Name", file);
+PARSE VALUE filename WITH filestem"."fileext
+
+SAY "ZOCXFER.CMD: "prepost"|"upDOwnload"|"filepath"-"filestem"-"fileext 
+
+IF prepost="PRE" THEN DO 
+    /******************************************************************/
+    /* Vor einem Filetransfer                                         */
+    /******************************************************************/
+
+    IF updownload="UPLOAD" THEN DO 
+        /**************************************************************/
+        /* Vor einem Upload                                           */
+        /**************************************************************/
+    END
+    ELSE DO
+        /**************************************************************/
+        /* Vor einem Download                                         */
+        /**************************************************************/
+    END
+END
+ELSE DO 
+    /******************************************************************/
+    /* Nach einem Filetransfer                                        */
+    /******************************************************************/
+
+    IF updownload="UPLOAD" THEN DO 
+        /***************************************************************/
+        /* Nach einem Upload                                           */
+        /***************************************************************/
+    END
+    ELSE DO
+        /***************************************************************/
+        /* Nach einem Download                                         */
+        /***************************************************************/
+    END
+END
+
+RETURN newfile
+

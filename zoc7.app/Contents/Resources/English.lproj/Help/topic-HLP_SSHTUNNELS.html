@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Manage SSH Tunnel Profiles</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_SSHTUNNELS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_SSHTUNNELS} -->
+<!-- {\footnote Manage SSH Tunnel Profiles} -->
+
+<h2>Manage SSH Tunnel Profiles</h2><p>
+
+Tunnel profiles are used to route data from a local port 
+to a remote host or remote port to a local host through the 
+secure SSH connection. A profile consists of one or more 
+specifications of port/host pairs and can be assigned to 
+a connection.&nbsp;</p><p> 
+This dialog lets you manage tunnel profile files. You can 
+load an existing file, create, edit or delete entries, save 
+it or save it under a different name. To use the tunnels 
+in the profile, the name of the file can then be specified 
+in the SSH options of a connection.&nbsp;</p><p> 
+If, for example, you wanted to do secure mail checking, you 
+could install a tunnel from your local port <font class="example" color="207030" face="Courier New"><span class="example">10110</span></font> to 
+your mail server <font class="example" color="207030" face="Courier New"><span class="example">mail.hogwarts.edu.110</span></font> 
+(see <a class="link" href=topic-HLP_SSHTUNNELSITEM.html>Tunnel Profile Items</a>).&nbsp;</p><p> 
+In your email program 
+you would then configure the account to connect to <font class="example" color="207030" face="Courier New"><span class="example">localhost:10110</span></font> 
+or <font class="example" color="207030" face="Courier New"><span class="example">127.0.0.1:10110</span></font> (which both refer to your own computer). 
+Assuming there is a connection to a host active with the given 
+tunnel profile, ZOC would then route the connection through the 
+SSH stream to the remote mail server.&nbsp;</p><p> 
+Additionally ZOC also supports dynamic port forwarding, which essentially 
+turns the SSH connection and ZOC into a SOCKS4 or SOCKS5 proxy.&nbsp;</p><p> 
+See also: 
+<a class="link" href=topic-HLP_SSHOPTS.html>SSH Communication&rarr;Options</a> and 
+<a class="link" href=topic-HLP_SSHTUNNELSITEM.html>Tunnel Profile Items</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Spez. Dateien</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_GLOB_SPECIALFILES"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_GLOB_SPECIALFILES} -->
+<!-- {\footnote Spez. Dateien} -->
+
+<h2>Spez. Dateien</h2><p>
+
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Dieses Feld enthält den Namen des Texteditors, den ZOC zum Bearbeiten von 
+Dateien verwenden soll (z.B. beim Editieren eines REXX Skripts). 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b>Wenn dieses Feld auf <font class="example" color="207030" face="Courier New"><span class="example">&lt;DEFAULT&gt;</span></font> 
+gesetzt ist, wird unter Windows der Editor <font color="5080A0"><i>Notepad.exe</i></font> verwendet 
+bzw. unter Mac OS X der Standardeditor. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Shell</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Shell enthält den Namen der Shell, die bei Aufruf der Funktionen 
+<font color="5080A0"><i>Shell</i></font> im <a class="link" href=topic-IDM_VIEW.html>Anzeigen-Menü</a> geöffnet wird. Diese Shell auch 
+wird (zusammen mit der /C Option) verwendet, wenn innerhalb eines Skripts 
+ein <font color="5080A0"><i>ZocShell</i></font> Kommando ausgeführt oder eine Taste mit einer Shell 
+Aktion belegt wird. 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b>Wenn dieses Feld auf <font class="example" color="207030" face="Courier New"><span class="example">&lt;DEFAULT&gt;</span></font> 
+gesetzt ist, wird <font color="5080A0"><i>cmd.exe</i></font> für Windows verwendet, 
+sowie <font color="5080A0"><i>/bin/sh</i></font> für Mac OS X. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Anrufprotokoll</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+In die hier angegebene Datei protokolliert ZOC eine Übersicht aller Verbindungen 
+und Dateiübertragungen (C+/C- bedeutet Connect/Disconnect, DL bedeutet 
+Download, UL bedeutet Upload).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Der Dateiname kann Platzhalter wie <font class="example" color="207030" face="Courier New"><span class="example">Calls^2^3.LOG</span></font> für Datumsteile 
+enthalten (siehe <a class="link" href=topic-HLP_APXCODES.html>Steuerzeichen</a> im Anhang). <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Wenn kein Pfad angegeben wird, wird die Anrufprotokolldatei in den Log-Ordner 
+von ZOC geschrieben. Wenn das Feld leer ist, wird kein Protokoll geschrieben. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Bildschirm speichern</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Hier wird die Datei angegeben, in die bei Anruf der Funktion 
+<font color="5080A0"><i>Datei&rarr;Bildschirm speichern</i></font> der aktuelle Bildschirminhalt 
+geschrieben wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ZOC-Ereignisse</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die hier angegebene REXX-Datei wird aufgerufen, wenn ZOC gestartet, wenn 
+ZOC beendet und wenn innerhalb von ZOC die Kommunikationsmethode 
+gewechselt wird. Technische Details dazu sind in der Beispieldatei 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOCEVENT.ZRX</span></font> und in der Datei <font class="example" color="207030" face="Courier New"><span class="example">ZOCEVENT.TXT</span></font> im Skriptverzeichnis 
+zu finden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Datei-Übertragung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Hier kann angegebenen werden, welche REXX-Datei vor und nach einer 
+Datei-Übertragung ausgeführt wird. Die REXX-Datei kann z.B. den Dateinamen 
+der aktuellen Datei ändern, noch bevor diese auf Festplatte geschrieben wird 
+(damit kann erreicht werden, dass Dateien je nach Endung in ein anderes 
+Verzeichnis gespeichert werden). Außerdem können Packer und Entpacker 
+(z.B. ZIP und UNZIP, UUdecode) noch vor Übertragung der Dateien automatisch 
+aufgerufen werden.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Technische Details hierzu sind in der Beispieldatei <font class="example" color="207030" face="Courier New"><span class="example">ZOCXFER.ZRX</span></font> und 
+in der Datei <font class="example" color="207030" face="Courier New"><span class="example">ZOCXFER.TXT</span></font> im Skriptverzeichnis zu finden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Alternative REXX DLL</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Standardmäßig liefert ZOC eine Ableger des Regina-REXX Prozessors mit. 
+Falls Sie stattdessen eine andere REXX-Variante bevorzugen oder schon eine 
+im Einsatz haben, können Sie hier deren DLL mit dem Programmier-API angeben. 
+Wenn, wie z.B. bei OOREXX, das API auf mehrere DLLs verteilt ist, können 
+Sie diese durch senkrechten Strich getrennt angeben (s.u.).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Das folgende ist eine Liste populärer REXX Implementierungen und der 
+entsprechenden DLLs.<br> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">ZOC-REXX (akt. ZOC Standard)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">zocrexx.dll</span></font> (ZOC-REXX ist ein Ableger 
+von REGINA REXX, siehe <a class="link" href=topic-HLP_SOFTWARECOPYRIGHT.html>Urheberrechte</a>). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Enterprise REXX (ZOC5 Standard)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">RxREXX.dll</span></font> (im Programmordner von ZOC5) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Regina-REXX</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">regina.dll</span></font> (<a class="ilink" href="http://regina-rexx.sourceforge.net" target="_blank">http://regina-rexx.sourceforge.net</a>) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Object-REXX/OOREXX</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">rexxapi.dll|rexx.dll</span></font> (<a class="ilink" href="http://www.oorexx.org" target="_blank">http://www.oorexx.org</a>) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Reginald-REXX</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">reginald.dll</span></font> (<a class="ilink" href="http://www.borg.com/~jglatt/rexx/reginald/reginald.htm" target="_blank">http://www.borg.com/~jglatt/rexx/reginald/reginald.htm</a>) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Quercus Personal REXX</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+<font class="example" color="207030" face="Courier New"><span class="example">WRexx32.dll</span></font> (<a class="ilink" href="http://www.quercus-sys.com/prexx.htm" target="_blank">http://www.quercus-sys.com/prexx.htm</a>) 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+<b>Wichtig:</b> Bitte beachten Sie, dass es unter Umständen nötig sein kann, dass Sie statt nur des 
+Namens, den gesamten Pfad zur entsprechenden DLL angeben, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">c:\Programme\oorexx\rexxapi.dll|c:\Programme\oorexx\rexx.dll</span></font> 
+&nbsp;</p><p> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+Siehe auch: 
+<a class="link" href=topic-HLP_OPTIONS3.html>Programmeinstellungen</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

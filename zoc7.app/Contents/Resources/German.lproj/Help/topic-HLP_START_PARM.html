@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Kommandozeilen-Parameter</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_START_PARM"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_START_PARM} -->
+<!-- {\footnote Kommandozeilen-Parameter} -->
+
+<h2>Kommandozeilen-Parameter</h2><p>
+
+ZOC kennt eine Vielzahl von Parametern, die beim Starten entweder von der 
+Kommandozeile, vom Programmsymbol (Windows Icon) oder durch 
+<a class="link" href=topic-HLP_START_ZOCCFG.html>Kommandozeilendateien (Windows, Mac OSX)</a> 
+übergeben werden können. 
+&nbsp;</p><p> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+ZOC<br/> 
+[/CALL:&lt;hostname&gt;] [/CONNECT:&lt;verbindungstyp&gt;!&lt;host&gt;]<br/> 
+[/DEV:&lt;verbindungstyp&gt;] [/EMU:&lt;emulation&gt;]<br/> 
+[/FI:&lt;zeichensatz&gt;] [/FX:&lt;zeichensatz&gt;]<br/> 
+[/KEY:&lt;datei&gt;]<br/> 
+[/LANG:&lt;sprache&gt;]<br/> 
+[/MIN] [/MAX] [/MOUSEPOS:&lt;x&gt;,&lt;y&gt;] [/NUMLOCK:&lt;n&gt;]<br/> 
+[/O:&lt;verbindungsprofil&gt;]<br/> 
+[/PF:&lt;adressbuchdatei&gt;]<br/> 
+[/PROGCFG:&lt;programmconfig&gt;]<br/> 
+[/POS:&lt;x&gt;,&lt;y&gt;,&lt;breite&gt;,&lt;höhe&gt;]<br/> 
+[/Q] [/RESTRICT:n]<br/> 
+[/RUN:&lt;scriptdatei&gt;] [/RUNARG:&lt;scriptargument&gt;]<br/> 
+[/RLOGIN:&lt;host&gt;[:&lt;port&gt;]]<br/> 
+[/TABBED]<br/> 
+[/TELNET:&lt;host&gt;[:&lt;port&gt;]]<br/> 
+[/SSH:[&lt;login&gt;@]&lt;host&gt;[:&lt;port&gt;]] [/SSHKEY:&lt;private keyfile&gt;]<br/> 
+[/TT:&lt;datei&gt;] [/U] [/WD:&lt;arbeitsverz.&gt;]<br/> 
+</div></span></font> 
+&nbsp;</p><p> 
+Parameter können beim Starten von ZOC aus einem Windows Befehlseingabefenster 
+oder in einem Verknüpfungs-Icon angegeben werden. Um z.B. ZOC mit einer 
+Telnet-Verbindung zu starten, klicken Sie die rechte Maustaste auf der 
+Arbeitsoberfläche, wählen Neu, Verknüpfung und geben 
+<font class="example" color="207030" face="Courier New"><span class="example">"C:\programme\zoc7\zoc.exe" /TELNET:mailserver.de</span></font> an.&nbsp;</p><p> 
+Bitte beachten Sie, dass Parameter, die ein Leerzeichen enthalten, in 
+Hochkommata eingeschlossen werden müssen, z.B. <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">"C:\Programme\zoc7\zoc.exe" "/CALL:Neuer Mail Server"</span></font> oder <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">zoc "/EMU:Ansi BBS"</span></font>&nbsp;</p><p> 
+Normalerweise wird das aktuelle Arbeitsverzeichnis beim Start von 
+ZOC ignoriert, 
+(siehe <a class="link" href=topic-HLP_START_WDIR.html>Datenverzeichnis</a>) aber Sie können in 
+Kommandozeilenparametern den Platzhalter <font class="example" color="207030" face="Courier New"><span class="example">%CURDIR%</span></font> verwenden, 
+um sich auf das Startverzeichnis zu beziehen, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">/O:%CURDIR%\test.zoc</span></font>&nbsp;</p><p> 
+Alternativ zu dem oben gezeigten Windows typischen Format der 
+Kommandozeilenparameter ist es möglich, die Parameter im Unix-Stil anzugeben 
+und statt des Schrägstrichs ein Minus zu verwenden. Außerdem kann in 
+Unix-Schreibweise der Doppelpunkt für Wertangaben gegen ein Leerzeichen 
+ersetzt werden. Demgemäß führen die folgenden Aufrufe zum gleichen 
+Ergebnis:&nbsp;</p><p> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /MIN /RUN:test.zrx</span></font><br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC -min -run test.zrx</span></font>&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+<b>Beschreibung der einzelnen Befehlszeilenparameter</b> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>/CALL:hostentry</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Hier kann der Name eines Adressbucheintrages angegeben werden, 
+der sofort nach Programmstart automatisch ausgeführt wird, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /CALL:CoolServer</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/CONNECT=&lt;verbindungstyp&gt;!&lt;host&gt;</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option erlaubt es, von der 
+Befehlszeile aus eine beliebige Gegenstelle mit einer beliebigen 
+Verbindungsmethode anzuwählen.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Als Verbindungstyp-Parameter muss einer der Namen der 
+ZOC-Verbindungstyp-Optionen angegeben werden, für Host kann ein Hostname, eine 
+Adresse oder eine Telefonnummer (abhängig vom verwendeten Verbindungstyp) stehen 
+(bei Hostnamen kann zusätzlich mit Doppelpunkt noch ein Port angehängt 
+werden).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Bei Verbindungen per SSH (Secure Shell) kann ein Benutzername und 
+Passwort in der Form <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">&lt;benutzername&gt;:&lt;passwort&gt;@&lt;host&gt;</span></font> 
+übergeben werden, also z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /CONNECT=SSH!harry:alohomora@secure.com</span></font>. 
+(Zur Anmeldung mit Public/Private-Key Dateien lesen Sie bitte den Text 
+zum <font class="example" color="207030" face="Courier New"><span class="example">SSH</span></font> und <font class="example" color="207030" face="Courier New"><span class="example">SSHKEY</span></font> Parameter.)<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Für RLOGIN kann <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">&lt;benutzername&gt;@&lt;host&gt;</span></font> verwendet werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/DEV:verbindungstyp</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit /DEV kann angegeben werden, welchen Verbindungstyp 
+ZOC beim Starten aktivieren soll. Nach dem Doppelpunkt muss der Name 
+(wie in <a class="link" href=topic-DLG_WIN_OPTS_DEVICE.html>Verbindungsprofil&rarr;Verbindungstyp</a> angezeigt) 
+angegeben werden, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC&nbsp;/DEV:TELNET</span></font><br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Falls nötig, können Verbindungstyp-Parameter (wie im REXX Kommando ZocSetDevParm 
+beschrieben) mit @ an den Names des Verbindungstyps angehängt werden, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC "/DEV:SERIAL/MODEM@COM3:57600-8N1|9|350"</span></font> (Parameter, 
+die das | Zeichen enthalten, müssen in Hochkommata eingeschlossen werden). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/EMU:emulation</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit diesem Parameter geben Sie an, welche Terminalemulation 
+nach dem Start aktiviert werden soll, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC&nbsp;/EMU:VT220</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/FI</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Normalerweise überprüft ZOC alle im System vorhandenen Zeichensätze, 
+um zu überprüfen, welche für ZOC geeignet sind. Diese Liste kann deshalb 
+Zeichensätze enthalten, die unerwünscht sind. Mit der Option /FI verwendet 
+ZOC nur Zeichensätze, die explizit angegeben werden, der Aufruf 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC "/FI:Courier New"</span></font> hat zur Folge, dass ZOC in der Liste 
+der Zeichensätze nur noch Courier New anbietet. Diese Option kann mehrfach 
+verwendet werden, um mehrere Zeichensätze einzubinden. Es ist wichtig, dass 
+zumindest einer der angegebenen Zeichensätze wirklich existiert und für 
+ZOC nutzbar ist, ansonsten bricht ZOC beim Starten mit einer 
+Panic-Fehlermeldung ab. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/FX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Die /FX Option funktioniert ähnlich der Option /FI, allerdings 
+verwendet ZOC alle normalerweise verwendeten Zeichensätze mit Ausnahme der 
+hier angegebenen. Um also alle Terminal-Zeichensätze auszuschließen, lautet 
+der Aufruf <font class="example" color="207030" face="Courier New"><span class="example">ZOC /FX:Terminal</span></font>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/KEY:datei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option bewirkt, dass ZOC beim Laden eine spezielle 
+Tastaturdefinitionsdatei lädt, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /KEY:SCAND.ZKY</span></font>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/LANG:GER|ENGL</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option lässt sich die Sprache des Programms zwischen 
+deutsch (<font class="example" color="207030" face="Courier New"><span class="example">/LANG:GER</span></font>) und englisch (<font class="example" color="207030" face="Courier New"><span class="example">/LANG:ENGL</span></font>) 
+wechseln. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/MIN</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option bewirkt, dass ZOC beim Starten mit minimiertem Fenster 
+geöffnet wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/MAX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option bewirkt, dass ZOC beim Starten mit maximiertem Fenster 
+geöffnet wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/MOUSEPOS</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Bewegt die Maus nach dem Start an die angegebene Pixelposition 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">/MOUSEPOS:1024,768</span></font> (nur Windows) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/NUMLOCK:n</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option kann eingestellt werden, ob ZOC 
+mit eingeschalteter (n=1) oder ausgeschalteter (n=0) Num-Taste gestartet wird. 
+(nur Windows) 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/O:datei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option lädt ZOC beim Starten das angegebene Verbindungsprofil 
+(statt OPTIONS\STANDARD.ZOC), z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /O:BlackGlass.ZOC</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/PROGCFG:datei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option kann der Name einer Datei mit Programmeinstellungen 
+angegeben werden, die statt der Standard.ZFG Programmstart geladen wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/PF:datei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Hier kann der Name einer Adressbuchdatei angegeben werden, die 
+statt des Standard-Adressbuchs <font color="5080A0"><i>HostDirectory.Zocini</i></font> beim 
+Programmstart geladen wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/POS:x,y</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Der /POS Parameter erlaubt es, die Position und Größe des Fensters 
+beim Starten zu kontrollieren. x/y sind Pixelkoordinaten von der linken, 
+oberen Ecke gemessen, Breite/Höhe steuert die Fensterbreite in Bildpunkten. 
+Die Breite und Höhe kann von ZOC während dem Starten entsprechend der 
+Fensteroptionen verändert werden, um z.B. den nächsten passenden Font 
+zu finden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/RESTRICT:n</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option kann der Zugriff auf verschiedene 
+Teile von ZOC eingeschränkt werden. Diese Option steht jedoch nur noch 
+aus Kompatibilitätsgründen zur Verfügung, bitte nutzen Sie stattdessen 
+die ADMIN.INI Datei (Beispieldatei im ZOC-Verzeichnis). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/RUN:scriptname</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option kann ZOC ein REXX-Programm übergeben werden, 
+das nach dem Starten des Programms automatisch ausgeführt wird, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /RUN:PROCESS.ZRX</span></font> Das Programm 
+wird im eingestellten REXX-Verzeichnis, im ZOC Verzeichnis, im 
+Benutzerdatenverzeichnis und im aktuellen Arbeitsverzeichnis gesucht. 
+Ein Pfad kann angegeben werden, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /RUN:C:\SCRIPTS\NIGHTCALL.ZRX</span></font> 
+Sollte das REXX-Programm einen Parameter erwarten 
+(der im Skript als <font class="example" color="207030" face="Courier New"><span class="example">parm= ARG(1)</span></font> abgerufen wird), kann dieser mit Hilfe von 
+<font class="example" color="207030" face="Courier New"><span class="example">/RUNARG</span></font> übergeben werden:<br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /RUN:DOIT.ZRX "/RUNARG:HELLO WORLD"</span></font>. 
+<br>Hinweis: Der /RUN Parameter kann nicht zusammen mit Parametern verwendet 
+werden, die eine Verbindung aufbauen (z.B. /CONNECT, /TELNET etc.). In solchen 
+Fällen verwenden Sie bitte nur den /RUN Parameter und bauen die Verbindung 
+vom Skript aus mit Call ZocConnect etc. auf.<br> 
+Hinweis: Bitte auch die Option /U beachten. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/RLOGIN:</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Entspricht <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">/CONNECT=RLOGIN!&lt;benutzer&gt;@&lt;host&gt;:&lt;port&gt;</span></font> 
+(siehe oben), z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /RLOGIN:harry@secure.hogwarts.edu</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/TABBED</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Dieser Parameter funktioniert Verbindung mit anderen Parametern wie 
+<font class="example" color="207030" face="Courier New"><span class="example">/CONNECT</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/TELNET</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/SSH</span></font>, oder <font class="example" color="207030" face="Courier New"><span class="example">/RUN</span></font> erlaubt es, 
+eine Verbindung oder ein Skript als Registerblatt in einem bereits geöffneten ZOC 
+Fenster zu starten, statt für jeden Aufruf ein eigenes Fenster zu öffnen. In Verbindung 
+mit diesem Parameter können Sie noch /TITLE:&lt;name&gt; angeben um einen Titel für das 
+Registerblatt festzulegen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/TELNET:ziel</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Bei angegebener Option baut ZOC direkt nach dem Programmstart 
+eine Telnet-Verbindung zum angegebenen Host auf, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /TELNET:bbs.channel1.com</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /TELNET:192.168.0.5:110</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC -telnet secure.hogwarts.edu smtp</span></font>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/SSH:ziel</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Entspricht <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">/CONNECT=SSH![&lt;benutzer&gt;[:&lt;password&gt;]]@&lt;host&gt;:&lt;port&gt;</span></font> 
+(siehe oben), z.B. <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /SSH:harry@secure.hogwarts.edu</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /SSH:harry:alohomora@secure.hogwarts.edu:10022</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">zoc -ssh harry@secure.hogwarts.edu</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">zoc -ssh harry@secure.hogwarts.edu 10022</span></font>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/SSHKEY:datei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+In Verbindung mit dem <font class="example" color="207030" face="Courier New"><span class="example">/SSH</span></font> Parameter kann, 
+wenn im SSH-Parameter ein Benutzer angegeben ist, mit Hilfe des <font class="example" color="207030" face="Courier New"><span class="example">/SSHKEY</span></font> 
+Parameters zusätzlich zum Kennwort (oder statt Kennwort) eine Schlüsseldatei 
+zu Authentifizierung mit dem Public/Private Key Verfahren angegeben werden. 
+Die Angabe ist hierbei entweder ein Dateiname aus dem ZOC SSH Verzeichnis oder 
+eine Angabe mit voll qualifiziertem Pfad: <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /SSH:harry@secure.hogwarts.edu /SSHKEY:id_dsa</span></font> <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Alternativ kann die Schlüsseldatei auch im <font class="example" color="207030" face="Courier New"><span class="example">/SSH</span></font> Parameter mit einem 
+weiteren Doppelpunkt hinter dem Kennwort angegeben werden, z.B. <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /SSH:harry:alohomora:id_dsa@secure.hogwarts.edu</span></font> oder <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">ZOC /SSH:harry::id_dsa@secure.hogwarts.edu</span></font><br> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/TT</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option bewirkt, dass ZOC beim Laden eine andere 
+Zeichenumsetzungstabelle lädt, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC /TT:SCAND.ZTR</span></font>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/U</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Diese Option steht für 'unbeaufsichtigt'. Während des 
+Programmablaufs erscheinen dann keine Abfragefenster (wie z.B. 'Sind Sie sicher'), 
+sondern es werden die Standard-Ergebnisse der Fenster ausgeführt. So können 
+automatische Abläufe gestartet werden, ohne dass wegen einer Abfrage die gesamte 
+Verarbeitung unterbrochen wird. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>/WD:ordner</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1">
+Mit dieser Option kann das Arbeitsverzeichnis angegeben werden, 
+aus dem Datendateien geladen werden (Optionen, Skripts, usw.). Siehe auch 
+<a class="link" href=topic-DLG_WIN_WORKDIRNOTFOUND.html>Order für Benutzerdaten</a>. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

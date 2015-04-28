@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Zmodem File Transfer</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_ZMODEMTRANSFER"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_ZMODEMTRANSFER} -->
+<!-- {\footnote Zmodem File Transfer} -->
+
+<h2>Zmodem File Transfer</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Overview</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Most Unix/Linux systems haven an implementation of Zmodem installed and preconfigured 
+(if not, look for a package named lrzsz.zip on the internet, check if the Linux distribution 
+offers a <font color="5080A0"><i>rzsz</i></font> or <font color="5080A0"><i>lrzsz</i></font> packet or ask our support). 
+This program works very well to transfer files over SSH or telnet connection and 
+integrates seamlessly with ZOC.&nbsp;</p><p> 
+If rz/sz is available on the remote server (or lsz/rsz in some implementations), 
+you can send a file from the remote host to ZOC by typing <font class="example" color="207030" face="Courier New"><span class="example">sz &lt;filename(s)&gt;</span></font> 
+on the remote shell. ZOC will then open the Zmodem download dialog and place 
+the file into the local download directory 
+(<a class="link" href=topic-DLG_WIN_GLOB_FOLDERS.html>Options&rarr;Program Settings&rarr;Folders</a>).&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Transfer</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+To send a file to the remote machine, start ZOC's upload (Transfer menu). 
+ZOC will then first send an <font class="example" color="207030" face="Courier New"><span class="example">rz</span></font> command to the host to start the remote 
+receiver and will then perform an upload. Alternately you can type <font class="example" color="207030" face="Courier New"><span class="example">rz</span></font> on 
+the remote shell and ZOC will open the upload file selection dialog. &nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Options</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+For file transfers using ZModem, ZOC offers a variety of options to 
+control the transfer. These can be configured in the session profile 
+(transfer section): <br> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Upload File Management</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+These options apply only to uploads. They are only effective, if the receiver 
+is able and willing to handle them, so they may or may not have an effect 
+on an actual file transfer, depending on the receiver's Zmodem implementation 
+(they work best when used to send files to Omen Technology's RZ or DSZ, which 
+is available on various platforms including Unix, VMS and MS-DOS). <br> 
+You can specify that you want the receiver to convert carriage returns and 
+line feed according to its platform and you can suggest what the receiver 
+should do if a file already exists on its machine. Options are to use the 
+receiver's default action, to always overwrite files, to overwrite files if 
+their file date is older, to resume an aborted file transfer or append the 
+data to the existing files (the corresponding Unix SZ options are -p, -y, -n, 
+-r, -+). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ASCII</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The ASCII options are used when it is necessary to do an end-of-line 
+character translation between different operating systems. It is useful 
+when transferring text file, but has disastrous results when applying 
+to binary data like ZIP files or executables. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Ignore time stamp</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Select this option, if you want received files to be marked with the 
+date/time of download, instead of being marked with the time stamp the 
+file carried on the file system of the sender. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

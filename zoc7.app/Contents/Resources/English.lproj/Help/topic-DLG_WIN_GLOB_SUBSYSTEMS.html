@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Subsystems</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_GLOB_SUBSYSTEMS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_GLOB_SUBSYSTEMS} -->
+<!-- {\footnote Subsystems} -->
+
+<h2>Subsystems</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Primary Subsystems</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+This block of options groups various connection types and emulations 
+in order to tell the program loader how likely these are to be used. &nbsp;</p><p> 
+<font color="5080A0"><i>Off</i></font> means that it is unlikely that you will use the functions. <font color="5080A0"><i>On</i></font> means that 
+the function is one of your primarily used functions. The third state (neither on 
+nor off) is somewhere in between (meaning that the feature will be used occasionally).&nbsp;</p><p> 
+Depending on these settings, ZOC may delay the loading of functions 
+and may not offer them in the <a class="link" href=topic-DLG_WIN_PHONE_QUICKCONNECT.html>Quick Connection</a> or 
+other dialogs unless they have already been used. Please be aware that turning 
+off a function off does not mean that it is strictly disabled. 
+Think of it in terms of telling the likeliness of using the function 
+in order to optimize loading the program's loading time and memory 
+use.&nbsp;</p><p> 
+ZOC may still load and offer such a function, if it has previously been used. 
+If for example you have disabled the TN3270 emulation, but subsequently have 
+a host directory entry, which has the TN3270 emulation selected, it will be still 
+be loaded when you open the host directory.&nbsp;</p><p> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: 
+<a class="link" href=topic-HLP_OPTIONS3.html>Program Settings</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

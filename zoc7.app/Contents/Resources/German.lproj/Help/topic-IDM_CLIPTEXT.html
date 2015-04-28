@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Bearbeiten-Menü</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="IDM_CLIPTEXT"></A>
+
+
+<!-- \page -->
+<!-- {\footnote IDM_CLIPTEXT} -->
+<!-- {\footnote Bearbeiten-Menü} -->
+
+<h2>Bearbeiten-Menü</h2><p>
+
+Das Bearbeiten-Menü verwaltet den Text, der in der Zwischenablage 
+des Betriebssystems gespeichert ist. 
+Normalerweise wird Text durch Markieren mit der linken 
+Maustaste im ZOC-Fenster in die Zwischenablage kopiert (kann mit 
+der Alt-Taste kombiniert werden), es können aber auch Texte aus 
+Editoren und beliebigen anderen Programmen in die Zwischenablage 
+gestellt werden.&nbsp;</p><p> 
+Siehe auch: Optionen, Programmeinstellungen, <a class="link" href=topic-DLG_WIN_GLOB_CLIPBOARD.html>Zwischenablage</a> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Fensterinhalt kopieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion kopiert den Inhalt des gesamten ZOC-Fensters in die 
+Zwischenablage. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zurückblätternpuffer kopieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Kopiert den gesamten Inhalt des Puffers zum Zurückblättern in die Zwischenablage. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Einfügen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sendet die in der Zwischenablage befindlichen Zeichen an die Gegenstelle. 
+Da der Text ähnlich wie bei einem ASCII-Upload übertragen wird, gilt 
+die in <a class="link" href=topic-DLG_WIN_OPTS_TEXTSEND.html>Optionen&rarr;Verbindungsprofil&rarr;Text Senden</a> 
+eingestellte Verzögerung der Übertragung und die CR/LF-Übersetzung auch für 
+diese Funktion. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Einfügen ohne Zeilenwechsel</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sendet die sich im Zwischenspeicher befindenden Zeichen an die Gegenstelle. 
+Ein Zeilenvorschub wird gegen ein Leerzeichen ersetzt. Die Geschwindigkeit 
+der Übertragung kann in <a class="link" href=topic-DLG_WIN_OPTS_TEXTSEND.html>Optionen&rarr;Verbindungsprofil&rarr;Text Senden</a> 
+eingestellt werden.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Eine Anwendung dieser Funktion ist das Auswählen von Dateinamen aus 
+einer gesendeten Liste. Nach Übertragung der Liste mit allen Dateinamen 
+können blockweise mehrere Dateinamen markiert (linke Maustaste zusammen 
+mit der Alt-Taste) und mit dieser Funktion hintereinander einem 
+Download-Befehl der Gegenstelle angehängt werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Einfügen als Zitat</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sendet die sich im Zwischenspeicher befindenden Zeichen an die Gegenstelle. 
+Jede neue Zeile beginnt mit <font class="example" color="207030" face="Courier New"><span class="example">&gt;</span></font>, um ein Zitat zu symbolisieren. 
+Es gilt die in <a class="link" href=topic-DLG_WIN_OPTS_TEXTSEND.html>Optionen&rarr;Verbindungsprofil&rarr;Text Senden</a> 
+eingestellte Verzögerung der Übertragung und die CR/LF-Übersetzung, sowie 
+die Clipboard/Maus Einstellungen in den Programmeinstellungen. 
+Hinweis: Durch Drücken der Shift-Taste während des Anwählens dieser Funktion 
+wird der zu sendende Text automatisch der Zeilenlänge entsprechend 
+umformatiert. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Einfügen als Block-Zitat</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die Methode, Text mit '&gt;' zu zitieren, ist sehr verbreitet. Oft wird 
+allerdings eine andere Art verwendet: Ein zitierter Text beginnt 
+als Block mit <font class="example" color="207030" face="Courier New"><span class="example">&gt;&gt;</span></font> und endet mit <font class="example" color="207030" face="Courier New"><span class="example">&lt;&lt;</span></font>. 
+Hinweis: Durch Drücken der Shift-Taste während des Anwählens dieser Funktion 
+wird der zu sendende Text automatisch der Zeilenlänge entsprechend 
+umformatiert. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zwischenablage an Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion startet den in 
+<a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Optionen&rarr;Programmeinstellungen&rarr;Spez. Dateien</a> 
+angegebenen Editor mit dem Inhalt der Zwischenablage. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zwischenablage Drucken</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sendet den Inhalt der Zwischenablage an den Drucker. Der Drucker 
+muss in <a class="link" href=topic-DLG_WIN_GLOB_PRINTER.html>Optionen&rarr;Programmeinstellungen&rarr;Drucker</a> 
+angegeben sein. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

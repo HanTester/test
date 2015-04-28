@@ -1,0 +1,69 @@
+
+---------------------------------------------------------------------------
+1) HOW TO USE ZOCEVENT.ZRX
+---------------------------------------------------------------------------
+
+   The ZOCEVENT.ZRX file is called at certain points in ZOC (with the
+   parameters identifying the event shown in the table below).
+
+
+
+---------------------------------------------------------------------------
+2) CALL PARAMETERS
+---------------------------------------------------------------------------
+
+   ----------------------------  ------------------------------------------
+   EVENT                         PARAMETER(S)
+   ----------------------------  ------------------------------------------
+   ZOC Start                     OPEN
+   ZOC Ends                      CLOSE
+   Before a device is opened     DEVOPEN '<device name>' '<device opts>'
+   After a device was closed     DEVCLOSE '<device name>' 
+   When connected                CONNECT '<host name>'
+   Befire disonnect              PREDISCONNECT '<host name>' 
+   When disonnected              DISCONNECT '<host name>' 
+   ----------------------------  ------------------------------------------
+
+   The DeviceName is the same as it appears in ZOC, but always in upper
+   case letters (eg. SERIAL/MODEM).
+
+   The device opt strings are undocumented, so you need a bit of experimenting
+   with them (see the debugging section below). However, since they are 
+   probably only used to determine the com port, here is how to parse 
+   the SERIAL/MODEM options:
+
+   /* ZOCEVENT.ZRX */
+   PARSE ARG Event " '" DeviceName "'" "'" DeviceOpts "'"
+
+   /* if serial, get com port */
+   IF Event="DEVOPEN" & DeviceName="SERIAL/MODEM" THEN DO
+       PARSE VALUE DeviceOpts WITH "[" id "]" serport ":" baud "-" opts "|" 
+       serport= TRANSLATE(serport)  /* uppercase */
+       CALL LINEOUT "zocevent.trc", "OPEN OF "serport" DETECTED"
+   END /* IF */
+
+
+
+---------------------------------------------------------------------------
+3) SPECIAL PROGRAMMING ISSUES
+---------------------------------------------------------------------------
+
+   You can call all of the ZOC commands.  However, not many will make
+   sense in the environment in which ZOCEVENT.ZRX is called, especially
+   when no communication device is opened or (in case of OPEN and CLOSE)
+   when not even a ZOC window is there.
+
+
+
+---------------------------------------------------------------------------
+4) DEBUGGING
+---------------------------------------------------------------------------
+
+   If there is no ZOC window, the SAY or TRACE commands will pop up a 
+   message window with the message you want to show.  As this could make
+   debugging a bit tedious, you can alternately write debugging output 
+   to a file with REXX's lineout command:
+
+      CALL LINEOUT "c:\temp\zocevent-trace.log", event "#" DeviceName "#" DeviceOpts
+
+

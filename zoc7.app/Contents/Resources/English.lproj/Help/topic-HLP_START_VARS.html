@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Environment Variables</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_START_VARS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_START_VARS} -->
+<!-- {\footnote Environment Variables} -->
+
+<h2>Environment Variables</h2><p>
+
+ZOC uses the TZ environment variable to correct the file date transmitted 
+by Zmodem. 
+&nbsp;</p><p>Zmodem was developed with Unix in mind, where time stamps (file date/time) 
+are always stored in Greenwich time and where local time is calculated by the 
+dir command. This way a file always carries the correct local time, even if 
+shipped on disk around the globe. However, the HPFS file system knows 
+nothing about the time zones which are still part of Zmodem. Most 
+MS-DOS systems emulate the time zone in one way or another, mostly by using 
+Eastern Standard Time (5 hours west of Greenwich) as a default; 
+files received from such senders get the correct time when received by ZOC. 
+However, some hosts use other time zones. If you want to adapt your 
+time zone setting to such hosts, you should add the TZ environment 
+variable to your CONFIG.SYS. 
+&nbsp;</p><p>To do this use SET TZ=&lt;SSS&gt;&lt;N&gt;&lt;DDD&gt; 
+where &lt;SSS&gt; is a 3-char standard time code, &lt;N&gt; is the time difference from 
+Greenwich and &lt;DDD&gt; is a 3-char daylight saving time code, for example use 
+SET TZ=EST5EDT for Eastern Standard Time (which is the default) or 
+TZ=CET2CDT for Central European Time. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

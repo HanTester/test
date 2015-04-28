@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Layout (Font and Window Size)</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_LAYOUT"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_LAYOUT} -->
+<!-- {\footnote Layout (Font and Window Size)} -->
+
+<h2>Layout (Font and Window Size)</h2><p>
+
+Please also read the topic 
+<a class="link" href=topic-HLP_FONTCOLOR.html>Fonts, Window Size, Color</a> 
+for additional information regarding this dialog.&nbsp;</p><p> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>FONT AND TERMINAL SIZING</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">... window size will determine number of rows/cols</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When the ZOC window is sized, this option will keep the font size unchanged, but change 
+the number of rows/columns of the terminal window instead (e.g. from 80x24 to 87x32).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+If this option is activated, you will not be able to manually select a specific terminal size 
+(rows/columns), because the terminal size will be determined by the size of the window. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">... the font size will be adjusted</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When you change the window size, this option will keep the number of rows/columns fixed, 
+but instead use a larger or smaller font to fit the terminal area into the window.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+If this option is activated, you will not be able to manually select a specific font size 
+in this dialog (see below), because the font size will be automatically 
+determined depending on the size of the window. Also, sizing 
+of the window with the mouse will only work in larger steps because only 
+those sizes will be offered, for which there is a matching font. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">... retain font size and rows/cols</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+This option will keep the font and logical terminal size. This will 
+prevent the ZOC window from being changed in size. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>TERMINAL SIZE</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Rows/Columns</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+You can select the terminal size here (columns and rows). If in doubt, try terminal sizes of 80x24 or 
+80x25. 
+<br/>&nbsp;<br/>
+<b>Note: </b>If an emulation or host requires a specific terminal size (e.g. fixed size TN3270 or VT100 in 
+132 columns mode), this setting may be ignored. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>FONT AND CHARACTER DISPLAY</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Character Set</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+ZOC for Windows supports various character sets, e.g. the DOS/IBM 
+character set, Windows/Ansi/Latin-1 character set and the Linux coding for 
+Unicode (UTF8).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+The choice of character set depends mostly on the host and is required for 
+correct display of line graphics or accented characters. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Terminal Font</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Select a font size for the terminal window from the list. The font list will 
+only show fonts, where all characters have the same width (non proportional fonts). 
+This is required for correct display of tables etc.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+The font size is given in display pixels <font color="5080A0"><i>width x height</i></font> (this is different 
+from the "points" size, which is usually used in text processing programs). 
+The size of the terminal area (where text is displayed) depends on the terminal 
+size (number lines and characters per line) combined with the font size. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Antialiasing</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+With this option enabled, the font will be rendered on screen with smoother 
+edges, although with small fonts this can result in a slightly fuzzy look. 
+Turning the option off will create a more crisp but slightly edgy font. 
+The third state of the option (half checked) will activate or deactivate 
+this setting based on the operating system's default. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+See also: 
+<a class="link" href=topic-HLP_FONTCOLOR.html>Fonts, Window Size, Color</a>, 
+<a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

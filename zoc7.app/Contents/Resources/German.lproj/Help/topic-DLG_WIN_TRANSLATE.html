@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Zeichenumsetzung</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_TRANSLATE"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_TRANSLATE} -->
+<!-- {\footnote Zeichenumsetzung} -->
+
+<h2>Zeichenumsetzung</h2><p>
+
+Für Benutzer in Ländern, die nicht den US-ASCII Zeichensatz verwenden, 
+stellt sich oft das Problem, dass das von der Gegenstelle gesendete Zeichen 
+nicht mit dem Zeichencode des Terminalprogramms oder des Betriebssystems 
+übereinstimmt.&nbsp;</p><p> 
+Hier können alle Zeichencodes für gesendete und empfangene 
+Zeichen verändert, sowie durch Löschen aller Veränderungen 
+der Normalzustand wiederhergestellt werden.&nbsp;</p><p> 
+Durch die Funktionen Laden und Speichern unter können mehrere 
+Zeichensatztabellen geladen oder gespeichert und diese bei 
+Adressbucheinträgen wieder angegeben werden. &nbsp;</p><p> 
+Mit dem Programm werden einige übliche 
+Tabellen zur Umwandlung der deutschen Umlaute mitgeliefert. 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b>Die Zeichenumsetzung ist nur dann aktiv, wenn 
+die Option zum Ignorieren der Zeichenumsetzung in 
+<a class="link" href=topic-DLG_WIN_OPTS_TERMINAL.html>Optionen&rarr;Verbindungsprofil&rarr;Terminal</a> 
+nicht eingeschaltet ist. 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b>Die Erstellung einer Umsetzungstabelle kann evtl. 
+vermieden werden, wenn die Zeichenzuordnung bereits von ZOC durch eine 
+vorgegebene Zeichentabelle unterstützt wird. (siehe 
+<a class="link" href=topic-DLG_WIN_OPTS_LAYOUT.html>Verbindungsprofil&rarr;Layout</a>). 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+<b>Fallbeispiel:</b>&nbsp;</p><p> 
+Angenommen, die Gegenstelle sendet das Zeichen <font class="example" color="207030" face="Courier New"><span class="example">'78</span></font> anstatt 
+des deutschen Zeichens <font class="example" color="207030" face="Courier New"><span class="example">Ä</span></font>. In der Codetabelle ist dieses 
+Zeichen mit dem Code 123 zu finden. D.h. der Host sendet für ein 
+<font class="example" color="207030" face="Courier New"><span class="example">Ä</span></font> die 123 und ZOC müsste für die Taste Ä 123 senden. &nbsp;</p><p> 
+Weiter angenommen, für ZOC ist der IBM/DOS Zeichensatz eingestellt 
+(Optionen, Verbindungsprofil, Zeichensatz). In diesem Fall hat das 
+<font class="example" color="207030" face="Courier New"><span class="example">Ä</span></font> für ZOC jedoch den Wert 142, d.h. ein empfangenes 123 muss 
+in 142 umgesetzt werden und ein gesendetes 142 muss in 123 verwandelt 
+werden. &nbsp;</p><p> 
+Dazu klicken Sie in der linken Tabelle auf 123 und geben als Wert 
+142 ein (im Fenster erscheint dann <font class="example" color="207030" face="Courier New"><span class="example">123 '78 -&gt; 142 Ä</span></font>). Dann 
+klicken Sie in der rechten Tabelle auf 142 und geben dafür 123 
+an. &nbsp;</p><p> 
+&nbsp;</p><p> 
+Hier ist eine Tabelle der Codes, die in ZOC (je nach Konfiguration) 
+für die Umlaute verwendet werden: &nbsp;</p><p> 
+<table class="outertable" cellspacing="0" cellpadding="8"><tr><td><table class="table" cellspacing="0" cellpadding="4"> 
+<tr class="table"> 
+<td class="tablehdr"><b>Zeichen</b> 
+</td><td class="tablehdr"><b>DOS/IBM</b> 
+</td><td class="tablehdr"><b>ANSI/Windows (auch Latin-1 genannt)</b> 
+</td></tr><tr class="table"> 
+<td class="table">Ä 
+</td><td class="table">142 (8E) 
+</td><td class="table">196 (C4) 
+</td></tr><tr class="table"> 
+<td class="table">ä 
+</td><td class="table">132 (84) 
+</td><td class="table">228 (E4) 
+</td></tr><tr class="table"> 
+<td class="table">Ö 
+</td><td class="table">153 (99) 
+</td><td class="table">214 (D6) 
+</td></tr><tr class="table"> 
+<td class="table">ö 
+</td><td class="table">148 (94) 
+</td><td class="table">246 (E6) 
+</td></tr><tr class="table"> 
+<td class="table">Ü 
+</td><td class="table">154 (9A) 
+</td><td class="table">220 (DC) 
+</td></tr><tr class="table"> 
+<td class="table">ü 
+</td><td class="table">129 (81) 
+</td><td class="table">252 (FC) 
+</td></tr><tr class="table"> 
+<td class="table">ß 
+</td><td class="table">225 (E1) 
+</td><td class="table">223 (DF) 
+</table></td></tr></table> 
+&nbsp;</p><p> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

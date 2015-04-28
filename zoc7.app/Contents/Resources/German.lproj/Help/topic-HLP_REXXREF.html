@@ -1,0 +1,629 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>REXX Sprachelemente</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_REXXREF"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_REXXREF} -->
+<!-- {\footnote REXX Sprachelemente} -->
+
+<h2>REXX Sprachelemente</h2><p>
+
+Diese Übersicht behandelt spezielle Themen über die Kontrollsprache REXX 
+(alternativ ist eine allgemeiner gehaltene ZOC REXX-Einführung unter 
+<a class="link" href=topic-HLP_REXX.html>REXX Programmierung</a> zu finden).&nbsp;</p><p> 
+Die REXX Sprache für ZOC besteht im Prinzip aus drei Teilen: <br> 
+1. REXX Grundbefehle (<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">IF</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">LOOP</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL</span></font>, usw.)<br> 
+2. REXX Standardfunktionen. (<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">TIME()</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">SUBSTR()</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">STRIP()</span></font>, usw.)<br> 
+3. ZOC Erweiterungen (<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ZocSend</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ZocDownload</span></font>, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ZocWait</span></font>, etc.) 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+Der Text unten beschreibt den Grundumfang (Punkte 1 und 2). Die speziellen 
+ZOC-Erweiterungen (Punkt 3) sind unter 
+<a class="link" href=topic-HLP_APXRXCMDS.html>Hilfe-Menü&rarr;ZOC REXX-Befehle/Funktionen</a> zu finden. &nbsp;</p><p> 
+Neben der Beschreibung hier, ist der komplette REXX Grundumfang (wiederum Punkte 
+1. und 2.) auch an verschiedenen Stellen im Internet beschrieben. Links hierzu 
+befinden sich im <font color="5080A0"><i>Rexx-Ordner</i></font> innerhalb des Ordners <font color="5080A0"><i>ZOC Dateien</i></font> 
+(wir empfehlen das REXX Wiki (deutsch)).&nbsp;</p><p> 
+Die <a class="ilink" href="http://www.emtec.com/downloads/zoc/rexx/docs/ZocRexxReference.pdf" target="_blank">ZOC REXX Reference (PDF, engl)</a> 
+deckt alle drei Punkte ab. Die unten aufgeführten Themen werden außerdem in den 
+REXX-Beispielen gezeigt, die über den REXX Link im o.g. Ordner bzw. in der 
+<a class="ilink" href="http://www.emtec.com/zoc/documents.htm#rexxfiles" target="_blank">REXX Online Dokumentation</a> 
+verfügbar sind. 
+&nbsp;</p><p> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Programm-Formatierung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Alle REXX-Programme müssen prinzipiell mit einem Kommentar beginnen. Als 
+Kommentar gilt Text, der zwischen <font class="example" color="207030" face="Courier New"><span class="example">/*</span></font> und <font class="example" color="207030" face="Courier New"><span class="example">*/</span></font> steht. 
+Außerdem gibt es Zeilenkommentare, die durch <font class="example" color="207030" face="Courier New"><span class="example">--</span></font> eingeleitet werden 
+und bis zum Ende der Zeile gelten.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Es können mehrere Befehle in eine Zeile geschrieben werden, wenn diese 
+durch Komma voneinander getrennt werden. Ein Befehl kann in der nächsten 
+Zeile fortgesetzt werden, wenn am Ende der vorherigen Zeile ein zusätzliches 
+Komma geschrieben wird. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+SAY "Hello "; SAY "World"<br/> 
+CALL zoc "REQUEST", "Wie geht's", ,<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp; "Gut", "Nicht schlecht"<br/> 
+answer= ZOCRESULT()<br/> 
+-- jetzt ist genug<br/> 
+EXIT<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zahlen und Berechnungen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zahlen können zum Rechnen, Zählen usw. verwendet werden. REXX verwendet 
+Zahlen und Berechnungen in einer denkbar unkomplizierten Weise: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+SAY 4*5+3*5 /* Ausgabe: 35 */<br/> 
+SAY 10/3 /* Ausgabe: 3.333333 */<br/> 
+SAY 10%3 /* Ausgabe: 3 (Ganzzahl-Division) */<br/> 
+SAY 10//3 /* Ausgabe: 1 (Divisions-Rest) */<br/> 
+N= 4<br/> 
+SAY N /* Ausgabe: 4 */<br/> 
+N= N+1<br/> 
+SAY N*3 /* Ausgabe: 15 */<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zeichenketten</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Obwohl REXX in der Lage ist, mit Text ohne Anführungszeichen zu arbeiten, 
+ist es generell besser, Zeichenketten mit einfachen oder doppelten 
+Anführungszeichen zu versehen: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+SAY "Hello World!"<br/> 
+SAY "Joe's Bar"<br/> 
+SAY 'Er sagt: "Verwende ZOC!"'<br/> 
+SAY 'Sie sagt: "Mach ich sowieso schon!"'<br/> 
+</div></span></font> 
+&nbsp;</p><p>Zeichenketten können Variablen zugewiesen werden. Außerdem können 
+Zeichenketten und Variablen direkt aneinandergereiht werden. Falls syntaktisch 
+notwendig kann auch der String-Verbindungsoperator <font class="example" color="207030" face="Courier New"><span class="example">||</span></font> verwendet werden: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+w= "World"<br/> 
+ex= "!"<br/> 
+w2= w||ex -- the || operator is actually required here (w||ex vs. wex)<br/> 
+hwe= "Hello "w2<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+-- fuenf mal "Hello World!"<br/> 
+SAY hwe<br/> 
+SAY "Hello" w2<br/> 
+SAY "Hello "w2<br/> 
+SAY "Hello "||w2<br/> 
+SAY "Hello "||w||ex<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Ablaufverfolgung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zur Fehlersuche ist es möglich, am Anfang des Programms nach der ersten 
+Zeile den Befehl <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">TRACE A</span></font> anzugeben. Danach zeigt der 
+REXX-Interpreter jeden Befehlsschritt vor der Ausführung an. 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">TRACE I</span></font> zeigt eine sehr detaillierte Ablaufverfolgung, <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">TRACE O</span></font> 
+schaltet die Ablaufverfolgung wieder aus.<br> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Vergleiche</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Um Vergleiche in REXX auszudrücken, stehen folgende Vergleichs-Operatoren 
+zur Verfügung:&nbsp;</p><p> 
+<table class="outertable" cellspacing="0" cellpadding="8"><tr><td><table class="table" cellspacing="0" cellpadding="4"> 
+<tr class="table"> 
+<td class="tablehdr"><b>Operator</b> 
+</td><td class="tablehdr"><b>Funktion</b> 
+</td><td class="tablehdr"><b>Beispiel</b> 
+</td></tr><tr class="table"> 
+<td class="table">= 
+</td><td class="table">Numerische Gleichheit 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF ret=640 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">== 
+</td><td class="table">Gleichheit bei Zeichenkeitten 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF input=="ZOC" THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">&lt;&gt; 
+</td><td class="table">nicht gleich 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF rc&lt;&gt;640 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">\= 
+</td><td class="table">nicht gleich (wie &lt;&gt;) 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF rc\=640 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">&lt; 
+</td><td class="table">kleiner als 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF val&lt;10 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">&gt; 
+</td><td class="table">größer als 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF val&gt;50 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">&lt;= 
+</td><td class="table">kleiner oder gleich 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF val&lt;=100 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">&gt;= 
+</td><td class="table">Größer oder Gleich 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF val&gt;=100 THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">& 
+</td><td class="table">UND-Verknüpfung 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF (i&gt;=0) & (i&lt;10) THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">| 
+</td><td class="table">ODER-Verknüpfung 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF (k=0) | (k=1) THEN ...</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">\ 
+</td><td class="table">NICHT-Verknüpfung 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">IF \(k=0) THEN ...</span></font> 
+</table></td></tr></table> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Entscheidungen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Entscheidungen werden in der Syntax 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">IF &lt;ausdruck&gt; THEN DO &lt;befehle&gt; END ELSE DO &lt;befehle&gt; END</span></font> 
+ausgedrückt (siehe Abschnitt Vergleiche (oben) für die Vergleichs- 
+und Verknüpfungsoperationen).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Ein typischer IF-Programmteil sieht in etwa so aus: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+IF rc=0 | rc=1 THEN DO /* rc 0 OR rc 1 */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "ok"<br/> 
+END<br/> 
+ELSE DO<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "failed"<br/> 
+END<br/> 
+</div></span></font> 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Der ELSE-Zweig kann weggelassen werden, wenn er nicht benötigt wird. 
+Die Schlüsselwörter <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DO</span></font> und <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">END</span></font> können weggelassen werden, 
+wenn sich nur ein Befehl zwischen DO und END befindet. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+IF rc=0 | rc=1 THEN SAY "ok"<br/> 
+ELSE SAY "failed"<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Schleifen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Schleifen werden in REXX folgendermaßen formuliert:<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DO &lt;zähler&gt; &lt;befehle&gt; END</span></font><br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DO WHILE &lt;bedingung&gt; &lt;befehle&gt; END</span></font><br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DO UNTIL &lt;bedingung&gt; &lt;befehle&gt; END</span></font><br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DO &lt;variable&gt;=&lt;start&gt; TO &lt;ende&gt; &lt;befehle&gt; END</span></font><br> 
+<br> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+DO 5<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "Hello"<br/> 
+END<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+N= 100<br/> 
+DO WHILE n&gt;0<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY n<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;n= n-1<br/> 
+END<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+DO i=1 TO 10<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY i<br/> 
+END<br/> 
+</div></span></font> 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Schleifen können mit dem Befehl <font class="example" color="207030" face="Courier New"><span class="example">LEAVE</span></font> abgebrochen werden. Mit 
+<font class="example" color="207030" face="Courier New"><span class="example">ITERATE</span></font> kann innerhalb der Schleife der nächste Schleifendurchgang 
+ausgelöst werden (d.h. der Befehl überspringt den Rest des aktuellen 
+Schleifendurchgangs).<br> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Sprünge und Prozeduren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sprungmarken und Prozeduren werden mit einem Namen und nachfolgendem 
+Doppelpunkt gekennzeichnet. Um eine Sprungmarke anzuspringen, wird der Befehl 
+<font class="example" color="207030" face="Courier New"><span class="example">SIGNAL</span></font> verwendet, während der Befehl <font class="example" color="207030" face="Courier New"><span class="example">CALL</span></font> eine 
+Prozedur aufruft (die Prozedur kann zum Aufrufpunkt mittels <font class="example" color="207030" face="Courier New"><span class="example">RETURN</span></font> zurückkehren). <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Das nachfolgende Beispiel zeigt einen Sprung und 
+einen Prozeduraufruf mit Argumentübergabe: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+PULL n<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+IF n=0 THEN SIGNAL get_out<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+teny= 10/n<br/> 
+SAY "10/"n "is" teny<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+CALL square n<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+get_out:<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+EXIT<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+square:<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;value= ARG(1)<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;sqr= value*value<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "Das Quadrat von "||value||" ist "||sqr<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Funktionsaufrufe</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Funktionen werden wie Prozeduren gekennzeichnet und aufgerufen. Allerdings 
+besitzen Funktionen im Gegensatz zu Prozeduren einen Rückgabewert: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+SAY "Basis eingeben"<br/> 
+PULL b<br/> 
+SAY "Exponent eingeben"<br/> 
+PULL p<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+result= power(b,p)<br/> 
+SAY "Der " p "te Exponent von " b " ist " result<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+EXIT<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+power:<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;base= ARG(1)<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;pow= ARG(2)<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;res= 1<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;DO I=1 TO pow<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;    res= res*base<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;END<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;RETURN res<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Externe Skripts</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Es ist auch möglich ein externes Skript als Unterprogramm oder Funktion 
+aufzurufen. Dazu muss der Name der Datei in Hochkommata geschrieben werden 
+und die Datei entweder im ZOC-Programmordner, im ZOC Dateiordner oder 
+im ZOC Skript-Ordner oder in einem Ordner im Windows Suchpfad (PATH) oder 
+im REGINA REXX Makro Pfad (REGINA_MACROS) liegen. 
+Alternativ kann die Datei komplettem mit Pfad angegeben werden. <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Parameter werden wie sonst auch mit Komma getrennt aufgelistet und können im 
+externen Skript mittels der <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ARG(n)</span></font> Funktion abgegriffen werden. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX:test.zrx */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* externes Skript in einem der ZOC ordner */<br/> 
+CALL "sub.zrx" "Hello", "World"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* externes Skript in einem anderen Ordner */<br/> 
+CALL "C:\somefolder\sub.zrx" "Hello", "World"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* externes Skript als Funktion */<br/> 
+x= "sub.zrx"(12,2)<br/> 
+SAY x<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* externes Skript per INTERPRET */<br/> 
+scriptfile= "Z:\test\zzz.zrx"<br/> 
+cmd= 'CALL "'||scriptfile||'"'<br/> 
+INTERPRET cmd<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* externes Skript als Funktion per INTERPRET */<br/> 
+scriptfile= "sub.zrx"<br/> 
+cmd= 'x= "'||scriptfile'"(12,2)'<br/> 
+INTERPRET cmd<br/> 
+SAY x<br/> 
+</div></span></font> 
+<br> 
+Das aufgerufene Skript kann die Parameter durch die REXX Funktion <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ARG(n)</span></font> 
+aufnehmen und Ergebnisse per <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">RETURN</span></font> zurückgeben: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX:sub.zrx */<br/> 
+a= ARG(1)<br/> 
+b= ARG(2)<br/> 
+SAY a<br/> 
+SAY b<br/> 
+mult= a*b<br/> 
+RETURN mult<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Der PARSE Befehl</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+PARSE ist ein flexibles REXX Kommando um formatierte Zeichen in Teile zu zerlegen 
+und die Teile Variablen zuzuweisen. Der Syntax hierfür ist 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">PARSE VALUE &lt;zeichenkette&gt; WITH &lt;variable&gt;"&lt;trenner&gt;"...</span></font> Wenn Sie z.B. 
+eine Zeichenkette coord mit Koordinaten in der Form 
+<font color="5080A0"><i>&lt;index&gt;: &lt;pos-x&gt;/&lt;pos-y&gt;</i></font> haben, können Sie diese leicht mittels <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+<font class="example" color="207030" face="Courier New"><span class="example">PARSE VALUE coord WITH index": "posx"/"posy</span></font> zerlegen. 
+<br/>&nbsp;<br/><b><font color="404060">Beispiel</font>:</b><font class="example" color="207030" face="Courier New"><span class="example"><div class="lines"> 
+/* REXX BEISPIEL UM EIN MIT KOMMA GETRENNTE LISTE VON ZAHLEN ZU ZERLEGEN */<br/> 
+x= "1, 2, 3, 4"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+DO FOREVER<br/> 
+&nbsp;IF x=="" THEN LEAVE<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;PARSE VALUE x WITH zahl", "rest<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;SAY zahl<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;x= rest<br/> 
+END<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Verwendung von ZOC-Befehlen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZOC-Befehle sind eine Erweiterung der REXX Sprache in Form von Prozeduren 
+und Funktionen und bieten Zugriff auf ZOC-spezifische Funktionalitäten 
+(siehe <a class="link" href=topic-HLP_APXRXCMDS.html>ZOC-REXX Befehle</a>). 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+ZOC-Befehle, die keinen Rückgabewert besitzen (oder wenn Sie an dem Rückgabewert 
+nicht interessiert sind), werden wie Prozeduren aufgerufen: <br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL &lt;zoc-befehlsname&gt; &lt;argument(e)&gt;</span></font> 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+ZOC-Befehle, die einen Rückgabewert besitzen, werden wie Funktionen 
+aufgerufen: <br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">&lt;ergebnis&gt;= &lt;zoc-befehlsname&gt;(&lt;argument(e)&gt;)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Verwendung von OS X- oder Windows-Befehlen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Befehle, die direkt vom Betriebssystem ausgeführt werden (wie z.B. Löschen 
+und Umbenennen von Dateien), müssen direkt an das Betriebssystem adressiert 
+werden. Dies kann entweder durch REXX's <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ADDRESS CMD</span></font> Befehl 
+oder durch ZOC's <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">ZocShell</span></font> Befehl geschehen. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+ADDRESS CMD "cmd.exe /c DEL UPLOAD.TMP"<br/> 
+CALL ZocShell "DEL UPLOAD.TMP"<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Eingebaute Funktionen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die nachfolgenden Funktionen können in Zuweisungen oder in anderen Befehlen, 
+die Werte erwarten, verwendet werden, z.B. <font class="example" color="207030" face="Courier New"><span class="example">b= ABS(a)</span></font> oder 
+<font class="example" color="207030" face="Courier New"><span class="example">IF ABS(n)&gt;10 THEN ...</span></font>.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+.Es sind nur die wichtigsten Funktionen und Argumente aufgelistet. 
+Der komplette Sprachumfang ist in der 
+<a class="ilink" href="http://www.emtec.com/downloads/zoc/rexx/docs/ZocRexxReference.pdf" target="_blank">ZOC REXX Reference (PDF, engl)</a> 
+beschrieben, die sich im Ordner <font color="5080A0"><i>Eigene Dateien&rarr;ZOC7 Dateien&rarr;Rexx</i></font> 
+befindet. 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">ABS(&lt;wert&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Absoluter Wert (entfernt Vorzeichen), z.B. <font class="example" color="207030" face="Courier New"><span class="example">n=ABS(t)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">ARG(&lt;n&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert das n-te Argument einer Prozedur/Funktion. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">COPIES(&lt;str&gt;, &lt;anzahl&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Gibt &lt;anzahl&gt; Kopien von &lt;string&gt; zurück, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">x=COPIES("-mehr- ", 10)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">C2D(&lt;zeichen&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert den dezimalen ASCII-Wert eines oder mehrerer Zeichen 
+(Char-TO-Decimal), z.B. <font class="example" color="207030" face="Courier New"><span class="example">n=C2D('A')</span></font> setzt n auf 65. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">C2X(&lt;zeichen&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert den dezimalen ASCII-Wert eines Zeichens 
+(Char-TO-heX), z.B. <font class="example" color="207030" face="Courier New"><span class="example">n= C2X('AB')</span></font> setzt n auf 4142. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">DATE("&lt;format&gt;")</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Gibt das aktuelle Datum in verschiedenen Formaten zurück 
+(eines von B, D, E, M, N, O, S, U, W), z.B. <font class="example" color="207030" face="Courier New"><span class="example">heute=DATE("S")</span></font> 
+gibt am 1.2.97 den Text <font class="example" color="207030" face="Courier New"><span class="example">"19970201"</span></font> zurück. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">D2C(&lt;ascii&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert das Zeichen zu einem dezimalen ASCII-Wert 
+(Decimal-To-Character), z.B. <font class="example" color="207030" face="Courier New"><span class="example">SAY D2C(65)</span></font> gibt den Buchstaben A aus, 
+bzw. <font class="example" color="207030" face="Courier New"><span class="example">cr= D2C(13)</span></font> weist der Variable CR das Carriage Return Zeichen zu. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">FILESPEC(&lt;teil&gt;, &lt;dateiname&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert einen Teil des Dateinamens 
+(aus "Drive", "Path", "Name"), z.B. <font class="example" color="207030" face="Courier New"><span class="example">dir=FILESPEC("Path", ofile)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LEFT(&lt;string&gt;, &lt;num&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert die ersten &lt;num&gt; Zeichen von 
+&lt;string&gt;, z.B. <font class="example" color="207030" face="Courier New"><span class="example">SAY LEFT("BIERFLASCHE", 4)</span></font> gibt BIER aus. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LENGTH(&lt;string&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Gibt die Anzahl Zeichen des Strings zurück. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LINEIN(&lt;dateiname&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liest die nächste Textzeile einer Datei aus 
+(siehe Datei-I/O). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LINEOUT(&lt;dateiname&gt;, &lt;text&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Schreibt die nächste Textzeile in eine 
+Datei (siehe Datei-I/O). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">POS(&lt;string1&gt;, &lt;string2&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Sucht den ersten String im zweiten String 
+und liefert die Position oder 0, wenn nicht gefunden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">RIGHT(&lt;string&gt;, &lt;num&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert die letzten &lt;num&gt; Zeichen von 
+&lt;string&gt;, z.B. <font class="example" color="207030" face="Courier New"><span class="example">SAY RIGHT("BIERFLASCHE", 7)</span></font> gibt FLASCHE aus. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">STREAM(&lt;dateiname&gt;, ...)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Führt eine Dateioperation aus (siehe 
+Datei-I/O). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">SUBSTR(&lt;string&gt;, &lt;pos&gt;[, &lt;länge&gt;])</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert &lt;länge&gt; 
+Zeichen ab Position &lt;pos&gt; in &lt;string&gt; zurück. Wird &lt;länge&gt; nicht angegeben, 
+wird der Rest von &lt;string&gt; zurückgeliefert. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">STRIP(&lt;string&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Entfernt Leerzeichen am Anfang und Ende einer Zeichenkette, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">str= STRIP(str)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">TIME("&lt;format&gt;")</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Gibt die aktuelle Uhrzeit von verschiedenen Formaten 
+(eines von C, H, L, M, N, S) zurück, z.B. SAY TIME("N") zeigt die Uhrzeit 
+in der Form HH:MM:SS. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">TRANSLATE(&lt;string&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Setzt alle Zeichen von &lt;string&gt; in Großbuchstaben um. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">TRUNC(&lt;n&gt;, &lt;m&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Verkürzt den Wert &lt;n&gt; auf &lt;m&gt; Dezimalstellen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">X2C(&lt;hex&gt;)</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Liefert das Zeichen zu einem hexadezimalen ASCII-Wert 
+(heX-To-Character), z.B. <font class="example" color="207030" face="Courier New"><span class="example">SAY X2C(41)</span></font> gibt den Buchstaben A aus, 
+bzw. <font class="example" color="207030" face="Courier New"><span class="example">crlf= X2C(0D0A)</span></font> weist der Variable CRLF die zwei Zeichen 
+für Carriage-Return/Line-Feed zu. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Datei-I/O</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Überprüfen, ob eine Datei existiert</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">IF STREAM(&lt;dateiname&gt;, "C", "QUERY EXISTS")\="" THEN ...</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Zum Schreiben öffnen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL STREAM &lt;dateiname&gt;, "C", "OPEN WRITE"</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Zum Lesen öffnen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL STREAM &lt;dateiname&gt;, "C", "OPEN READ"</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">In eine Datei schreiben</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL LINEOUT &lt;dateiname&gt;, &lt;text&gt;</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Aus einer Datei lesen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">&lt;variable&gt;=LINEIN(&lt;dateiname&gt;)</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Auf EOF abprüfen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">IF STREAM(&lt;dateiname&gt;, "S")\="READY" THEN ...</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Eine Datei schließen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CALL STREAM &lt;dateiname&gt;, "C", "CLOSE"</span></font> 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX FILE INPUT EXAMPLE */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+file= "input.txt"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+DO FOREVER<br/> 
+&nbsp;ln= LINEIN(file)<br/> 
+&nbsp;IF STREAM(file, "S")\="READY" THEN LEAVE<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;/* process line of file (ln) here */<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+END<br/> 
+CALL STREAM file, "C", "CLOSE"<br/> 
+</div></span></font> 
+&nbsp;</p><p> 
+&nbsp;</p><p>Die Datei <font class="example" color="207030" face="Courier New"><span class="example">FILEIO.ZRX</span></font> bei den Beispielen im Rexx Ordner wendet 
+diese Funktionen beispielhaft an. 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Übergabe von Parametern an REXX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Von der ZOC Kommandozeile bzw. von ZOC-Benutzerknöpfen kann auch ein Parameter 
+an ein REXX Skript übergeben werden, z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZOC "/RUN:script\test.zrx Hello, World"</span></font> &nbsp;</p><p> 
+Solche Parameter können in im REXX Skript mit Hilfe der ARG(1) Funktion abgefragt und ggf. mit 
+<font class="example" color="207030" face="Courier New"><span class="example">PARSE</span></font> zerlegt werden) (es wird dabei noch dringend empfohlen evtl. führende und 
+nachfolgende Leerzeichen durch STRIP() zu entfernen). 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX PARAMETERÜBERGABE */<br/> 
+p= ARG(1)<br/> 
+PARSE VALUE p WITH p1","p2<br/> 
+p1= STRIP(p1)<br/> 
+p2= STRIP(p2)<br/> 
+SAY "Übergebene Parameter: ("||p||") ("||p1||") ("||p2||")"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Häufige Funktionen in Visual Basic vs. REXX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">ASC</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+D2C() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">CHR$</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+C2D(), X2C() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">CLOSE</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+CALL STREAM(&lt;file&gt;, "C", "CLOSE") 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">EOF</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+STREAM(&lt;file&gt;, "S")\="READY" 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">FOR ... NEXT</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+DO n=&lt;first&gt; TO &lt;last&gt; ... END 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">INSTR$</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+POS() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">MID$</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+SUBSTR() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LEN</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+LENGTH() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">OPEN</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+STREAM(&lt;file&gt;, "C", "OPEN ...") 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">INPUT</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+PULL, ZocAsk() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">INPUT#</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+LINEIN() 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">PRINT</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+SAY, ZocWrite, ZocWriteln 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">PRINT#</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+CALL LINEOUT &lt;file&gt;, ... 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

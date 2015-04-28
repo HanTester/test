@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Telnet Einstellungen</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_TELNETOPTS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_TELNETOPTS} -->
+<!-- {\footnote Telnet Einstellungen} -->
+
+<h2>Telnet Einstellungen</h2><p>
+
+Nachfolgende Optionen sind für Telnet Verbindungen verfügbar: 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Pure Socket Verbindung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Option baut eine reine TCP Verbindung zur Gegenstelle auf, d.h. 
+es werden keine spezifischen Telnet-Optionen ausgehandelt. Dies ist sinnvoll, 
+wenn die Gegenstelle kein Telnet-Server ist (z.B. SMTP oder andere RFC Server). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Mit lokalem Echo starten</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Bei eingeschalteter Funktion verwendet ZOC beim Beginn der Verbindung ein 
+lokales Echo (anstatt dem langsameren Gegenstellenecho). Allerdings wird 
+diese Option beim Login-Prozess oftmals von der Gegenstelle überschrieben 
+(d.h. zurück auf Remote-Echo gestellt). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Im Binärmodus starten</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Mit dieser Option versucht ZOC mit dem Host von Anfang an eine Binärverbindung 
+zu vereinbaren. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Verbindung bei Fehler halten</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Normalerweise legt ZOC bei einem Telnet-Übertragungsfehler auf. Wenn diese 
+Option eingeschaltet ist, bleibt die Verbindung auch bei Übertragungsfehlern 
+bestehen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Eingehende Verbindungen auf Port</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Hier kann angegeben werden, auf welchem Port ZOC Telnet-Verbindungen annimmt, 
+wenn die Verbindungsannahme aktiviert ist (Funktion 
+<font color="5080A0"><i>Verbindungen annehmen</i></font> im Dateimenü). 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ERWEITERTE OPTIONEN</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>CR als CR/NUL senden</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Option muss eingeschaltet werden, wenn die Gegenstelle ein Nullzeichen 
+nach einem CR-Zeichen, dem kein LF-Zeichen folgt, benötigt. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Host sendet CR/NUL im Binärmodus</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Option kann verwendet werden, wenn Binärtransfers (wie z.B. Zmodem) 
+über die Telnet-Verbindung nicht funktionieren. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SGA</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+SGA ist eine Funktion des Telnet-Protokolls. Normalerweise wird diese 
+von ZOC deaktiviert, was mit 99.9% aller Gegenstellen keinen Unterschied 
+macht. Falls Sie beim Anmelden jedoch eine Fehlermeldung im Bezug auf 
+SGA erhalten, versuchen Sie bitte diese Option zu aktivieren. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>GLOBALE OPTIONEN</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Kein Ping vor Verbindungsaufbau</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Normalerweise versucht ZOC den Zielhost anzuPINGen, bevor die Verbindung 
+aufgebaut wird. Auf Systemen (wie TIA), die keinen PING unterstützen, 
+schlägt der Aufruf dann aber fehl (Fehler NO RESPONSE). In diesem Fall hilft 
+das Einschalten dieser Option. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Keine Hostnamen zu IP Adr. suchen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Beim Verbindungsaufbau per IP Adresse sucht ZOC normalerweise den dazu 
+passenden Hostnamen. Dies kann abgeschaltet werden, falls es nicht erwünscht 
+ist (z.B. weil der DNS Server gebührenpflichtig ist). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>TCP 'Keep Alive' Option aktivieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Wenn diese Option aktiviert ist, konfiguriert das TCP Keep-Alive feature für 
+die TCP Verbindung mit dem Host (technisch gesehen wird dafür die SO_KEEPALIVE 
+Option auf dem Socket aktiviert). Falls das nicht funktioniert, können Sie 
+auch die Timeout Einstellung im Verbindungsprofil (Abschnitt Terminal) verwenden. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

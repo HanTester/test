@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Astronaut Terminology">
+<!--
+
+File: Astronaut.sdef
+Abstract: Scripting definitions for the Astronaut example.
+
+-->
+	<suite name="ZOC" code="ZOC!" description="Terminology for accessing ZOC via AppleScript">
+	
+		<!-- application +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<class name="application" code="capp" description="AppleScript access to ZOC-REXX Functions">
+			<cocoa class="APPLESCRIPTBUCKET"/>
+			<element description="Some Sub-Element Class" type="trinket"/>
+			<property name="val1" code="Val1" description="Test: Some String Value" type="text" access="rw"/>
+			<property name="val2" code="Val2" description="Test: Some String Value" type="text" access="rw"/>
+			<property name="val3" code="Val3" description="Test: Some Int Value" type="integer" access="rw"/>
+		</class>
+		
+
+		<!-- application sub object ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<class name="trinket" code="cwin" description="Test: The ScriptBridge sub element">
+			<cocoa class="APPLESCRIPTTRINKET"/>
+			<property name="val" code="vall" description="Test: The Element value" type="integer" access="rw"/>
+			<responds-to name="doforclass">
+				<cocoa method="doforclass:"/>
+			</responds-to>
+		</class>
+
+
+		<!-- application start/end commands ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<command name="start conversation" code="ZOC!StaC" description="Start an AppleScript conversation with a ZOC-Session">
+			<cocoa class="ApplicationCommand"/>
+
+			<parameter name="window" code="iWnd" description="the window number (currently supports only a value of 0)." type="integer" optional="yes">
+				<cocoa key="Window"/>
+			</parameter>
+			<parameter name="session" code="iSes" description="the session number (currently supports only a value of -1 for the current session)" type="integer" optional="yes">
+				<cocoa key="Session"/>
+			</parameter>
+			<parameter name="debug" code="iDeb" description="flag to show debug info in the ZOC window" type="boolean" optional="yes">
+				<cocoa key="Debug"/>
+			</parameter>
+			<result description="returns either ##OK## or ##ERROR##" type="text"/>
+		</command>
+		
+		<command name="end conversation" code="ZOC!EndC" description="Ends an AppleScript conversation with a ZOC-Session">
+			<cocoa class="ApplicationCommand"/>
+			<result description="returns either ##OK## or ##ERROR##" type="text"/>
+		</command>		
+		
+
+		<!-- application 'perform' commands ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<command name="perform" code="ZOC!Perf" description="Run one of the ZOC-Extension functions.  This command serves as an alternative for the subroutine syntax, .e.g.  ZocWrite(&quot;Hello World!&quot;) could be called as perform ZocWrite using { &quot;Hello World!&quot; } ">
+			<cocoa class="ApplicationCommand"/>
+
+			<direct-parameter description="the name of a ZOC-command, e.g. &quot;zocwrite&quot;" type="text"/>
+			
+			<parameter name="using" code="Usin" description="a list of strings which are used as the parameter for the command" type="list of text" optional="yes">
+				<cocoa key="Argv"/>
+			</parameter>
+			<result description="the result as described for the individual commands" type="text"/>
+		</command>
+
+		
+
+		<!-- test stuff commands +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<command name="doasync" code="ZOC!Asyn" description="Test: run a simple command with no parameters">
+			<cocoa class="AsyncResultCommand"/>
+			<result description="alwys returns the string 'done'" type="integer"/>
+		</command>
+		
+		<command name="doforclass" code="ZOC!DoFC" description="Test: run a simple command with a parameter in a class">
+			<cocoa class="ClassCommand"/>
+
+			<direct-parameter type="integer"/>
+			<parameter name="text" code="iTxt" description="Test: just some value" type="text">
+				<cocoa key="Text"/>
+			</parameter>
+			<result description="the direct parameter enclosed in quotes" type="text"/>
+		</command>
+		
+
+	</suite>
+</dictionary>

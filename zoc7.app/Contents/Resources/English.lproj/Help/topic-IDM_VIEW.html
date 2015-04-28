@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>View Menu</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="IDM_VIEW"></A>
+
+
+<!-- \page -->
+<!-- {\footnote IDM_VIEW} -->
+<!-- {\footnote View Menu} -->
+
+<h2>View Menu</h2><p>
+
+In the View menu you will find functions that have to do with screen 
+display etc. &nbsp;</p><p> 
+Probably the most used function will be the Scroll Back buffer. It 
+is a memory buffer that stores the lines that scrolled off the top 
+edge of the screen. A similar function is the Stream Capture: 
+it captures data exactly in the order it was received (which may 
+look quite messy for applications that use on screen menus, etc. but 
+can be useful for logging commands in Unix shells etc.).&nbsp;</p><p> 
+See also: <a class="link" href=topic-IDM_LOGFILE.html>Logging to File functions</a> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Scroll Back</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This function shows the contents of the scrollback buffer inside 
+the main window to see text that has scrolled off the screen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Scroll Back as Window</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Alternately to scrolling back inside the main window, it is possible 
+to open a scrollback in a separate window, thus being able to see 
+current and scrolled text at the same time. 
+The font for the window is selected in 
+<a class="link" href=topic-DLG_WIN_GLOB_SCROLLBACK.html>Options&rarr;Program Settings&rarr;Scrollback</a> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Find in Scroll Buffer</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Searches and highlights text within the scrollback buffer. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Clear Scroll Buffer</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Clears the capture buffer. This function is affected by the 
+<a class="link" href=topic-DLG_WIN_GLOB_PROMPTS.html>Options&rarr;Program Settings&rarr;Confirmation</a>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Scroll Buffer to Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Saves the scrollback buffer to file and opens the file in an editor. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Show Stream Capture</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Shows the stream capture window (the stream capture is an alternate version of 
+reviewing older session data). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Clear Stream Capture</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Clears the stream capture (see above). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Next/Previous Tab</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Switches to the previous/next tab within the window. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Tab as Thumbnails</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Shows the session from all tabs in miniaturized form. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Window Elements</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This shows a submenu in which you can check the window elements for 
+ZOC's main window. This is the same as in 
+<a class="link" href=topic-DLG_WIN_OPTS_WINDOW.html>Options&rarr;Session Profile&rarr;Window</a>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Snippets</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZOC monitors your input data stream for filenames and Internet addresses 
+and collects them in a little window that floats aside the ZOC window. 
+Using this function you can show or hide the Snippets Window. When it is 
+showing, you can send one of the collected items by double clicking it 
+with the mouse. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Clear Screen/Reset Terminal</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This function just clears the terminal screen and resets the LEDs in the 
+<a class="link" href=topic-HLP_STATUSLINE.html>Status Line</a> back to red. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Call the editor which is defined in 
+<a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Options&rarr;Program Settings&rarr;Special Files</a>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Command Shell</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Call the shell which is defined in 
+<a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Options&rarr;Program Settings&rarr;Special Files</a>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Local Typing</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This function shows an entry field on screen where you can type locally 
+before sending the whole line to the remote host (local typing uses the 
+ASCII send options in the Session Profile, transfer-2). You can jump 
+between the main screen and the Local Typing window via Alt+C and you can 
+close the Local Typing window via ESC. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Split Chat</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The split chat function splits the screen horizontally and shows text you 
+type in the lower half while displaying text you receive in the upper. 
+This is handy if you want to chat with someone who called you by modem 
+directly. 
+<br/>&nbsp;<br/>
+<b>Note: </b>You should not use this function while accessing a remote host. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

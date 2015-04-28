@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>SSH (Secure Shell) Overview</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_SSHGEN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_SSHGEN} -->
+<!-- {\footnote SSH (Secure Shell) Overview} -->
+
+<h2>SSH (Secure Shell) Overview</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Introduction</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+The secure shell communication allows you to login to a host via internet/LAN. 
+Unlike using Telnet, an SSH connection uses encryption for all data sent and 
+received, which makes it impossible for third parties to tamper with or 
+monitor the connection to obtain passwords or confidential data.&nbsp;</p><p> 
+<br/>&nbsp;<br/>
+<b>Note: </b> ZOC's implementation of the Secure Shell protocol contains source code 
+that was provided to public by the OpenSSH project. You will find 
+more information about OpenSSH on 
+<a class="ilink" href="http://www.openssh.org" target="_blank">http://www.openssh.org</a> 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Login</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+To authenticate with the remote host, you can use the public/private 
+key, username/password and/or keyboard-interactive methods. If you want 
+to login via public/private key, you need to provide the names of 
+the key files for your host before making the connection (enter them in the 
+host directory entry or in the quick connect dialog or in SSH's global 
+options). For username/password or similar methods you can either provide 
+these upfront or you will be asked to provide them when necessary.&nbsp;</p><p> 
+<br/>&nbsp;<br/>
+<b>Note: </b> Please also read 
+<a class="link" href=topic-HLP_SSHCREATEKEY.html>SSH Key Generator</a> for information about how to transfer 
+the public key file to the server. 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>File Transfer</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+To transfer files over SSH you can either use SCP or Zmodem. See 
+<a class="link" href=topic-HLP_SSHTRANSFERS.html>SSH File Transfer</a> for more information. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Auto-Action</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_AUTOACTION"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_AUTOACTION} -->
+<!-- {\footnote Auto-Action} -->
+
+<h2>Auto-Action</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>AutoActions</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Auto action provide a way to automatically send text or invoke ZOC actions 
+(see <a class="link" href=topic-DLG_WIN_ASSIST.html>Action Assistant</a>) whenever a sequence of specific 
+characters is received from the host.&nbsp;</p><p> 
+This feature can be used to 
+<ul class="list"> 
+<li class="list">Automate logins: You could automatically send your username and password</li> 
+when receiving the text <font class="example" color="207030" face="Courier New"><span class="example">Username</span></font> and <font class="example" color="207030" face="Courier New"><span class="example">Password</span></font> 
+<li class="list">Reading mail: When you receive the <font class="example" color="207030" face="Courier New"><span class="example">You have mail</span></font> notification</li> 
+from your Unix host, you could start your mail reader by automatically replying 
+<font class="example" color="207030" face="Courier New"><span class="example">elm^M</span></font>. 
+<li class="list">Skip birthday checks: Some hosts ask for your date of birth now and then</li> 
+to make sure no one else uses your account. Using AutoActions you can provide 
+the date automatically when receiving the prompt. 
+</ul><p> 
+This feature is similar to <a class="link" href=topic-DLG_WIN_OPTS_KEYBOARD.html>AutoMacros</a> and 
+some results can be achieved by using both methods. However the important 
+difference is: AutoActions monitor the incoming data stream (sent by the host) 
+while AutoMacros watch the keystrokes from local the keyboard.&nbsp;</p><p> 
+<br/>&nbsp;<br/>
+<b>Warning: </b>You should make sure that the text you are looking for 
+is unique. Making the trigger text too general increases the risk, that 
+your actions will be performed at undue moments. 
+<br/>&nbsp;<br/>
+<b>Note: </b>This feature is disabled during REXX script execution and during AutoLogin 
+and Learn mode. 
+<br/>&nbsp;<br/>
+<b>Note: </b> 
+emulations (TN3270, TN5250).&nbsp;</p><p> 
+&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>File Handling Options</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_FILEHANDLING"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_FILEHANDLING} -->
+<!-- {\footnote File Handling Options} -->
+
+<h2>File Handling Options</h2><p>
+
+These settings define the characteristics of file handling. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>IF FILE EXISTS...</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Select what you want to do if you try to download a file that already 
+exists in your computer's download directory. You can choose different 
+actions in case the incoming file has a modification date that is older, 
+same or newer than the existing one, or if the incoming file has no 
+modification date at all (e.g. when transferred with Xmodem).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Additionally you can specify, if you want the old (existing) or the new 
+(incoming file) renamed (if rename is chosen somewhere). 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SPECIAL FILE EXTENSIONS</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZOC lets you list extensions of files that should be downloaded to an 
+alternate directory (see <a class="link" href=topic-DLG_WIN_GLOB_FOLDERS.html>Options&rarr;Program Settings&rarr;Folders</a>) 
+and files that should be deleted after they were uploaded successfully.&nbsp;</p><p> 
+The file extensions may contain the * and ? wildcard characters and need to 
+be separated by vertical bars, but without space characters, like this: 
+<font class="example" color="207030" face="Courier New"><span class="example">GIF|Q*|MO?|TU?</span></font><br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Note: Specify file extensions only, not full file names (i.e. '*.GIF|ABC.DOC' will not work) <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Note: If you want to implement a more complex scheme to manage downloaded files, you can use 
+the ZOC-Events REXX file (see <a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Options&rarr;Program Settings&rarr;Special Files</a>). 
+<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>BEHAVIOR/MISCELLANEOUS</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Start transfer automatically</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+If enabled, ZOC will try to automatically detect when the remote host initiates 
+a file transfer. This is done by checking the incoming data for sequences that 
+are unique to some file transfer methods (e.g. Zmodem or Kermit), but will not 
+work with all file transfer methods.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+<b>Note:</b> This option should be disabled if you intend to perform file transfers 
+through the REXX scripting language. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Do not write transfer summary to terminal screen</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+If this option is set, the program will not print the transfer summary, which is normally 
+displayed in the terminal are of the ZOC window (alongside the output of the remote host). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Close window right after transfer</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+After a file transfer completed successfully, this option turns off the 3 seconds 
+waiting time before closing the transfer window. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Start picture viewers</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+ZOC is able to show pictures while downloading them. For this purpose 
+the file SHOWEM.DLL are provided in your ZOC directory. If you do not like 
+this feature, it can be disabled. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

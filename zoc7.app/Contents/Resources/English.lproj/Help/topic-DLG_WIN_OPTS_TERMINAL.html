@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Terminal Options</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_TERMINAL"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_TERMINAL} -->
+<!-- {\footnote Terminal Options} -->
+
+<h2>Terminal Options</h2><p>
+
+This window is used to define general terminal characteristics. It 
+can be opened from the menu or by double clicking the space between 
+the buttons in the status line. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>TERMINAL-PARAMETERS</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Local echo</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Normally a remote host will send all typed characters back to the terminal, 
+which then displays them. In other words, the users sees his own input by 
+way of the host echoing the characters back to the terminal. If a host 
+does not do this (i.e. if the user does not see what he types), the terminal 
+can use this option to display input locally. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Echo CR only</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When the Enter key is pressed and when local echo is also enabled, this option 
+makes ZOC echo only a Carriage-Return instead of the normal CR/LF combination. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Incoming new-line to CR/LF</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When enabled, this options ensures that each incoming line end (CR or LF) is 
+treated as an Carriage-Return/Line-Feed combination. Use this option if received text 
+is either printed over and over in the same line without advancing to the next line 
+or if the text is printed like a stairway with the cursor moving down at the end of 
+the line but not moving back to the left edge. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Soft Shift-Lock for letters</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When using remote systems that require (or accept) only upper case characters, 
+this option can be used to treat all letter keys as if Shift-Lock was active. 
+Non-letter keys (e.g. digits or punctuation) will remain unaffected. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Ignore remote beep</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+This option lets you suppress remote beep signals (^G/Bell). It overrides the setting 
+in <a class="link" href=topic-DLG_WIN_GLOB_SOUND.html>Options&rarr;Program Settings&rarr;Sounds</a> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Scroll jumps</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Even in modern computers, scrolling large amounts of text can be a demanding task 
+for the CPU. In order to improve scrolling speed, you can allow ZOC to delays scrolling 
+until a few lines of text have arrived. This way ZOC saves CPU cycles, because 
+needs to move the text only once instead of five times.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Obviously output speed benefits from this (while the scrolling appears 
+rather "jumpy" instead of smooth). The bigger the jumps you select (normally 
+flea jumps should be enough) the more lines ZOC will collect before actually 
+scrolling and the faster output will be. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>CURSOR APPEARANCE</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Block cursor</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Enabling this option makes the cursor in the main window larger. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Blinking cursor</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+This option makes the cursor in the main window blink. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Crosshair</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+When this option is selected, thin vertical and horizontal lines are 
+drawn on the screen to indicate the cursor position. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>IDLE TIMER</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+These options control what should happen if no characters have 
+been sent or received for a given time. <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+When such a timeout occurs, you can make ZOC send something to your 
+host in order to prevent the host from idle-disconnecting the session. Alternately 
+you can terminate (disconnect) the session yourself.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+In case of sending data, you should send something neutral, i.e. something 
+that does not trigger unwanted action on the remote host: 
+<font class="example" color="207030" face="Courier New"><span class="example">^@</span></font> (a null character is ignored by many hosts), 
+<font class="example" color="207030" face="Courier New"><span class="example">^(20)</span></font> (space) or <font class="example" color="207030" face="Courier New"><span class="example">^!</span></font> (break signal) may be good choices.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+If you want disable timeout control altogether, set the time to zero. 
+<br/>&nbsp;<br/>
+<b>Note: </b> SSH and Telnet connections have additional options (keep alive) which 
+are specific to those connection type. You will find those in the 
+options dialogs for the SSH and Telnet connection types. 
+&nbsp;</p><p> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ADVANCED</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Answer to ENQ</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Some hosts use the ENQ character (^E, hex 05) to request information from 
+the terminal. This option lets you specify the answer which will be 
+sent, if an ENQ character is received from the host. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Send echo</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Loop back all incoming characters to the originator. This option can be used 
+if other computers are connecting to ZOC and if they are expecting it to behave 
+like a host computer. 
+<br/>&nbsp;<br/>
+<b>Warning: </b>This may result in an endless loop if the originator 
+also sends an echo, which is true for most modems and hosts. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Software 7E1</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+This option is used if a host with 7E1 coding is accessed through an 
+8 bit Gateway (ISDN, Telnet). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Strip high bit</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+If enabled, all characters in the terminal window are printed with 7 bits. 
+This can be used if you receive graphical characters where text should 
+appear (of course, this does not help if bursts of noise from the phone line 
+send garbage to your screen). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Ignore character translation</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+This options can disable the translation of characters via 
+<a class="link" href=topic-DLG_WIN_TRANSLATE.html>Options&rarr;Character Translation Profiles</a> 
+If enabled, a loaded character translation profile will remain dormant. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

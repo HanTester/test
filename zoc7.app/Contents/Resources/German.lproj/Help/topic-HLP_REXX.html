@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Einführung in REXX</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_REXX"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_REXX} -->
+<!-- {\footnote Einführung in REXX} -->
+
+<h2>Einführung in REXX</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Über REXX und ZOC</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die von ZOC verwendete Skriptsprache REXX hat eine lange Tradition, speziell 
+in der IBM-Welt. Die Sprache ist einfach aber vielseitig und bietet alle Elemente 
+einer Programmiersprache, notwendig sind um Programme von einfacher bis mittlerer 
+Komplexität zu schreiben (Variablen, Schleifen, Dateibehandlung, Prozeduren, usw.). 
+Es gibt sogar eine objektorientierte Variante von REXX. 
+&nbsp;</p><p> 
+Die Programmierbarkeit von ZOC entsteht durch einer Kombination aus der Sprache 
+REXX und ZOC-spezifischen Erweiterungen. Da REXX selbst bereits eine etablierte 
+Skriptsprache ist, nutzt ZOC diese als Fundament und baut darauf mit eigenen 
+Funktionen zur Terminalemulation und Kommunikation auf. Diese Erweiterungen heben 
+sich vom normalen Sprachumfang ab, inden Sie immer mit dem Namen <font class="example" color="207030" face="Courier New"><span class="example">Zoc</span></font> beginnen, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZocConnect</span></font>. 
+&nbsp;</p><p> 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b> Die in ZOC verwendete REXX Interpreter ist REGINA REXX 
+(<a class="ilink" href="http://regina-rexx.sourceforge.net/" target="_blank">http://regina-rexx.sourceforge.net/</a>). 
+Falls Sie eine andere REXX-Implementierung bevorzugen (z.B. OOREXX), könnnen 
+Sie diese unter 
+<a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Optionen&rarr;Programmeinstellungen&rarr;Spezielle Dateien&rarr;Alternative REXX-DLL</a> 
+konfigurieren. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>ZOC REXX lernen</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Nachfolgend finden Sie einen groben Einblick in die REXX Programmierung. 
+Nachdem Sie diesen Überblick gelesen haben, sollten Sie einen Blick auf die Themen 
+<a class="link" href=topic-HLP_REXXREF.html>REXX Sprachelemente</a> und <a class="link" href=topic-HLP_APXRXCMDS.html>ZOC-REXX Befehle</a> 
+werfen. Diese decken den notwendigen Sprachumfang für den größten Teil 
+aller anfallenden Aufgaben ab.&nbsp;</p><p> 
+Abgesehen davon befindet sich im Ordner <font color="5080A0"><i>Eigene Dateien&rarr;ZOC7 Dateien&rarr;Rexx</i></font> 
+das Archiv 
+<a class="ilink" href="http://www.emtec.com/downloads/zoc/rexx/ZocScriptingSamples.zip" target="_blank">ZocScriptingSamples.zip</a> 
+mit deutschsprachigen Schritt-für-Schritt Beispielen. 
+Darüberhinaus gibt es weitere <a class="ilink" href="http://www.emtec.com/zoc/documents.htm#rexxfiles" target="_blank">REXX Online Dokumentation</a> 
+auf der EmTec-Webseite. 
+&nbsp;</p><p> 
+Sollten Sie REXX auf einem komplexeren Level verwenden wollen, sollten Sie den Text 
+<a class="ilink" href="http://www.emtec.com/downloads/zoc/rexx/docs/ZocRexxReference.pdf" target="_blank">ZOC REXX Reference (PDF, engl)</a> 
+ansehen, den Sie auch im o.g. Ordner oder auf der Webseite finden. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Ein erstes Beispiel</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die ZOC-REXX Versionen des berühmten Hello-World Programms sehen so aus: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+-- "Hello World" am ZOC Bildschirm ausgeben<br/> 
+SAY "Hello World"<br/> 
+</div></span></font> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+-- "Hello World" zur Gegenstelle senden<br/> 
+CALL ZocSend "Hello World"<br/> 
+</div></span></font> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* REXX */<br/> 
+-- Die Gegenstelle "Hello World" ausgeben lassen<br/> 
+CALL ZocSend "echo 'Hello World!'^M"<br/> 
+</div></span></font> 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Grundsätzliches</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Alle REXX-Programme beginnen in der Regel mit einem Kommentar. REXX 
+sieht jeden Text, der zwischen <font class="example" color="207030" face="Courier New"><span class="example">/*</span></font> und <font class="example" color="207030" face="Courier New"><span class="example">*/</span></font> steht, 
+also Kommentar an. Folglich sollte die erste Zeile eines REXX-Programms in 
+etwa so aussehen: <font class="example" color="207030" face="Courier New"><span class="example">/*&nbsp;REXX&nbsp;*/</span></font>. 
+Zusätzlich zu dieser Form von Kommentaren kennt REXX noch Kommentare 
+bis zum Ende der Zeile, die durch <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">--</span></font> eingeleitet werden (siehe 
+die Beispiele oben). 
+&nbsp;</p><p> 
+REXX kennt Standard- und Erweiterungsbefehle. Beispiele für REXX 
+Standardbefehle sind <font class="example" color="207030" face="Courier New"><span class="example">SAY</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">IF</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">DO</span></font>, 
+<font class="example" color="207030" face="Courier New"><span class="example">END</span></font>. ZOC-Erweiterungsbefehle sind zum Beispiel <font class="example" color="207030" face="Courier New"><span class="example">ZocConnect</span></font>, 
+<font class="example" color="207030" face="Courier New"><span class="example">ZocSend</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">ZocDisconnect</span></font>. 
+&nbsp;</p><p> 
+Der Übersichtlichkeit halber werden die nativen REXX Sprachelemente in 
+Großschrift verwendet, z.B. <font class="example" color="207030" face="Courier New"><span class="example">CALL</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">IF</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">SAY</span></font>. 
+ZOC-Erweiterungen werden dagegen in <font color="5080A0"><i>CamelCase</i></font> angegeben, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">ZocAsk</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">ZocWrite</span></font>. Namen die im Programm vom Benutzer selbst 
+vergeben werden (z.B. Variablen, Prozeduren, etc.), stehen in Kleinbuchstaben, 
+z.B. <font class="example" color="207030" face="Courier New"><span class="example">ergebnis= 10*eingabe</span></font>. 
+&nbsp;</p><p> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Wie werden die verschiedenen Befehlstypen angesprochen</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Standardbefehle</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Standardbefehle werden durch Namen und ggf. Argumente angegeben (alle unten stehenden 
+Wörter in Großbuchstaben sind Standard-REXX Befehle): 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+IF rc=640 THEN DO<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "Anruf fehlgeschlagen!"<br/> 
+&nbsp;SIGNAL done<br/> 
+END<br/> 
+ELSE DO<br/> 
+&nbsp;SAY "Success!"<br/> 
+END<br/> 
+</div></span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ZOC-Befehle</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZOC-Befehle werden als eine Art REXX-Unterfunktion aufgerufen und ausgeführt. Es gibt sie 
+im Prinzip in zwei Formen: <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Befehle, die keine Rückgabewert liefern (oder wenn Sie diesen nicht benötigen), 
+werden durch <font class="example" color="207030" face="Courier New"><span class="example">CALL</span></font> zusammen mit dem ZOC-Befehl und den benötigten, durch 
+Komma getrennten, Argumenten aufgerufen. Befehle, die Rückgabewerte liefern, 
+übergeben die Liste aller Argumente, in Klammern eingeschlossen, hinter dem 
+Befehlsnamen. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/* Zwei Befehle ohne Rückgabewert: */<br/> 
+CALL ZocBeep 2<br/> 
+CALL ZocConnect "sss.hogwarts.edu"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+/* Ein Befehl mit Rückgabewert: */<br/> 
+answer= ZocAsk("Wie ist Ihr Name")<br/> 
+</div></span></font> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Ein kleines Beispiel</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Eine häufige Anwendung für REXX-Programme ist das Einloggen und die 
+automatische Ausführung von Befehlen. &nbsp;</p><p> 
+Einfache Login-Prozeduren können zwar auch ohne REXX Skript direkt im 
+jeweiligen Eintrag des Adressbuchs als AutoLogin angegeben werden (siehe 
+<a class="link" href=topic-DLG_WIN_PHONE_EDIT.html>Adressbucheinträge ändern</a>), deren Möglichkeiten 
+sind jedoch auf sehr simple Abläufe begrenzt.&nbsp;</p><p> 
+Das nachfolgende REXX Beispiel ist dagegen etwas komplexer. Es baut 
+eine SSH Verbindung zu einem Rechner auf, führt dort den 
+<font color="5080A0"><i>mail</i></font> Befehl aus um zu sehen ob neue Email vorliegt, meldet sich 
+wieder ab und zeigt ggf. eine Meldung. 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+/*REXX*/<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+-- variablen mit host und logininformationen<br/> 
+hostip= "users.hogwarts.edu"<br/> 
+username= "harryp"<br/> 
+password= "alohomora"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+-- ssh verbindung aufbauen<br/> 
+CALL ZocSetDevice "Secure Shell"<br/> 
+CALL ZocConnect username":"password"@"hostip<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+-- falls der rechner antwortet, sollten wir innerhalb<br/> 
+-- von wenigen sekunden den text "last login" sehen<br/> 
+-- (resultat von 640 beim wait-befehl bedeutet timeout)<br/> 
+CALL ZocTimeout 10<br/> 
+x= ZocWait("Last login")<br/> 
+IF x\=640 THEN DO<br/> 
+&nbsp;-- erfolgreich angemeldet, auf prompt warten<br/> 
+&nbsp;CALL ZocWait "$"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;-- sende den befehl 'mail'<br/> 
+&nbsp;CALL ZocSend "mail^M"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;-- das echo des mail-befehls ueberspringen<br/> 
+&nbsp;CALL ZocWaitline<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;-- die naechste zeile die kommt, ist die ausgabe<br/> 
+&nbsp;-- von 'mail' (z.b. 'no mail for harryp')<br/> 
+&nbsp;CALL ZocWaitline<br/> 
+&nbsp;themail= ZocLastline()<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;-- abmelden und verbindungsabbau<br/> 
+&nbsp;CALL ZocSend "exit^M"<br/> 
+&nbsp;CALL ZocDelay 1<br/> 
+&nbsp;CALL ZocDisconnect<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;/* wenn die antwort nicht mit "No mail" anfaengt,<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp; wird eine Meldung fuer den Benutzer angezeigt */<br/> 
+&nbsp;IF LEFT(themail,7)\="No mail" THEN DO<br/> 
+&nbsp;&nbsp;CALL ZocMsgBox themail<br/> 
+&nbsp;END<br/> 
+END<br/> 
+</div></span></font> 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b> Weitere Beispiele finden Sie im 
+<a class="ilink" href="http://www.emtec.com/downloads/zoc/rexx/ZocScriptingSamples.zip" target="_blank">ZocScriptingSamples.zip</a> 
+Archiv. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Was nun?</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Nach diesem Überblick ist der nächste Schritt die Übersicht über 
+die <a class="link" href=topic-HLP_REXXREF.html>REXX Sprachelemente</a>. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

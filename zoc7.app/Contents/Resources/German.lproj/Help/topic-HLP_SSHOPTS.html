@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Secure Shell (SSH) Optionen</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_SSHOPTS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_SSHOPTS} -->
+<!-- {\footnote Secure Shell (SSH) Optionen} -->
+
+<h2>Secure Shell (SSH) Optionen</h2><p>
+
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>SOCKS4 Proxy</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Falls die Verbindung zum SSH Server nicht direkt sondern über den 
+Umweg über einen SOCKS4 Proxy aufgebaut werden soll, können Sie in den 
+SSH Optionen im Feld SOCKS4 Proxy der den Namen oder IP des Proxy Servers 
+mit optionalem Port (Standardport ist 1080) angeben, z.B. 
+<font class="example" color="207030" face="Courier New"><span class="example">192.168.1.1</span></font> oder <font class="example" color="207030" face="Courier New"><span class="example">myproxy.somewhere.com:8080</span></font> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SSH Version erzwingen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Auf Wunsch kann durch diese Option eine 
+Verbindung mit dem sichereren SSH2-Protokoll erzwungen werden. Ein 
+Verbindungsaufbau zu SSH1-Servern ist dann allerdings nicht mehr möglich. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Verschlüsselung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die Optionen von SSH erlauben die Auswahl der verwendeten 
+Verschlüsselung. Sollte die Gegenstelle diese Verschlüsselungsart nicht 
+unterstützen, wird die Verbindung abgebrochen. Aus diesem Grund ist es 
+empfehlenswert, die Option 'Auto' zu verwenden. Letztere handelt mit 
+der Gegenstelle eine für beide Seiten bestmögliche Verschlüsselung aus. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Hostkey mit 'known_hosts' abgleichen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Weiterhin erlaubt die SSH-Unterstützung von ZOC das Speichern und Überprüfen 
+des von der Gegenstelle gesendeten Hostkeys. Bereits gespeicherte Hostkeys 
+befinden sich in den Dateien <font class="example" color="207030" face="Courier New"><span class="example">known_hosts</span></font> für SSH1 und <font class="example" color="207030" face="Courier New"><span class="example">known_hosts2</span></font> 
+für SSH2-Verbindungen im Unterverzeichnis 'ssh'. Der Dateiaufbau dieser Dateien 
+ist identisch mit dem Aufbau der unter Unix verwendeten OpenSSH Anwendung. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Keep-Alive Signal aktivieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die Keep-Alive Option ist nützlich wenn die Gegenstelle die Verbindung 
+bei Inaktivität des Nutzers unterbricht. Wenn die Option gesetzt wird, 
+werden sowohl die IP Verbindung auf Keep-Alive gesetzt (SO_KEEPALIVE, 
+bzw. äquivalent <font color="5080A0"><i>keepalives</i></font> im OpenSSH) als auch bei SSH 2.0 
+auf Applikationslevel alle 60 Sekunden Keep-Alive Pakete geschickt 
+(entspricht <font color="5080A0"><i>ServerAliveInterval=60</i></font> im OpenSSH). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Tunnelprofile</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Außerdem kann eine Tunnelprofildatei angegeben bzw. erstellt werden, die lokale 
+und serverseitige Tunnels (Port Forwarding) enthält. Die dort eingestellten 
+Tunnels werden dann beim Verbinden mit einem Host automatisch eingerichtet 
+(siehe auch <a class="link" href=topic-HLP_SSHTUNNELS.html>Tunnelprofile erstellen</a>). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Globale Authentifizierungsdateien</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zusätzlich kann über die Schaltfläche "Globale Authentifizierungs-Dateien ändern" 
+für SSH1- und SSH2-Verbindungen je eine Authentifizierungsdatei angegeben werden, 
+die dann von ZOC für den jeweiligen Verbindungstyp verwendet werden kann. Die 
+Dialoge jedes Adressbucheintrages sowie der manuellen Anwahl bieten die Möglichkeit, 
+für die entsprechende Verbindung entweder die globalen Authentifizierungsdateien 
+zu verwenden, oder aber für diese Verbindung eine spezielle Datei zu verwenden. 
+Siehe auch: <a class="link" href=topic-HLP_SSHOPTSGLOB.html>SSH&rarr;Globale Optionen</a> 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

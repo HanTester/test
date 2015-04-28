@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>SSH File Transfers</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_SSHTRANSFERS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_SSHTRANSFERS} -->
+<!-- {\footnote SSH File Transfers} -->
+
+<h2>SSH File Transfers</h2><p>
+
+The best ways to transfer files over an SSH connection are SCP or Zmodem. 
+For both methods you will need to switch ZOC to the corresponding file transfer 
+protocol: 
+Either go to <font color="5080A0"><i>Options&rarr;Session Profile&rarr;Transfers</i></font> 
+and activate SCP or Zmodem. Alternately, if you are connecting to the host from 
+an entry in the ZOC host directory, you can select the file transfer protocol 
+in the entry's Options tab.&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>SCP</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Connect to a remote server via SSH and login to the shell prompt. To send a file 
+(or multiple files) from your computer to the remote host, select the Upload function 
+from ZOC's Transfer menu. Alternately, to transfer a file or folder from the 
+remote computer to your local computer, select the Download function.&nbsp;</p><p> 
+The source/destination folder on the remote computer will be your 
+current working directory there. For the local computer, the default up/download folders 
+are configured in <font color="5080A0"><i>Options&rarr;Program Options&rarr;Folders</i></font>.&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_SCPTRANSFER.html>SCP Transfer</a> 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Zmodem</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Most Unix/Linux systems haven an implementation of Zmodem installed and preconfigured 
+(if not, look for a package named lrzsz.zip on the internet or ask our support). 
+ZOC and rz/sz works very well over a SSH connection and integrates seamlessly with ZOC.&nbsp;</p><p> 
+See <a class="link" href=topic-HLP_ZMODEMTRANSFER.html>Zmodem Transfer</a> for a description of how Zmodem is 
+used from a Linux command line and for a description of options. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

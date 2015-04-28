@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Einzelne Tasten umdefinieren</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_ASSISTKEY"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_ASSISTKEY} -->
+<!-- {\footnote Einzelne Tasten umdefinieren} -->
+
+<h2>Einzelne Tasten umdefinieren</h2><p>
+
+Nachdem unter <a class="link" href=topic-DLG_WIN_KEYBOARD.html>Optionen&rarr;Tastaturprofile</a> 
+eine Taste zur Definition ausgewählt worden ist, erscheint ein kleines 
+Fenster, in das der Wert eingegeben werden muss, der später beim Drücken 
+der entsprechenden Tastenkombination gesendet werden soll (z.B. 
+Alt+Strg+Z). Zusätzlich kann eine Aktion auf diese Tastendefinition gelegt 
+werden (siehe <a class="link" href=topic-HLP_APXCODES.html>Codes und Power Codes</a> bzw. 
+<a class="link" href=topic-DLG_WIN_ASSIST.html>Actionscode Assistent</a>).&nbsp;</p><p> 
+Unter <a class="link" href=topic-HLP_APXEMUKEYS.html>Emulationsabhängige Tastenbezeichnungen</a> finden Sie 
+auch Informationen darüber, wie nicht nur Text, sondern auch Sondertasten 
+(z.B. Esc, Enter, SysReq etc.) und ZOC Funktionen auf Tasten gelegt werden können.&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+<b>Tastenbelegungen aus anderen Quellen kopieren:</b> 
+Fall Sie Werte für Tastenbelegungen in einem anderen Programm oder im Internet 
+gefunden haben, oder wenn Sie diese per Befehl <font class="example" color="207030" face="Courier New"><span class="example">infocmp</span></font> aus der terminfo eines Unix-Systems 
+nachgeschlagen haben, zeigt die folgende Liste äquivalente Werte für die Verwendung in 
+ZOC: &nbsp;</p><p> 
+<table class="outertable" cellspacing="0" cellpadding="8"><tr><td><table class="table" cellspacing="0" cellpadding="4"> 
+<tr class="table"> 
+<td class="tablehdr"><b>Andere Software</b> 
+</td><td class="tablehdr"><b>ZOC Äquivalent</b> 
+</td></tr><tr class="table"> 
+<td class="table">^M<br>\r<br>CR<br>Return 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">^M</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(0D)</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">Esc<br>\E<br>\e<br>\033<br>\x1B 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">^[</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(1B)</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">^[[ 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">^[[</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(1B)[</span></font> <br> 
+</td></tr><tr class="table"> 
+<td class="table">CSI 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">^[[</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(1B)[</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(9B)</span></font> 
+</td></tr><tr class="table"> 
+<td class="table">SS3 
+</td><td class="table"><font class="example" color="207030" face="Courier New"><span class="example">^[O</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(1B)O</span></font> <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">^(8F)</span></font> 
+</table></td></tr></table> 
+&nbsp;</p><p> 
+Wenn Sie z.B. den Befehl <font class="example" color="207030" face="Courier New"><span class="example">infocmp</span></font> auf einem Linux-System mit 
+Xterm Emulation eingeben, sehen Sie unter anderem den Eintrag <font color="5080A0"><i>kf12=\E[24~</i></font> 
+(mehr dazu per <font class="example" color="207030" face="Courier New"><span class="example">man terminfo</span></font>), der die Belegung der F12 Taste anzeigt. 
+Der entsprechende Wert für ZOC wäre <font class="example" color="207030" face="Courier New"><span class="example">^[[24~</span></font> oder <font class="example" color="207030" face="Courier New"><span class="example">^(1B)[24~</span></font>&nbsp;</p><p> 
+Die komplette Liste der von ZOC unterstützen Control-Zeichen finden Sie hier: 
+<a class="link" href=topic-HLP_APXCODES.html>Control-Codes und Power-Codes</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

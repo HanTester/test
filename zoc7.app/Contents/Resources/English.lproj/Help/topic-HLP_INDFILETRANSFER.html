@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>IND$FILE File Transfer</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_INDFILETRANSFER"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_INDFILETRANSFER} -->
+<!-- {\footnote IND$FILE File Transfer} -->
+
+<h2>IND$FILE File Transfer</h2><p>
+
+The IND$FILE file transfer protocol is intended for use with the 
+TN3270 emulation. It allows the exchange of files with an IBM zSeries 
+host.&nbsp;</p><p> 
+While connected to a host via TN3270 you can choose Upload or Download from 
+the Transfer menu in order to send files to or receive files from the host.&nbsp;</p><p> 
+When selecting one of these functions, a dialog will pop up and ask for the 
+local and remote filenames. Local filenames can be any file directly 
+available to your computer. The remote file is the name of a dataset which 
+the host can understand (e.g. a sequential or partitioned dataset name on a 
+TSO/ISPF system like <font class="example" color="207030" face="Courier New"><span class="example">SOURCE.ASM(TEST01)</span></font> or <font class="example" color="207030" face="Courier New"><span class="example">'TXUSER.OUTPUT.LOG'</span></font> 
+(including the single quotes for full qualification).&nbsp;</p><p> 
+The transfer options govern the conversion of the data between the host and 
+local computer, e.g. insertion of CR/LF line endings, conversion between EBCDIC 
+and ASCII or remapping of the ASCII data into the currently selected TN3270 
+codepage.&nbsp;</p><p> 
+The setting for the host type modifies the command which is sent to the host 
+in order to initiate the transfer. TSO is intended for a TSO prompt (genuine 
+TSO <font color="5080A0"><i>READY</i></font> prompt or then command prompt on <font color="5080A0"><i>ISPF menu 6</i></font>), ISPF/TSO 
+can launch a file transfer from any ISPF <font color="5080A0"><i>Command ==&gt;</i></font> or <font color="5080A0"><i>Option ==&gt;</i></font> 
+prompt while VMS is (obviously) intended for VMS systems. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

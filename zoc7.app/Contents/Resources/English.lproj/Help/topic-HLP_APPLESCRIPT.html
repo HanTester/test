@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Introduction to ZOC AppleScript Programming (Mac OS X)</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_APPLESCRIPT"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_APPLESCRIPT} -->
+<!-- {\footnote Introduction to ZOC AppleScript Programming (Mac OS X)} -->
+
+<h2>Introduction to ZOC AppleScript Programming (Mac OS X)</h2><p>
+
+While not being fully AppleScript aware, ZOC offers a simple interface to 
+execute <a class="link" href=topic-HLP_APXRXCMDS.html>ZOC-Commands</a> from within an AppleScript. 
+&nbsp;</p><p> 
+In order to prepare ZOC for the processing of those, the commands need 
+to be enclosed between a <font class="example" color="207030" face="Courier New"><span class="example">start conversation</span></font> and an 
+<font class="example" color="207030" face="Courier New"><span class="example">end conversation</span></font> command. 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Calling ZOC Commands as Subroutines</b></td></tr></table> 
+The ZOC commands themselves work as if they are issued from within ZOC's 
+native scripting engine (REXX) and even the syntax is similar. To perform 
+one of those, you simply put them into the script in function call syntax 
+(the same syntax which you use to call a subroutine which resides inside 
+an AppleScript). 
+&nbsp;</p><p> 
+A simple AppleScript using a ZOC function will look like this: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+tell application "zoc7"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- prepare the current session in the first ZOC window<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- to process upcoming ZOC commands.<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;start conversation<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- send 'ls -l&lt;enter&gt;' to the remote host<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;ZocSend("ls -l^M")<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- call a ZOC function for user interaction and store the result<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;set reply to ZocRequest("Your preference?", "Apples", "Oranges")<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- release the command processing<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;end conversation<br/> 
+end tell<br/> 
+</div></span></font> 
+Please see <a class="link" href=topic-HLP_APXRXCMDS.html>the list of available commands</a> for 
+a description of parameters (this list is also available directly 
+from ZOC's help menu). The syntax and examples there are tailored 
+to ZOC's internal REXX scripting engine, but their use from within 
+an AppleScript as shown above should be self evident. 
+&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Calling ZOC Commands as via 'perform'</b></td></tr></table> 
+If you prefer to use a more AppleScript like syntax, you can also 
+execute ZOC commands through the <font class="example" color="207030" face="Courier New"><span class="example">perform</span></font> command. This 
+command takes one direct parameter (the name of the ZOC command) 
+and an array (in curly brackets) which contains the parameters 
+(if any) to the respective command. 
+&nbsp;</p><p> 
+Using this variant is equivalent to the subroutine syntax. 
+It merely provides a convenient alternative: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+tell application "zoc7"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- prepare the current session in the first ZOC window<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- to process upcoming ZOC commands.<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;start conversation<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- send 'ls -l&lt;enter&gt;' to the remote host<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;perform "ZocSend" using { "ls -l^M" }<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- call a ZOC function for user interaction and store the result<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;set reply to perform "ZocRequest" using<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;     { "Your preference?", "Apples", "Oranges" }<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;-- release the command processing<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;end conversation<br/> 
+end tell<br/> 
+</div></span></font> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

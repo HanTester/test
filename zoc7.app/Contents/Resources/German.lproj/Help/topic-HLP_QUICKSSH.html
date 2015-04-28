@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Secure Shell (SSH) Einstieg</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_QUICKSSH"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_QUICKSSH} -->
+<!-- {\footnote Secure Shell (SSH) Einstieg} -->
+
+<h2>Secure Shell (SSH) Einstieg</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Verbindungsaufbau</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Um eine Verbindung über <a class="link" href=topic-HLP_SSH.html>Secure Shell (SSH)</a> herzustellen, 
+wählen Sie im Menü <font color="5080A0"><i>Dateimenü&rarr;Neue Verbindung</i></font>.&nbsp;</p><p> 
+Im daraufhin angezeigten Dialog kann die Gegenstelle, die gewünschte Emulation (<font color="5080A0"><i>VT220</i></font> oder <font color="5080A0"><i>Xterm</i></font> 
+funktionieren in den meisten Fällen) sowie <font color="5080A0"><i>Secure Shell</i></font> als Verbindungstyp ausgewählt werden. 
+Geben Sie unter <font color="5080A0"><i>Verbinden mit</i></font> den Namen der Gegenstelle bzw. die 
+IP-Adresse an, also z.B. <font class="example" color="207030" face="Courier New"><span class="example">ssh.hogwarts.edu</span></font> oder <font class="example" color="207030" face="Courier New"><span class="example">192.168.1.1</span></font>&nbsp;</p><p> 
+Wenn der Server, zu dem Sie sich verbinden möchten, einen anderen Port als 
+22 (dem üblichen SSH-Port) verwendet, können Sie eine alternative Portnummer 
+im dafür vorgesehenen Port-Eingabefeld angeben. Wird das Feld für den Port leer 
+gelassen, wird der Standardport verwendet.&nbsp;</p><p> 
+Wenn Sie sonstige Terminal- und Fenstereinstellungen ändern möchten, klicken 
+Sie den Knopf <font color="5080A0"><i>Bearbeiten</i></font> für das <a class="link" href=topic-HLP_OPTIONS1.html>Verbindungsprofil</a>. 
+(Verbindungsprofile sind vordefinierte Sammlungen von Einstellungen die den einzelnen 
+Verbindungen zugrunde liegen.) 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Direktwahl/Icons</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Beachten Sie auch <font color="5080A0"><i>Speichern unter</i></font> Knopf. Hiermit können Sie z.B. ein 
+Icon für eine Verbindung auf der Arbeitsoberfläche erstellen oder die 
+Verbindung ins Adressbuch eintragen. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Adressbuch</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Um eine Secure Shell Gegenstelle direkt im Adressbuch anzulegen, öffnen Sie 
+<font color="5080A0"><i>Dateimenü&rarr;Adressbuch</i></font>, klicken Sie auf <font color="5080A0"><i>Neu</i></font> &nbsp;</p><p> 
+Dann geben Sie den Namen des Eintrags und den Hostnamen oder die Adresse der Gegenstelle 
+an und wählen Sie als Verbindungstyp <font color="5080A0"><i>Secure Shell</i></font> (SSH). 
+Im Adressbucheintrages kann außerdem eine Emulation und weitere Optionen für den Eintrag 
+eingestellt werden. &nbsp;</p><p> 
+Wenn Sie möchten, dass sich ZOC am Host automatisch einloggt, 
+können Sie den Benutzernamen und das Passwort im Abschnitt <font color="5080A0"><i>Login</i></font> hinterlegen. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Sicherheitswarnung</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Das Speichern des Passwortes gibt jedem Benutzer, 
+der Zugriff auf ZOC hat, die Möglichkeit, sich mit dieser Gegenstelle zu verbinden, 
+ohne das Passwort eingeben zu müssen. Bitte verwenden Sie diese Option mit Vorsicht. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Dateitransfer</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Um Dateien per Secure Shell (SSH) zu übertragen, lesen Sie bitte 
+die Beschreibung zum <a class="link" href=topic-HLP_SSHTRANSFERS.html>Secure Shell File-Transfer</a>.&nbsp;</p><p> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Verwandte Themen</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Mehr über <a class="link" href=topic-HLP_SSH.html>Secure Shell (SSH)</a> (z.B. Optionen, Hostnamen, Ports, etc.). 
+Außerdem können Sie Secure Shell (SSH) Verbindungen mit dem /SSH Parameter 
+über die <a class="link" href=topic-HLP_START_PARM.html>Kommandozeile</a> aufbauen. 
+Darüber hinaus lesen Sie bitte die Hilfe im Dialog beim Anlegen eines 
+Telefonbucheintrags. 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

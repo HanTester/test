@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Deployment, System/Network Administrators Quick Start</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_QUICKADMIN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_QUICKADMIN} -->
+<!-- {\footnote Deployment, System/Network Administrators Quick Start} -->
+
+<h2>Deployment, System/Network Administrators Quick Start</h2><p>
+
+If you are a system or network administrator and if you want to set 
+up ZOC for users in your organization the following topics will be of 
+interest in order to configure and organize the deployment.&nbsp;</p><p> 
+If you have questions beyond these topics or specific requirements, 
+please do not hesitate to ask our support. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Command Line Options</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+ZOC offers a set of <a class="link" href=topic-HLP_STARTUP.html>command line parameters</a> to run 
+it in special modes or make it perform operations directly after 
+startup. &nbsp;</p><p> 
+When checking the command line options, the options 
+<font class="example" color="207030" face="Courier New"><span class="example">/CONNECT</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/CALL</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/RUN</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/O</span></font> may be the ones of immediate interest.&nbsp;</p><p> 
+Command line parameters can be put into the shortcut icon which starts 
+ZOC or into a file named <a class="link" href=topic-HLP_START_ZOCCFG.html>commandline.ini</a> 
+(the latter could be part of a custom installation, see below). 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Configuration Files</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+If you need to replicate ZOC configurations throughout your 
+organization, the necessary files will be <font color="5080A0"><i>HostDirectory.zocini</i></font> (host 
+directory), <font color="5080A0"><i>Standard.zfg</i></font> (program options), <font color="5080A0"><i>*.ZOC</i></font> 
+(session profile), <font color="5080A0"><i>*.ZKY</i></font> (key maps) and maybe the <font color="5080A0"><i>*.ZRX</i></font> files. 
+All these files are located in the ZOC Data Folder, which can be accessed via 
+<font color="5080A0"><i>File Menu&rarr;Show Data Folder</i></font> 
+&nbsp;</p><p> 
+Additionally the file 
+<a class="link" href=topic-HLP_START_WDIR.html>Admin.ini</a> should be of special interest 
+if you want to tailor a ZOC installation in a shared environment.&nbsp;</p><p> 
+Also note the <font color="5080A0"><i>newuserprofile_english</i></font> and <font color="5080A0"><i>newuserprofile_german</i></font> folders 
+in the ZOC program folder. These contain the default configuration 
+which will be used (copied) to create the initial configuration for a 
+user on his first start. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Licensing</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Usually software license codes will be stored in the Windows 
+registry under HKLM/HKCU+Software+EmTec+ZOC7+Registration. 
+Alternately ZOC offers file based licensing and license counting 
+which can be used with custom or network installations (see below). 
+Please contact <a class="link" href=topic-HLP_CONTACT.html>EmTec support</a> for details. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Network Installation/Multi User Installation</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+ZOC can be installed on a network drives and can use shared 
+or individual configurations in read-only or write-access mode. 
+ZOC can be tailored to use host directory files, options files 
+or options directories in various locations 
+by using the <a class="link" href=topic-HLP_START_WDIR.html>Admin.ini</a> file (see the 
+ZOC directory for a sample) and/or by defining the directories 
+in <font color="5080A0"><i>Options&rarr;Program Settings</i></font> (see also 
+<a class="link" href=topic-DLG_WIN_WORKDIRNOTFOUND.html>Data Folder Selection</a>).&nbsp;</p><p> 
+Some tailoring is also possible by using 
+<a class="link" href=topic-HLP_STARTUP.html>command line options</a> together with a <font class="example" color="207030" face="Courier New"><span class="example">commandline.ini</span></font> file 
+although we strongly recommend to use the <font class="example" color="207030" face="Courier New"><span class="example">Admin.ini</span></font> file whenever possible.&nbsp;</p><p> 
+If necessary, <a class="link" href=topic-HLP_CONTACT.html>EmTec Support</a> will help you 
+to find the best network installation configuration and 
+licensing code handling option for your individual environment. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Building a Custom Setup</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+You can modify the ZOC installation to fit your special needs. The main 
+installation file (<font color="5080A0"><i>zoc_nnn.exe</i></font>) is a self extracting ZIP 
+archive. You can unzip into a temporary directory (e.g. Z:\CDINST) 
+with a standard unzip tool like INFOZIP. 
+&nbsp;</p><p> 
+There you will find two files named <font color="5080A0"><i>SETUP.CFG</i></font> and <font color="5080A0"><i>SETUP.FIL</i></font>. 
+SETUP.CFG is the installation script and controls the program folder name and 
+the icons in the Windows start menu. SETUP.FIL is a ZIP archive, 
+which contains a complete ZOC program directory including default 
+configuration files. You can replace the default configuration files in the 
+<font color="5080A0"><i>newuserprofile_english</i></font> folder or add your own files into this archive 
+(see <a class="link" href=topic-DLG_WIN_WORKDIRNOTFOUND.html>User Data Folder</a>). 
+&nbsp;</p><p> 
+Alternately you can create an 
+additional ZIP archive named <font color="5080A0"><i>CUSTOM.FIL</i></font> which will be unpacked 
+into the program directory after the files from SETUP.FIL have been 
+extracted. 
+&nbsp;</p><p> 
+Then you can burn the Z:\CDINST directory on CD or 
+make it available to licensed users in your organization as a LAN 
+resource. In both cases, the custom version will be installed 
+when the users run <font color="5080A0"><i>setup.exe</i></font> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Unattended Installation</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+The ZOC setup does not support unattended installation. However, 
+you can simply replicate a ZOC program directory from a previous 
+installation to other PCs and create the necessary icons/shortcuts 
+with your own deployment tools. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Questions?</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+If you have any further questions regarding installation, custom 
+versions or licenses please contact Markus Schmidt 
+at EmTec for <a class="link" href=topic-HLP_CONTACT.html>Support</a>. 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

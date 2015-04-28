@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Die Statuszeile</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_STATUSLINE"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_STATUSLINE} -->
+<!-- {\footnote Die Statuszeile} -->
+
+<h2>Die Statuszeile</h2><p>
+
+Die Statuszeile zeigt einige Informationen und bietet Zugriff auf die 
+entsprechenden Optionen. (Bei Verwendung eines sehr kleinen Zeichensatzes 
+kann das ZOC-Fenster so klein sein, dass einige Informationen nicht sichtbar 
+sind).&nbsp;</p><p> 
+Wenn sich die Maus länger als zwei Sekunden über einem Element der 
+Statuszeile befindet (Felder und LEDs), wird eine kleine Beschreibung 
+als Tooltip angezeigt. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Verbindungstyp Parameter</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Dieses Feld zeigt die momentan eingestellte Verbindungsmethode 
+(Verbindungstyp) und bei serieller Kommunikation die Baudrate sowie die 
+Übertragungsparameter an. Durch Anklicken wird die Dialogseite 
+<a class="link" href=topic-DLG_WIN_OPTS_DEVICE.html>Optionen&rarr;Verbindungsprofil&rarr;Verbindungstyp</a> angezeigt, in der alle 
+Verbindungsmethoden ausgewählt und konfiguriert werden können. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Emulation</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Dieses Feld zeigt die momentan aktive Bildschirmemulation an. Durch 
+Anklicken wird die Dialogseite 
+<a class="link" href=topic-DLG_WIN_OPTS_EMULATION.html>Optionen&rarr;Verbindungsprofil&rarr;Emulation</a> 
+angezeigt, in der aus einer Liste verfügbarer Emulationen ausgewählt werden 
+kann. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Transfer Protokoll</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Dieses Feld zeigt das momentan ausgewählte Übertragungsprotokoll an. 
+Durch Anklicken wird die Dialogseite 
+<a class="link" href=topic-DLG_WIN_OPTS_TRANSFER.html>Optionen&rarr;Verbindungsprofil&rarr;Dateitransfer</a> 
+angezeigt, in der alle Transferprotokolle ausgewählt und konfiguriert 
+werden können. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>LEDs</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die vier LEDs in der Statuszeile bieten zwei Funktionalitäten. 
+&nbsp;</p><p>In grüner Farbe stellen die 4 LEDs die originalen VT102-LEDs dar und werden 
+per VT102-Steuersequenzen gesteuert. Die LEDs bleiben grün, bis entweder 
+die Emulation gewechselt oder die Funktion Bildschirm rücksetzen/löschen ausgewählt wird.<br> 
+Diese beiden LEDs können 
+in <a class="link" href=topic-DLG_WIN_OPTS_WINDOW.html>Optionen&rarr;Verbindungsprofil&rarr;Fenster</a> abgeschaltet werden.<br> 
+In roter Farbe zeigen sie zusätzliche Statusinformationen an. 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LED 1</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Hellrot: Skript-Abarbeitung aktiv. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LED 2</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Blau: Tastenmodus Doorway (DOS Tasten) aktiv, Pink: AutoLogin aktiv, Grün: REXX oder AutoLogin lernen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">LED 3/4</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2">
+Empfangs/Sende-LEDs. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Logdatei</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Anzeige enthält den Namen der aktuellen Logdatei und zeigt an, 
+ob die Protokollierung ein- oder ausgeschaltet ist. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Online-Zeit</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Anzeige enthält die aktuelle Verbindungszeit. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Fenstergröße</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zeigt die Größe des Übertragungsfensters (Spalte mal Zeile). 
+bzw. Cursorposition an (einstellbar in Optionen, Programmeinstellungen, Fenster). 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

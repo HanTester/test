@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Logging Options</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_LOGGING"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_LOGGING} -->
+<!-- {\footnote Logging Options} -->
+
+<h2>Logging Options</h2><p>
+
+This window is used to define file logging parameters. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Default name</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The name defined here will be used as a default name for the logfile. 
+The name can contain absolute or relative folder paths (folders in the path, especially 
+when containing placeholders, will be created as necessary). <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+It is also possible to 
+create dynamic names and folders by using placeholders for date and time, which will 
+be substituted with their respective values when the log is opened 
+(see <a class="link" href=topic-HLP_APXCODES.html>Placeholder Codes</a> in the appendix). Examples are <font class="example" color="207030" face="Courier New"><span class="example">^+_^1^2^3.log</span></font> 
+or <font class="example" color="207030" face="Courier New"><span class="example">Host_^+\Log_^3_^2_^1.log</span></font> (the latter is a logfile in a dynamically created subfolder).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Note: Unless you supply an absolute path with the logfile name, the file will be placed 
+in the log directory which is configured in 
+<a class="link" href=topic-DLG_WIN_GLOB_FOLDERS.html>Options&rarr;Program Settings&rarr;Folders</a>. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Logging is now active</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Enable saving incoming data in the logfile. This function is identical to setting 
+checkmark near the logfile name in the status bar or to using the <font color="5080A0"><i>Log to File</i></font> entry 
+in the Logging menu. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Append data to existing logfiles</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+With this option, new data is appended to an existing logfile, rather than 
+overwriting existing files when logging starts. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Discard emulation control codes from log</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Cursor placement, colors and other screen controls for terminal emulations are 
+performed by adding invisible control codes to the data. This option controls, 
+if these codes should be added to the logfile or not (normally they are of little 
+interest to the end user). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Write time markers before each line</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This option will insert time stamps before each line of the log. The time stamps 
+will indicate, when exactly the data was received. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Log session headers</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Session headers are a few lines of extra information in the log. They contain 
+information about when a session starts, which host you connected to etc. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>DC2/DC4 control</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Some hosts are able to remotely suspend/resume logging by sending DC2 (^R) and 
+DC4 (^T) characters (the checkmark in the status line will turn gray if the 
+hosts suspends logging for you). This option enables/disables the ability of the 
+host to control the logging. 
+</table>&nbsp;<br/> 
+&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

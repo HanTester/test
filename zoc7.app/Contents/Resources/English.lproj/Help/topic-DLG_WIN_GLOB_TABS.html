@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Tabs</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_GLOB_TABS"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_GLOB_TABS} -->
+<!-- {\footnote Tabs} -->
+
+<h2>Tabs</h2><p>
+
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Perform this action when opening new tab ...</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The action which is configured here, will be performed when <i><font face="Times New Roman">additional</font></i> tabs 
+are opened through user interactions (e.g. from the menu). You can choose to 
+display the <font color="5080A0"><i>Quick Connect</i></font> or <font color="5080A0"><i>Address Book</i></font> window or you can run 
+the default startup REXX script <font class="example" color="207030" face="Courier New"><span class="example">Startup.zrx</span></font> (the script will be passed a 
+parameter of <font class="example" color="207030" face="Courier New"><span class="example">##NEWTAB##</span></font> to indicate that it was triggered through a new tab). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Close button for tabs</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This option lets you define, which of the session tabs will show a close button. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Colorful Tabs</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+If this option is active, the color from a tab's color marker will be used 
+to tint the background of the tab, the background of the user button 
+bar, the chatline and the statusbar. This helps to make switching between 
+sessions visually more distinct.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+When making a connection from the host 
+directory, a tab's color will be determined from the host directory entry's 
+icon color. This way a connection to a host from the host directory will always 
+have the same color.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+When this option is active, but when no tabs are shown (i.e. when there is only 
+a single session), the window elements are only tinted if the current connection has 
+been assigned a specific color from the host directory. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Show tabs always</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+When more than one session is opened within a ZOC Window, the program will 
+show a bar with tabs for each session. This option controls if the tabs 
+bar will remain visible when only one session is open. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Access tabs via ...</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This option lets you activate key combinations to quickly switch to the 
+first nine tabs. Under Windows the key combination is Alt+digit, on 
+Mac OS X it is Cmd+digit. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Rename tabs when receiving a Xterm terminal-title sequence</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Remote hosts can send a command to display a text in the window title. 
+When this option is active, that command will also rename the title of 
+the tab in which it was received. 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: 
+<a class="link" href=topic-HLP_OPTIONS3.html>Program Settings</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

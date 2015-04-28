@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Überblick über Farben/Zeichensätze/Fenstergröße</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_FONTCOLOR"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_FONTCOLOR} -->
+<!-- {\footnote Überblick über Farben/Zeichensätze/Fenstergröße} -->
+
+<h2>Überblick über Farben/Zeichensätze/Fenstergröße</h2><p>
+
+Da sich eine Terminalemulation in der Behandlung von Text von einer 
+Textverarbeitung unterscheidet, finden Sie im Folgenden Erklärungen 
+zu Zeichensätzen, Farben etc.&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Zeichensätze</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Zur Nutzung in einer Terminalemulation kommen nur Zeichensätze in 
+Frage, bei denen alle Zeichen die gleiche Breite aufweisen, d.h. 
+bei denen ein <font class="example" color="207030" face="Courier New"><span class="example">i</span></font> genauso breit ist wie z.B. ein <font class="example" color="207030" face="Courier New"><span class="example">W</span></font> 
+Dies ist notwendig um z.B. Tabellen korrekt darzustellen. Unter 
+Windows trifft dies z.B. auf die Zeichensätze Lucida Console oder 
+Courier New zu.&nbsp;</p><p> 
+Weiterhin ist es je nach Gegenstelle notwendig, dass die Zeichensätze 
+bestimmte Zeichen darstellen können, die z.B. zur Darstellung von 
+Linien oder Kästen notwendig sind. Die Codierung dieser Zeichen 
+ist über sog. Charactersets (Zeichentabellen) geregelt, die 
+gebräuchlichsten sind ANSI/Windows/Latin (enthält europäische 
+Umlaute, jedoch keine Grafikzeichen) und IBM/DOS (enthält Grafikzeichen, 
+jedoch nicht alle Umlaute).&nbsp;</p><p> 
+Die Einstellung erfolgt unter 
+<a class="link" href=topic-DLG_WIN_OPTS_LAYOUT.html>Verbindungsprofil&rarr;Layout</a>&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Fenstergröße</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die Anzahl der darzustellenden Zeichen hängt auch von der Gegenstelle 
+ab, üblich sind z.B. 25 Zeilen zu je 80 Zeichen. Da alle Zeichen 
+einer Schriftart eine fixe Höhe und Breite haben, ergibt sich 
+daraus ein Bereich fester Größe, der für die Darstellung benötigt 
+wird. 80x25 Zeichen dargestellt mit kleinen Zeichen 
+benötigen entsprechend weniger Platz als mit großen. Da der 
+Darstellungsbereich fix ist, kann das ZOC Fenster nicht beliebig 
+vergrößert oder verkleinert werden. ZOC bietet verschiedene 
+Einstellungen, wie mit der Größe des Darstellungsbereichs verfahren 
+werden soll, wenn die Größe des ZOC-Fensters mit der Maus geändert 
+wird, diese unterliegen aus den o.g. Gründen jedoch gewissen 
+Einschränkungen. Die Auswahl der Anzahl Zeilen/Zeichen 
+erfolgt unter <a class="link" href=topic-DLG_WIN_OPTS_TERMINAL.html>Verbindungsprofil&rarr;Terminal</a>, 
+die des Verfahrens bei Größenänderung unter 
+<a class="link" href=topic-DLG_WIN_OPTS_LAYOUT.html>Verbindungsprofil&rarr;Layout</a>&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Farben</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die meisten Emulationen basieren auf einer Palette von 16 Grundfarben. 
+Unter <a class="link" href=topic-DLG_WIN_OPTS_WINDOW.html>Verbindungsprofil&rarr;Fenster</a> 
+können Sie die Standardfarben für Text, bzw. Hintergrund auswählen. 
+Die Gegenstellen können jedoch mit Hilfe der eingestellten Emulation 
+die Darstellung auf bestimmte Farben umstellen (z.B. Standard-Gelb 
+für Hervorhebung), diese harmonieren dann mehr oder minder mit den 
+selbst gewählten Farben, da die Gegenstellen üblicherweise von 
+hellgrauem Text auf schwarzem Grund ausgehen.&nbsp;</p><p> 
+Im den o.g. Fenstereinstellungen ist es möglich die 16 Grundfarben 
+für ZOC zu verändern, das heißt es kann z.B. ein anderer Farbton 
+für hell- und dunkelgrün gewählt werden, bzw. im Extremfall grün 
+durch eine andere Farbe ersetzt werden, die immer dann dargestellt 
+wird, wenn die Gegenstelle Darstellung in grün anfordert.&nbsp;</p><p> 
+Die Emulationen 3270 und 5250 haben eigene Farbtabellen, hier wird 
+von der Gegenstelle ein Farbtyp angefordert, z.B. Standard-Textfarbe, 
+Farbe für Überschriften usw. Die wirklich darzustellenden Farben 
+(z.B. Textfarbe grün, Überschriftsfarbe türkis, usw.) sind in ZOC 
+in Farbschemata hinterlegt, deren Farben hinsichtlich guter 
+Lesbarkeit aufeinander abgestimmt sind. Eins dieser Farbschemata 
+kann unter 
+<a class="link" href=topic-DLG_WIN_OPTS_EMULATION.html>Verbindungsprofil&rarr;Emulation</a> 
+jeweils für die 3270 und 5250 
+Emulation ausgewählt werden. Die Einzelfarben können ggf. über 
+den oben erwähnten Dialog zur Änderung der globalen Farbtabelle 
+modifiziert werden, da die Schemata auch aus den 16 Grundfarben 
+zusammengestellt sind. 
+&nbsp;</p><p> 
+Siehe auch: <a class="link" href=topic-HLP_OPTIONS1.html>Verbindungsprofile</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>ZOC Konfigurieren</a> and <a class="link" href=topic-IDM_OPTS.html>Optionen-Menü</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

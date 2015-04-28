@@ -1,0 +1,114 @@
+
+---------------------------------------------------------------------------
+1) HOW TO USE ZOCXFER.ZRX
+---------------------------------------------------------------------------
+
+   The ZOCXFER.ZRX file is called before and after every file transfer.
+   Parameters identify the type of event (see table below) at which 
+   ZOCXFER.ZRX is called.  This lets you do things before and after file
+   transfers according to your needs (see examples below).
+
+
+
+---------------------------------------------------------------------------
+2) CALL PARAMETERS
+---------------------------------------------------------------------------
+
+   ----------------------------  ------------------------------------------
+   EVENT                         PARAMETER(S)
+   ----------------------------  ------------------------------------------
+   Before upload                 'PRE' 'UPLOAD' '<full filename>'
+   Before download               'PRE' 'DOWNLOAD' '<full filename>'
+   After upload                  'POST' 'UPLOAD' '<full filename>'
+   After download                'POST' 'DOWNLOAD' '<full filename>' 
+   ----------------------------  ------------------------------------------
+
+   You can split the call argument into its parts with a simple PARSE 
+   command: 
+
+      PARSE ARG WITH "'"prepost"' '"updownload"' '"file"'"
+
+   The file name is fully qualified and can be split into its parts 
+   (filepath, filename, filestem, fileext) by the following sequence 
+   of commands:
+
+      filepath= FILESPEC("Path", file);
+      filename= FILESPEC("Name", file);
+      PARSE VALUE filename WITH filestem"."fileext
+
+
+
+---------------------------------------------------------------------------
+2) RETURN VALUE
+---------------------------------------------------------------------------
+
+   In case of uploads, ZOCXFER.ZRX has to return the name of the file
+   that should be uploaded.  This can be either the name provided as a 
+   parameter, or a changed name (in case ZOCXFER.ZRX decided to upload
+   another file instead).
+
+
+
+---------------------------------------------------------------------------
+3) EXAMPLES
+---------------------------------------------------------------------------
+
+   Here are a few ideas of things that could be done in ZOCXFER.ZRX
+
+   3.1) BEFORE UPLOADS 
+
+        * Write your own up/download log with date, type and filename:
+
+            CALL LINEOUT "mylog.dat", DATE("S")||" "||updownload||" "||filename
+
+        * Automatically archive fido ".REP" files, in a special directory
+          with <YYYYMMDD>.REP as the file name:
+
+            ADDRESS CMD "cmd.exe /c COPY "||filename||" C:\REPILES\"||DATE("S")||".REP"
+
+        * if it is a ".TXT" file, use ZIP (or PGP) and upload the ZIP file
+          instead:
+
+            IF fileext=".TXT" THEN DO
+                 /* newfile will be uploaded instead (see "return newfile") */
+                 newfile= filestem||".ZIP" 
+
+                 /* run ZIP <newfile> <filename> */
+                 ADDRESS CMD "cmd.exe /c ZIP "||newfile||" "||filename
+            END
+
+
+   3.2) BEFORE DOWNLOADS 
+        
+        * Write your own up/download log with date, type and filename:
+
+            CALL LINEOUT "log.dat", DATE("S")||" "||updownload||" "||filename
+
+        * Redirect files to other directories using your own scheme by 
+          setting "newfile" to another directory and file name:
+
+            IF fileext=".ZIP" THEN DO
+                 /* download to directory C:\DOWNLOAD\ZIPFILES
+                 newfile= "C:\DOWNLOAD\ZIPFILES\"||filename
+            END
+            IF fileext=".QWK" THEN DO
+                 /* download to directory C:\DOWNLOAD\QWKFILES
+                 newfile= "C:\DOWNLOAD\QWKFILES\"||filename
+            END
+
+
+   3.3) AFTER UPLOADS 
+
+        * Automatically delete temporary files
+
+
+   3.4) AFTER DOWNLOADS 
+
+        * Automatically unzip files:
+
+            IF fileext=".ZIP" THEN DO
+                 zippath= "C:\DOWNLOAD\NEWFILES\"||filestem
+                 ADDRESS CMD "cmd.exe /c MD "||zippath
+                 ADDRESS CMD "cmd.exe /c UNZIP "||file||" "||zippath
+            END
+

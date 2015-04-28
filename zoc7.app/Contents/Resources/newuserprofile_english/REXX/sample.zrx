@@ -1,0 +1,25 @@
+/* REXX */
+/* ^^^^^^ REXX programs always begin with /* REXX */ on the first line */
+
+/* clear the screen */
+CALL ZocClearScreen
+
+SAY "This is a REXX scripting example."
+SAY 
+
+
+/* Ask user for his/her name */
+who= ZocAsk("What is your name")
+
+/* print some text to the ZOC window */
+/* (this time we're using REXX's internal SAY command) */
+SAY "Hello "||WHO||"!"
+SAY 
+SAY "Thank you for using ZOC!"
+SAY 
+SAY "For more information about REXX scripting, please"
+SAY "read the help topic at the bottom of the ZOC Script"
+SAY "menu."
+
+EXIT
+

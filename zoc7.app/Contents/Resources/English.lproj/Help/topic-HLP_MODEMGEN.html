@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Serial/Modem and Serial/Direct Overview</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_MODEMGEN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_MODEMGEN} -->
+<!-- {\footnote Serial/Modem and Serial/Direct Overview} -->
+
+<h2>Serial/Modem and Serial/Direct Overview</h2><p>
+
+This section applies to two similar connection types: <font color="5080A0"><i>Serial/Modem</i></font> and <font color="5080A0"><i>Serial/Direct</i></font>&nbsp;</p><p> 
+The purpose of Serial/Direct is to connect to gear which is hooked directly to 
+the serial port of your machine, e.g. routers, flash programming devices and such.&nbsp;</p><p> 
+The Serial/Modem method should be used to dial out to a remote location using a 
+modem which is attached to the serial port and where the modem is controlled through 
+means of AT-commands (e.g. <font color="5080A0"><i>ATDT &lt;number&gt;</i></font> to dial). &nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+The two are similar in that they work through serial ports and have almost the same 
+options, but there are two basic differences between Serial/Modem and Serial/Direct: <br> 
+1) Serial/Modem will internally issue AT commands to the attached port in order 
+to configure the modem it and to let it make the connection. Serial/Direct does not 
+send any commands or text strings by itself.<br> 
+2) Serial/Modem will operate under the assumption that 'connection' refers to a connection 
+to a remote location which the modem has made (not connecting to the serial port talking 
+to the modem itself). With Serial/Direct however, 'connection' means opening the serial 
+port in order to exchange data with the attached device itself. 
+&nbsp;</p><p> 
+For details about how to connect to a remote host via ZOC's Serial/Modem and/or 
+how to use Serial/Direct to talk to devices which are attached directly to a serial 
+port, please follow the instructions in <a class="link" href=topic-HLP_QUICKSTART.html>Quick Start Guides</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

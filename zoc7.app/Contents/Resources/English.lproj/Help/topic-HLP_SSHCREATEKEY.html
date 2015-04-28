@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Create SSH Public/Private Key Files</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_SSHCREATEKEY"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_SSHCREATEKEY} -->
+<!-- {\footnote Create SSH Public/Private Key Files} -->
+
+<h2>Create SSH Public/Private Key Files</h2><p>
+
+This function lets you create authentication files to identify 
+you with hosts that offer public/private key file authentication.&nbsp;</p><p> 
+You need to specify the length of the key in bits (usually 1024) and 
+the key type (the latter depends on your host and the SSH version which 
+the host offers).&nbsp;</p><p> 
+The passphrase is a word or short sentence which is used to protect 
+the key in order do avoid that someone who gets hold of your private 
+key file can use the key to log on with your accounts.&nbsp;</p><p> 
+After the keys are created, they are stored in two files, where the 
+public part of the key ends with the extension <font class="example" color="207030" face="Courier New"><span class="example">pub</span></font>. 
+The public part needs to be transferred to your SSH server were it is 
+usually appended to <font class="example" color="207030" face="Courier New"><span class="example">authorized_keys</span></font> file in the <font class="example" color="207030" face="Courier New"><span class="example">~/.ssh</span></font> 
+directory. The private key will need to remain in ZOC's SSH 
+directory.&nbsp;</p><p> 
+With ZOC this can be done on a Unix/Linux host using the following 
+sequence of commands: 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+cd ~/.ssh<br/> 
+rz<br/> 
+cat keyfile.pub &gt;&gt;authorized_keys<br/> 
+</div></span></font> 
+In the above example, the RZ command will cause a file upload 
+in ZOC where you can select the public key file which you just created. 
+Instead of <font color="5080A0"><i>keyfile.pub</i></font> you obviously need to use the name which 
+you have given the new file. 
+If you don't have rz installed, you can load the keyfile.pub file into 
+an editor on your local computer and copy it to the clipboard. Then edit 
+the remote <font class="example" color="207030" face="Courier New"><span class="example">authorized_keys</span></font> file (using the remote VI or EMACS via ZOC) 
+and paste the content of the clipboard to the end of the file.&nbsp;</p><p> 
+(This whole process may vary depending on the server and SSH version 
+installed on the server.)&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_SSHOPTS.html>SSH Communication&rarr;Options</a> and 
+<a class="link" href=topic-HLP_SSHOPTSGLOB.html>SSH Communication&rarr;Global Options</a>. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

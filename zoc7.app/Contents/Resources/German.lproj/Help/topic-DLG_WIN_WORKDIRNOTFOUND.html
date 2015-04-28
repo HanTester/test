@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Festlegung des Benutzerdatenordners</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_WORKDIRNOTFOUND"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_WORKDIRNOTFOUND} -->
+<!-- {\footnote Festlegung des Benutzerdatenordners} -->
+
+<h2>Festlegung des Benutzerdatenordners</h2><p>
+
+Im Normalfall speichert ZOC alle Konfigurationsdateien in einem zentralen 
+Ordner, der standardmäßig im "Eigene Dateien" Ordner des Benutzers liegt.&nbsp;</p><p> 
+Wenn der Order beim Start von ZOC nicht existiert (z.B. weil ZOC zum 
+ersten Mal gestartet wurde oder weil der Benutzer den Ordner umbenannt 
+hat), fragt ZOC, ob eine neue Konfiguration erstellt werden oder 
+die Position des Benutzerdatenordners verändert werden soll. Bei 
+Erstellen einer Neukonfiguration werden die Daten aus dem Ordner 
+<font class="example" color="207030" face="Courier New"><span class="example">newusertemplate</span></font> im ZOC Programmverzeichnis in den neu 
+erstellten Ordner umkopiert (Administratoren können im Ordner 
+<font class="example" color="207030" face="Courier New"><span class="example">newusertemplate</span></font> vorkonfigurierte Dateien für die 
+Benutzer hinterlegen).&nbsp;</p><p> 
+Die Basis für die Auswahl des Benutzerdatenordners ist die Einstellung 
+<font class="example" color="207030" face="Courier New"><span class="example">ConfigDataFolder</span></font> in der Datei <font color="5080A0"><i>admin.ini</i></font>, die im 
+ZOC Programmverzeichnis liegt. Für Einbenutzerinstallationen legt 
+diese Einstellung immer die Position des Benutzerdatenordners, außer 
+wenn über den <font class="example" color="207030" face="Courier New"><span class="example">/WD</span></font> Kommandozeilenparameter eine andere 
+Angabe gemacht wurde.&nbsp;</p><p> 
+Wenn der Benutzer die Position des Datenordners ändert (z.B. wie 
+oben beschrieben durch Umbenennen). wird die neue Position in die 
+<font color="5080A0"><i>admin.ini</i></font> Datei zurückgeschrieben.&nbsp;</p><p> 
+Für Mehrbenutzerinstallationen (d.h. Installationen, bei denen in der 
+<font color="5080A0"><i>admin.ini</i></font> die Einstellung <font class="example" color="207030" face="Courier New"><span class="example">SharedInstall=yes</span></font> eingetragen 
+ist), dient die <font color="5080A0"><i>admin.ini</i></font> zur Festlegung des Standardordners 
+für den Benutzer. Wird der Ordner vom Benutzer verschoben, wird die 
+neue Position nicht in die <font color="5080A0"><i>admin.ini</i></font> eingetragen (da dies 
+alle Benutzer betreffen würde), sondern stattdessen in der Registry 
+unter <font class="example" color="207030" face="Courier New"><span class="example">HKCU+Software+EmTec+UserConfigFolder</span></font> gespeichert.&nbsp;</p><p> 
+Das Ändern des Ordners mit Speicherung in der Registry kann 
+in der <font color="5080A0"><i>admin.ini</i></font> über die Einstellung 
+<font class="example" color="207030" face="Courier New"><span class="example">DisableRegistryConfigFolder=yes</span></font> unterbunden werden. 
+(Hinweis: Auch für das Unterbinden der Angabe über den /WD: 
+Kommandozeilenparameter existiert dort eine Option.)&nbsp;</p><p> 
+Das bedeutet für den Startvorgang von ZOC: 
+Zuerst wird <font class="example" color="207030" face="Courier New"><span class="example">/WD</span></font> Parameter von der Kommandozeile geprüft. 
+Ist der nicht vorhanden (oder unterbunden) wird in einer Mehrbenutzerinstallation 
+als nächstes der Eintrag <font class="example" color="207030" face="Courier New"><span class="example">UserConfigFolder</span></font> in der Registry geprüft.. 
+Ist dieser auch nicht vorhanden (oder deaktiviert), oder handelt es sich 
+um eine Einzelinstallation, legt die Einstellung <font class="example" color="207030" face="Courier New"><span class="example">ConfigDataFolder</span></font> 
+aus der <font color="5080A0"><i>admin.ini</i></font> das Benutzerdatenverzeichnis fest.&nbsp;</p><p> 
+Als nächstes wird dann die ZOC Konfigurationsdatei <font class="example" color="207030" face="Courier New"><span class="example">Standard.zfg</span></font> 
+geladen, die sich normalerweise im Benutzerdatenordner befindet, für 
+die aber in der <font color="5080A0"><i>admin.ini</i></font> auch eine andere Position (z.B. 
+in einem gemeinsamen Ordner auf dem Netzwerk) angegeben werden kann. 
+Diese Datei enthält dann die Ordnerangaben für die weiteren ZOC Dateien 
+wie Logs, Skripte, Standardordner für Up- und Download usw.&nbsp;</p><p> 
+Dieser Prozess erlaubt ein Maximum an Flexibilität, wenn es darum geht, 
+die Datenstruktur festzulegen. Die Bandbreite reicht hierbei von 
+Einzelinstallationen über Mehrbenutzerinstallation mit individuellen Dateien 
+auf Basis einer Vorgabe vom Administrator (über die Dateien im 
+<font class="example" color="207030" face="Courier New"><span class="example">newusertemplate</span></font>), zu gemischten Installationen (gemeinsame 
+<font class="example" color="207030" face="Courier New"><span class="example">Standard.zfg</span></font> die für die Arbeitsdateien auf Ordner im 
+Bereich der individuellen Nutzer zeigt) bis zu 
+komplett gemeinsamen Daten (gemeinsamer Benutzerdatenordner im Netz). 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Local Shell Overview</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_LOCALGEN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_LOCALGEN} -->
+<!-- {\footnote Local Shell Overview} -->
+
+<h2>Local Shell Overview</h2><p>
+
+The local shell communication type will create a pseudo connection which opens a shell 
+on the local computer. This way you can open local terminal sessions within 
+ZOC, thus replacing the Mac OS X terminal.&nbsp;</p><p> 
+Since ZOC is essentially connection related, when using Local Shell you need 
+to specifiy a destination to connect to. Valid destinations are either 
+<font class="example" color="207030" face="Courier New"><span class="example">localhost</span></font> or <font class="example" color="207030" face="Courier New"><span class="example">127.0.0.1</span></font> or the name of any system command in 
+shebang format, e.g. <font class="example" color="207030" face="Courier New"><span class="example">#!/usr/bin/login -p harry</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">#!/usr/bin/ksh</span></font> or 
+<font class="example" color="207030" face="Courier New"><span class="example">#!/usr/bin/ssh secure.hogwarts.edu</span></font> (only few system commands actually 
+will make sense here, they should at least be interactive).&nbsp;</p><p> 
+If not being passed a system command, the Local Shell handler will run 
+the command from the <a class="link" href=topic-HLP_LOCALOPTS.html>Local Shell Settings</a> which by 
+default is <font color="5080A0"><i>/usr/bin/login</i></font>. 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

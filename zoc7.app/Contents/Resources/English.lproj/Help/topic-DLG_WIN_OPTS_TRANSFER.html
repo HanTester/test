@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>File Transfer Options</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_TRANSFER"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_TRANSFER} -->
+<!-- {\footnote File Transfer Options} -->
+
+<h2>File Transfer Options</h2><p>
+
+These settings define the characteristics of file transfers. 
+They are accessed via the Options menu or by clicking the file transfer protocol 
+button in the status line. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>PROTOCOL</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Select X- Y- or Zmodem protocol or any of the other protocols offered here. 
+The selection will become the active file transfer protocol whenever this 
+session profile is activated. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>ZMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZModem is one of the most commonly used file transfer protocols. It allows the 
+transfer of files over almost any kind of connection and handles error-correction, bulk 
+file transfers and preservation of file attributes very well. Whenever available, the 
+use of Zmodem should be strongly considered.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+See <a class="link" href=topic-HLP_ZMODEMTRANSFER.html>Zmodem Transfer</a> for a description of its options and how Zmodem is 
+used. There is also information about how it can be installed on Linux computers. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SCP</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The SCP file transfer protocol will only work with SSH connections and all you need to do 
+to send or receive a file to the remote host, is to log on to a server and to select 
+<font color="5080A0"><i>Upload</i></font> or <font color="5080A0"><i>Download</i></font> from the Transfer menu (see <a class="link" href=topic-HLP_SCPTRANSFER.html>SCP Transfer</a>). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>KERMIT</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Kermit is an ancient file transfer protocol. Benefits are wide cross-platform 
+availability and good reliability over bad connections.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Normally the standard option values should work fine (press the Reset button 
+to set these). The block size can be any number from 80 to 9024. 
+If you are working in an environment that allows only 7bit transmissions, 
+uncheck the 8bit option. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>IND$FILE</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The IND$FILE file transfer protocol is for use in conjunction with TN3270 host 
+connections to IBM mainframes (see <a class="link" href=topic-HLP_INDFILETRANSFER.html>IND$FILE Transfer</a> for details). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>YMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Some systems offer protocols named Ymodem and Ymodem batch, 
+which really are Xmodem with Block-1024 (incorrectly named Ymodem) 
+and Ymodem (incorrectly named Ymodem-Batch). In those cases, set 
+ZOC to Xmodem with 1KB-Blocks for Ymodem and/or set ZOC 
+to Ymodem when the host requires Ymodem-Batch. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>XMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+These options only apply when the Xmodem protocol is selected. 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">CRC on</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+CRC is controlled by the receiver of a file. CRC can be used instead 
+of the slightly less reliable Xmodem checksums. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Blocksize 1024</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+With this option Xmodem uses blocks of 1024 instead of 128 bytes. Some 
+systems falsely call this Ymodem. The block size is controlled by the 
+sender. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Chop pads</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+If enabled, ZOC tries to remove padding bytes at the end when receiving a file. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

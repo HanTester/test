@@ -1,0 +1,155 @@
+
+
+[TIP]
+There are various ways to quickly access your commonly used
+host directory entries:
+
+Edit the host directory entry, go to the Shortcut
+tab and select the options to either add the entry to the file 
+menu or to the list of user buttons (the row of buttons below 
+the toolbar) or to create an icon on your desktop.
+
+[TIP]
+A click into the fields of the status bar will bring up the
+corresponding configuration dialog (e.g. Devices or Emulation)
+from the Session Profile.  You can also manipulate Session 
+Profiles from the Options menu.
+
+[TIP]
+The speed of sending text that is pasted into the window can be 
+configured in the Transfer tab of the Session Profile.
+
+[TIP]
+When connected to a host over a slow connection, you can use
+the Local Typing function (Alt+C) from the View menu to type commands
+locally before sending them.  This function also lets you send 
+a command to multiple open sessions.
+
+[TIP]
+You can access your ZOC configuration/data files from the File menu
+(Show Data Folder) and you will find additional documentation and 
+scripting samples there.
+
+[TIP]
+To relocate the folder where your ZOC files are stored, simply 
+quit ZOC and move the folder to a different place.
+
+On the next start, ZOC will find that the folder is no longer
+there and will ask you to point it to the new location.
+
+[TIP]
+If you have multiple concurrent connections open, you can switch
+between the tabs by pressing Ctrl+Tab.
+
+[TIP]
+Did you notice that you can display an overview of all tabs 
+as thumbnails (Shift+Esc or click the icon to the far right of the 
+tabs bar) and that you can select the thumbnails with the keyboard?
+
+[TIP]
+If you select a colored icon for a connection in the host directory, 
+that icon will be used for the ZOC window when the connection is active.
+It will also determine the color marker for session tabs when you have
+multiple connections open.  
+
+[TIP]
+If you enable the option for Colorful Tabs (Program Settings) the 
+visual difference between tabbed sessions will be even more prominent.
+For connections from the host directory, the color of the icon of the
+connection will be used.
+
+[TIP]
+The functions 'Scroll back in window' and 'Browse Capture' from the
+View menu let you look at your current screen and at text which scrolled
+by at the same time.
+
+[TIP]
+With the Alt key pressed you can mark rectangular parts of the screen.
+
+[TIP]
+Did you notice that you can resize the host directory dialog?
+
+[TIP]
+Most of the confirmation dialogs can be disabled in Options menu, 
+Program Settings, Confirmations.
+
+[TIP]
+When editing entries in the host directory, the entry's "Window" tab 
+lets you control if the connection is opened in a new tabs or 
+even in a new window.
+
+[TIP]
+If you are using Secure Shell (SSH) connections, you can transfer
+files to and from the remote host by using the Zmodem or SCP file 
+transfer (see the help topic at the bottom of the Transfer menu).
+
+[TIP]
+You can disable connection type (devices) and emulations which 
+you do not need by going to the Options&rarr.Program Settings&rarr.Subsystems 
+dialog.
+
+[TIP]
+If you press Alt+C, this will show a field at the bottom of the
+main window where you can type and edit text before sending it 
+to the host.
+
+The Local Typing field also has a history (cursor up/down).
+
+[TIP]
+You can have entirely different screen layouts for various hosts.
+The screen layout is stored in the Session Profile (see Options menu).
+
+You can assign each host in the host directory a different
+session profile (or use the same session profile for similar hosts).
+
+[TIP]
+A Right mouse button click on the toolbar opens the toolbar 
+customization dialog.  This will let you add or remove buttons 
+in the toolbar.
+
+[TIP]
+You can automate a login to a host simply by setting to the option
+to record the login in the Login tab of the entry in the host 
+directory.
+
+[TIP]
+Clicking the right mouse button on the userbar opens the userbar 
+definition dialog where you can make your own custom buttons to 
+perform common tasks.
+
+[TIP]
+If you mark text on the screen within the same line while holding
+the Shift key down, the marked text will be immediately pasted to
+the remote host.
+
+[TIP]
+Clicking the right mouse button on the status bar, opens a popup 
+menu of all options menu choices.
+
+[TIP]
+You can configure your preferred mouse button actions in Options, 
+Program Settings.  E.g. a click of the right mouse button on the 
+main window can open a popup menu or paste text from the clipboard.  
+
+[TIP]
+A click of the right mouse button in the list of host directory 
+entries opens a popup menu with actions for the clicked entry.
+
+[TIP]
+Paste-Quoting text (Edit menu) while holding the Ctrl key pressed, 
+reformats the text to fit the screen width.
+
+[TIP]
+The snippets window (Options, Window) captures useful stuff (like file 
+names, internet addresses, etc.) for you.
+
+[TIP]
+The keyboard dialog allows different mappings for keys according to
+the state of the scroll-lock key.  This way you could create totally 
+different keyboards and switch between them by use of scroll-lock.
+
+[TIP]
+If you keep the mouse over one of the LEDs in the status bar for some
+time, a description of the led will appear.  This works for the buttons 
+in the toolbar and userbar also.
+

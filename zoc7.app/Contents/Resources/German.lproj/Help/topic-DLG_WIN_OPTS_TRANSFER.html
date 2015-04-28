@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Dateitransfer Einstellungen</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_TRANSFER"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_TRANSFER} -->
+<!-- {\footnote Dateitransfer Einstellungen} -->
+
+<h2>Dateitransfer Einstellungen</h2><p>
+
+Hier können alle Parameter für die Dateiübertragung eingestellt werden. 
+Diese Seite kann auch durch Klicken auf das Protokoll-Klickfeld in der 
+Statuszeile geöffnet werden. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>PROTOKOLL</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Es stehen X- Y-, Zmodem und einige andere Protokoll zur Auswahl. 
+Zmodem ist davon das komfortabelste und das am weitesten verbreitetste Protokoll. 
+<br> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>ZMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zmodem ist eines der meistbenutzten Dateiübertragungsprotokolle. Es erlaubt 
+den Austausch von Dateien über nahezu jede Art von Verbindung und ist für 
+Übertragung mehrerer Dateien, Erhalt von Dateiattributen und Korrektur 
+von Fehlern bei schlechten Leitungen sind Kennzeichen von Zmodem. Wo immer es 
+verfügbar ist, sollte die Verwendung von Zmodem dringend erwogen werden. <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Siehe <a class="link" href=topic-HLP_ZMODEMTRANSFER.html>Zmodem Dateiübertragung</a> für die Beschreibung 
+der Installation und Verwendung Zmodem bzw. Liste der Zmodem Optionen. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SCP</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Für Filetransfer via SCP gibt es keine weiteren Einstellungen. Wenn SCP 
+ausgewählt ist und Sie mit einem Server via SSH Verbunden sind, wählen 
+Sie aus dem Transfermenü die Punkte <font color="5080A0"><i>Upload</i></font> oder <font color="5080A0"><i>Download</i></font> 
+um eine Datei zu übertragen (siehe auch <a class="link" href=topic-HLP_SCPTRANSFER.html>SCP Dateitransfer</a>). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>KERMIT</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Kermit ist ein Protokoll, dessen Vorteile in der weiten Verbreitung auf 
+nahezu allen Plattformen und guten Zuverlässigkeit bei schlechten Verbindungen 
+liegen.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Im Normalfall sollten die Standardwerte der Einstellungen, die mit dem Resetknopf 
+wiederhergestellt werden können, funktionieren. Die verwendete Blockgröße 
+kann zwischen 80 und 9024 Zeichen betragen, auf 7-bit-Leitungen muss die 
+8-Bit-Einstellung abgeschaltet werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>IND$FILE</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Das IND$FILE Dateiübertragungsprotokoll wird in mit TN3270 Verbindungen 
+verwendet, um Dateien mit IBM Großrechnern auszutauschen 
+(siehe <a class="link" href=topic-HLP_INDFILETRANSFER.html>IND$FILE Transfer</a> für weitere Details). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>YMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Einige Systeme bieten fälschlicherweise die 
+Begriffe Ymodem für Xmodem mit Block-1024 und Ymodem Batch für 
+normales Ymodem an. In diesen Fällen wählen Sie in ZOC statt Ymodem 
+das Protokoll X-Modem und aktivieren die Option "1KB Blöcke", bzw. 
+wählen Ymodem (wenn Ymodem-Batch verlangt wird). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>XMODEM</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Einstellungen sind nur bei aktiver Xmodem-Einstellung wirksam. 
+<table><tr><td><img src='dummy.gif' border='0' width='40' height='12' /></td><td></td></tr> 
+<tr><td class="pthead2" colspan=2><b><font color="#505060">CRC ein</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+CRC wird vom Empfänger gesteuert. Es werden 16-Bit CRC-Prüfsummen anstatt der 
+etwas fehleranfälligeren 8-Bit Xmodem-Prüfsummen verwendet. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">1KB Blöcke</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Mit dieser Funktion verwendet ZOC Blocklängen von 1024 Zeichen anstelle 
+von 128. Einige Systeme nennen diese Option fälschlicherweise Ymodem. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead2" colspan=2><b><font color="#505060">Chop ein</font></b></td></tr>
+<tr><td class="ptindent2">&nbsp;</td>	 <td class="ptbody2"> 
+Wenn aktiv, versucht ZOC, überflüssige Füllzeichen am Ende der 
+übertragenen Datei zu entfernen. 
+</table><img src='dummy.gif' border='0' width='40' height='12' /><br/> 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+Siehe auch: <a class="link" href=topic-HLP_OPTIONS1.html>Verbindungsprofile</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>ZOC Konfigurieren</a> und <a class="link" href=topic-IDM_OPTS.html>Optionen-Menü</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

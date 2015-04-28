@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Text upload and Clipboard Sending Parameters</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_TEXTSEND"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_TEXTSEND} -->
+<!-- {\footnote Text upload and Clipboard Sending Parameters} -->
+
+<h2>Text upload and Clipboard Sending Parameters</h2><p>
+
+The options below are used for the functions <font color="5080A0"><i>Send Text File</i></font>, <font color="5080A0"><i>Send Binary File</i></font> 
+and for pasting from the clipboard. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Delay</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sets the time (in milliseconds) to wait after sending a character and 
+after each line. This is useful if the host cannot keep up with fast 
+input (e.g. in online editors).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Note: The line delay is sent in addition to the character delay. 
+If the character delay is zero or if you are sending a binary file, then 
+the line delay will be ignored. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Line End Character</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Sets the form, in which end of line characters are transmitted to the remote machine. 
+When set to <font color="5080A0"><i>AsIs</i></font>, characters will be sent as they appear in the file, 
+otherwise either only <font color="5080A0"><i>CR</i></font> or <font color="5080A0"><i>LF</i></font> or <font color="5080A0"><i>CR/LF</i></font> is sent. <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Note: End of line translation is ignored when sending binary files. 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+See also: <a class="link" href=topic-HLP_OPTIONS1.html>Session Profiles</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>Customizing ZOC</a> and <a class="link" href=topic-IDM_OPTS.html>Options Menu</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

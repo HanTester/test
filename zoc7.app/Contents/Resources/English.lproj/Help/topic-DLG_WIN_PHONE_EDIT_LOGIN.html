@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Login</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_PHONE_EDIT_LOGIN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_PHONE_EDIT_LOGIN} -->
+<!-- {\footnote Login} -->
+
+<h2>Login</h2><p>
+
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Username</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Here you can set a username for login at your host. The text <font class="example" color="207030" face="Courier New"><span class="example">%USERNAME%</span></font> or 
+<font class="example" color="207030" face="Courier New"><span class="example">%USERNAMELWR%</span></font> or <font class="example" color="207030" face="Courier New"><span class="example">%USERNAMEUPR%</span></font> to log in using the same username that 
+was used to log on to your workstation (the latter two placeholders 
+are variants of the username translated to lower or upper case characters). 
+This field will only be used if you are using Secure Shell or Rlogin as the connection 
+method for this host, or if you are recording AutoLogin sequences (see below). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Password</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+You can add a password for the host here. The password will be used for Secure Shell 
+connections and AutoLogins.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Also, if you connect to the host you can send the password by defining 
+a macro key as <font class="example" color="207030" face="Courier New"><span class="example">^&</span></font>. For example, if your F12 key is set to send <font class="example" color="207030" face="Courier New"><span class="example">^&</span></font>, 
+you can answer the password prompt of the host by pressing F12 (see 
+<a class="link" href=topic-DLG_WIN_OPTS_USERBAR.html>Options&rarr;Session Profile&rarr;Macro Keys</a>).<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+However, in most cases it will be more convenient to let the AutoLogin feature 
+(see below) handle the entire login. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>SSH Authentication Files</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+You can select a specific SSH identity file (private key) for login with 
+the SSH hosts. It is also possible to use standard identity files for 
+the login (these standard files are selected if you go to 
+<font color="5080A0"><i>Options&rarr;Session Profile&rarr;Connection Type&rarr;SSH&rarr;Global authentication files</i></font>). 
+<br/>&nbsp;<br/>
+<b>Note: </b>SSH Authentication is only available if you enter a username for login. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Login Script/Arg</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+The name of a <a class="link" href=topic-HLP_REXX.html>REXX</a> script to be executed after ZOC has made 
+a connection to the given host. An optional argument can also be supplied, 
+which will be passed to the script and which the REXX script can access in 
+the form <font class="example" color="207030" face="Courier New"><span class="example">loginarg= ARG(1)</span></font><br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Such a script can be used to log you into the host automatically and/or to perform 
+more complex automated tasks after being logged in. However, for simple login 
+procedures (sending user name and password), the AutoLogin feature (see below) is usually 
+sufficient.<br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+If both an AutoLogin procedure and a REXX script are given, ZOC 
+will first log in using the AutoLogin procedure and will then start the 
+REXX script. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>AutoLogin Sequence</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+This field contains a sequence of events which automatically logs you on to the host. 
+The events are either Wait=&lt;something&gt; or Send=&lt;something&gt;. Since most logins can be 
+handled in a form like 'wait for this, then send that', ZOC offers this simple 
+method to perform automatic logins without having to deal with the more complex REXX 
+programming.<br> 
+<br/>&nbsp;<br/>
+<b>Note: </b>This method is not necessary for SSH connections, because SSH 
+offers a standard procedure to exchange user credentials. 
+To send special keys like Enter or ESC in an event, you can use control codes as 
+described in the <a class="link" href=topic-HLP_APXCODES.html>Appendix</a>. The most common 
+control codes are <font class="example" color="207030" face="Courier New"><span class="example">^[</span></font> for Esc, <font class="example" color="207030" face="Courier New"><span class="example">^M</span></font> for Enter, 
+<font class="example" color="207030" face="Courier New"><span class="example">^&</span></font> for the password and <font class="example" color="207030" face="Courier New"><span class="example">^%</span></font> for the username 
+(assuming that username and password were provided in the upper part of this dialog).<br> 
+<br/>&nbsp;<br/><b><font color="404060">Example</font>:</b><font class="example" color="207030" face="Courier New"><span class="example"><div class="lines"> 
+Wait=Select Host:<br/> 
+Send=Server^M<br/> 
+Wait=login:<br/> 
+Send=^%^M<br/> 
+Wait=password:<br/> 
+Send=^&^M<br/> 
+</div></span></font> 
+&nbsp;</p><p> 
+What this sample does: Wait until the remote host sends <font class="example" color="207030" face="Courier New"><span class="example">Select Host</span></font> 
+then simulate keystrokes for <font class="example" color="207030" face="Courier New"><span class="example">Server</span></font> and the Enter key (<font class="example" color="207030" face="Courier New"><span class="example">^M</span></font>). 
+Then wait for the host to send <font class="example" color="207030" face="Courier New"><span class="example">login</span></font> and answer by sending the 
+username field from this dialog and the Enter key. Having done that, 
+wait for the <font class="example" color="207030" face="Courier New"><span class="example">password</span></font> prompt and send the password from this 
+dialog to the host.. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Record keystrokes on next login</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+It is not necessary to write the step by step AutoLogin procedure by hand. 
+To let ZOC record the sequence of events, please enable this option and 
+enter the username and password which you are going to use for the login 
+into the fields in the upper part of the dialog and save the entry. Then connect to 
+it from the host directory main dialog and log into the host manually. 
+After you are logged in, select <font color="5080A0"><i>Stop Recording</i></font> from the Script menu 
+to let ZOC fill the AutoLogin field for you. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

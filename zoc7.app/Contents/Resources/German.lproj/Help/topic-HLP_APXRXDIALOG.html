@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>ZOC-REXX ZocDialog-Vorlagen</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_APXRXDIALOG"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_APXRXDIALOG} -->
+<!-- {\footnote ZOC-REXX ZocDialog-Vorlagen} -->
+
+<h2>ZOC-REXX ZocDialog-Vorlagen</h2><p>
+
+Eine Vorlage für den Befehl <font class="example" color="207030" face="Courier New"><span class="example"><a class="link" href=topic-HLP_APXRXCMDS.html#ZocDialog>ZocDialog</a></span></font> bezeichnet eine Textdatei, welche eine Liste und 
+Beschreibung aller Elemente, die im Dialogfenster erscheinen sollen, enthält. 
+&nbsp;</p><p> 
+Das grundsätzliche Format eines Dialog-Vorlagen Eintrages ist <br> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">&lt;typ&gt; &lt;element-id&gt; = "&lt;text&gt;", &lt;wert1&gt;, &lt;wert2&gt;[, &lt;wert3&gt;[, &lt;&gt;wert4&gt;]]</span></font><br> 
+z.B. <br> 
+<font class="example" color="207030" face="Courier New"><span class="example">DIALOG IDDLG0 = "Bitte Benutzernamen eingeben", 260,260</span></font>&nbsp;</p><p> 
+Der <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">typ</span></font> eines Eintrages wird durch das erste Wort dieses Eintrags in Großschreibung bestimmt. 
+Die <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">element-id</span></font> ist ein vom Benutzer definierter Text, der dazu verwendet werden kann, nach Schließen 
+des Dialogs den Wert des entsprechenden Elements abzufragen (z.B. um dann die Eingabe des Benutzers aus 
+einem Textfeld auszulesen). Der Wert von <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">text</span></font> hängt vom Typ des Elements ab und enthält 
+üblicherweise entweder die Bezeichnung oder den Inhalt des Elements. Abhängig 
+vom Typ des Elements geben <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">wert1/wert2</span></font> entweder die x/y-Koordinate innerhalb des Fensters oder dessen 
+Größe an. Die Werte <font class="syntax" color="4060A0" face="Courier New"><span class="syntax">wert3/wert4</span></font> bestimmen die Größe (Breite/Höhe) derjenigen Elemente, für die wert1/wert2 
+zur Angabe der Position verwendet wird. Wird für Breite und Höhe kein Wert angegeben, erhält das Element eine 
+Standardgröße.&nbsp;</p><p> 
+Der Interpreter für obige Befehle ist sehr einfach gehalten und nicht fehlertolerant. Bitte treffen Sie keine 
+Annahmen über mögliche andere Schreibweisen, die über die hier beschriebenen Beispiele hinausgehen, und nehmen Sie sich 
+keine syntaktischen Freiheiten. Nur ein Dialog-Element pro Zeile ist zulässig. Zeilen, die mit <font class="example" color="207030" face="Courier New"><span class="example">//</span></font> 
+oder <font class="example" color="207030" face="Courier New"><span class="example">--</span></font> oder <font class="example" color="207030" face="Courier New"><span class="example">#</span></font> beginnen, werden als Kommentarzeile behandelt. Leerzeilen sind erlaubt. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+Liste der Möglichen Einträge in Dialogvorlagen: 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>DIALOG</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DIALOG &lt;element-id&gt; = "&lt;titel&gt;", &lt;breite&gt;, &lt;hoehe&gt;</span></font><br> 
+Bestimmt den Fenstertitel und die Größe des Dialogs. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>STATICTEXT</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">STATICTEXT &lt;element-id&gt; = "&lt;text&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;[, &lt;breite&gt;[, &lt;hoehe&gt;]]</span></font><br> 
+Erstellt ein beschreibendes Text-Element (z.B. ein Label). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>EDITTEXT</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">EDITTEXT &lt;element-id&gt; = "&lt;inhalt&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;[, &lt;breite&gt;[, &lt;hoehe&gt;]]</span></font><br> 
+Erstellt ein Eingabefeld für Text, vorbelegt mit dem angegebenen Inhalt. Die element-id kann dazu 
+verwendet werden, den Inhalt des Textfeldes auszulesen, nachdem der Dialog verarbeitet wurde. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>CHECKBOX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">CHECKBOX &lt;element-id&gt; = "&lt;titel&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;[, &lt;breite&gt;[, &lt;hoehe&gt;]]</span></font><br> 
+Erstellt eine Checkbox mit entsprechender Überschrift an der angebebenen Position. Die element-id kann dazu 
+verwendet werden, den Zustand der Checkbox abzufragen, nachdem der Dialog verarbeitet wurde. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>GROUPBOX</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">GROUPBOX &lt;element-id&gt; = "&lt;titel&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;, &lt;breite&gt;, &lt;hoehe&gt;</span></font><br> 
+Erstellt eine rechteckige Gruppierung innerhalb des Fensters, um Inhalt zu gruppieren oder herauszustellen. 
+Es sind maximal drei Gruppierungen pro Dialog möglich. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>DROPDOWNLIST</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">DROPDOWNLIST &lt;element-id&gt; = "&lt;inhalt&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;, &lt;breite&gt;, &lt;hoehe&gt;</span></font><br> 
+Erstellt ein Mehrfachauswahl-Feld mit einer Liste von Einträgen. Die einzelnen Einträge werden über das Inhalt-Feld, 
+getrennt mit je einem vertikalem Strich, angegeben (z.B. <font class="example" color="207030" face="Courier New"><span class="example">"Ja|Nein|Vielleicht"</span></font>). Sollte ein Eintrag mit einem 
+Sternzeichen beginnen, wird dieser Eintrag vorselektiert. Die element-id kann dazu 
+verwendet werden, den Namen des ausgewählten Eintrags abzufragen, nachdem der Dialog verarbeitet wurde. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>PUSHBUTTON</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+<font class="syntax" color="4060A0" face="Courier New"><span class="syntax">PUSHBUTTON &lt;element-id&gt; = "&lt;text&gt;", &lt;x-pos&gt;, &lt;y-pos&gt;[, &lt;breite&gt;[, &lt;hoehe&gt;]]</span></font><br> 
+Erstellt eine Schaltfläche, z.B. zum Schließen des Dialogs bei Betätigung. Die Schaltfläche, die zum Schließen des 
+Dialogs verwendet wurde, liefert bei Abfrage mit ZocDialog GET und der element-id den Wert "1" zurück. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>DEFPUSHBUTTON</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Identisch mit PUSHBUTTON, erstellt aber eine Schaltfläche, die als Standard-Schaltfläche markiert ist (DEFBUTTON 
+wird üblicherweise für OK- oder Fertig-Schaltflächen verwendet). 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+<b>Beispiel: test.dlg</b> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+// Nachfolgend die erste Dialog-Vorlage innerhalb der Vorlage-Datei test.dlg<br/> 
+DIALOG MSG1 = "Einfacher Beispiel-Dialog", 260,140<br/> 
+STATICTEXT ST = "Glückwunsch! Dies ist Ihr erster Dialog.", 12,12, 100,60<br/> 
+DEFPUSHBUTTON P1 = "OK", 120,70<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+// Hier eine weitere Dialog-Vorlage innerhalb der gleichen Vorlage-Datei<br/> 
+DIALOG MAIN = "Beispiel-Dialog", 260,260<br/> 
+STATICTEXT ST1 = "Ihr Name", 12,12, 100<br/> 
+EDITTEXT ED1 = "Harry", 112,10<br/> 
+CHECKBOX CB1 = "Sind Sie sicher", 14,40, 100<br/> 
+GROUPBOX G1 = "Ihre Lieblingsfarbe?", 12, 80, 200,90<br/> 
+DROPDOWNLIST DD1= "Rot|*Grün|Blau", 20,105, 170,100<br/> 
+DEFPUSHBUTTON P1 = "OK", 12, 190, 80<br/> 
+PUSHBUTTON P2 = "Abbruch", 112, 190, 80<br/> 
+</div></span></font> 
+&nbsp;</p><p> 
+<b>Beispiel: Verwendung der obigen Vorlage innerhalb eines Scripts</b> 
+<br/><font class="example" color="207030" face="Courier New"><span class="example">&nbsp;<div class="lines"> 
+-- Anzeigen einer einfachen Nachricht<br/> 
+CALL ZocDialog "SHOW", "MSG1@test.dlg"<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;<br/> 
+-- Anzeiges eines Dialogs unf Prüfung der eingegebenen Werte<br/> 
+dlgrc= ZocDialog("SHOW", "MAIN@test.dlg")<br/> 
+SAY "&gt;"dlgrc<br/> 
+IF dlgrc=="##OK##" THEN DO<br/> 
+&nbsp;&nbsp;okpressed= ZocDialog("GET", "P1")<br/> 
+&nbsp;&nbsp;IF okpressed==1 THEN DO<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "EDITTEXT Wert: "||ZocDialog("GET", "ED1")<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "CHECKBOX Wert: "||ZocDialog("GET", "CB1")<br/> 
+&nbsp;&nbsp;&nbsp;&nbsp;SAY "DROPDOWNLIST Wert: "||ZocDialog("GET", "DD1")<br/> 
+&nbsp;&nbsp;END<br/> 
+END<br/> 
+</div></span></font> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

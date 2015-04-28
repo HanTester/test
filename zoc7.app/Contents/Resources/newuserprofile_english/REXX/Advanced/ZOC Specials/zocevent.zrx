@@ -1,0 +1,70 @@
+/*********************************************************************** 
+
+   PLEASE SEE ZOCEVENT.TXT FOR A DESCRIPTION OF HOW TO USE THIS FILE
+
+***********************************************************************/
+
+
+/**********************************************************************/
+/* The line below exits at once -- remove it to make it all work      */
+/**********************************************************************/
+
+EXIT  /* >>>>>>  delete this line to activate the code below  <<<<<<< */
+
+
+
+/**********************************************************************/
+/* Parse the command line arguments                                   */
+/**********************************************************************/
+PARSE ARG Event " '" DeviceOrHostname "'" "'" DeviceOpts "'"
+
+
+
+/**********************************************************************/
+/* Here comes the big action ...                                      */
+/**********************************************************************/
+SELECT 
+    /* if ZOC was started *********************************************/
+    WHEN Event="OPEN" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* if ZOC was closed **********************************************/
+    WHEN Event="CLOSE" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* if a ZOC device will be opened *********************************/
+    WHEN Event="DEVOPEN" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* if a ZOC device was closed *************************************/
+    WHEN Event="DEVCLOSE" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* when a connection was established ******************************/
+    WHEN Event="CONNECT" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* Before disconnecting *******************************************/
+    WHEN Event="PREDISCONNECT" THEN DO
+        /* leer */
+    END /* WHEN */
+
+    /* when a connection was disconnected *****************************/
+    WHEN Event="DISCONNECT" THEN DO
+        /* nothing yet */
+    END /* WHEN */
+
+    /* REXX requires an OTHERWISE clause ******************************/
+    OTHERWISE DO
+        /* nothing */
+    END /* OTHERWISE */
+
+END /* SELECT */
+
+EXIT
+

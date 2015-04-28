@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Zmodem Dateiübertragung</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_ZMODEMTRANSFER"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_ZMODEMTRANSFER} -->
+<!-- {\footnote Zmodem Dateiübertragung} -->
+
+<h2>Zmodem Dateiübertragung</h2><p>
+
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Überblick</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die meisten Unix/Linux Server verfügen über Zmodem Programme (rz und sz bzw. lrz und lsz), 
+die Dateitransfer von und zu entfernten Rechnern mit ZOC auf elegante Weise 
+ermöglichen.&nbsp;</p><p> 
+Falls Zmodem auf einem Server nicht installiert ist, suchen Sie 
+im Internet nach lrzsz.zip, das dann auf die unter Unix übliche Art und Weise 
+(./configure, make, make install) installiert werden kann. Alternativ bieten 
+viele Linux Distributionen ein einsprechendes Paket an.&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Transfer</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Um eine Datei vom Host zu ZOC zu senden, geben Sie auf der Linux-Shell 
+den Befehl <font class="example" color="207030" face="Courier New"><span class="example">sz &lt;dateiname&gt;</span></font> ein. ZOC öffnet dann einen Zmodem Download 
+und speichert die Datei im Download-Verzeichnis (siehe 
+<font color="5080A0"><i>Optionen&rarr;Programmeinstellungen&rarr;Dateiablage</i></font>).&nbsp;</p><p> 
+Um eine Datei zum Unix/Linux Rechner zu schicken, starten Sie unter ZOC im 
+Transfer Menü einen Zmodem Upload während Sie Linux-seitig in einem Befehlsprompt 
+stehen. Daraufhin schickt ZOC zunächst den Befehl <font class="example" color="207030" face="Courier New"><span class="example">rz</span></font> um unter Linux 
+das Empfangsprogramm zu starten und führt dann auf Ihrem Rechner den Upload durch. 
+Alternativ können Sie auf der Linux-Shell auch <font class="example" color="207030" face="Courier New"><span class="example">rz</span></font> wodurch der Upload 
+in ZOC automatisch gestartet wird.&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Optionen</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Für die Dateiübertragung per ZModem stehen im Verbindungsprofil (Abschnitt 
+Transfer) die folgenden Einstellungen zur Verfügung: 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Upload Datei-Management</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Optionen sind nur bei Uploads wirksam. Sie funktionieren nur dann, wenn 
+auch der Empfänger diese Optionen verarbeitet bzw. verarbeiten will. Die 
+DSZ- bzw. RZ-Implementationen von Zmodem auf verschiedensten Plattformen 
+unterstützen diese Funktionen. <br> 
+Es kann angegeben werden, ob der Empfänger CRs und LFs seinem 
+Betriebssystem entsprechend anpassen soll, und was geschehen soll, wenn 
+eine gesendete Datei beim Empfänger bereits vorhanden ist (die Unix 
+SZ-Optionen sind -p, -y, -n, -r, -+). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>ASCII</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die ASCII Option wird benutzt, um das Zeilenendezeichen zwischen verschiedenen 
+Betriebssystemen umzusetzen. Der Einsatz ist nur bei Textdateien sinnvoll, 
+Binärdateien (z.B. EXE oder ZIP) werden normalerweise bei Übertragung 
+mit dieser Option unbrauchbar. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Datum/Zeit lokal</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Wenn diese Einstellung aktiviert ist, erhält eine empfangene Datei 
+das Datum und die Uhrzeit, zu der sie empfangen wurde und nicht die 
+Werte, die die Gegenstelle hierfür sendet. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

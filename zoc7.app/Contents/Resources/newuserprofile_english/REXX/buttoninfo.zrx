@@ -1,0 +1,16 @@
+/* REXX */
+
+cr= x2c(0d) /* Carriage Return, Hex 0D */
+lf= x2c(0a) /* Line Feed, Hex 0A */
+crlf= cr||lf /* Carriage Return plus Line Feed */
+
+msg= "The buttons in this part of the ZOC window are examples "
+msg= msg||"to demonstrate the User Button bar"||crlf||crlf
+
+msg= msg||"They are part of a session profile and can be modified "
+msg= msg||"from the Options menu under 'Edit Session Profile'. "||crlf||crlf
+
+msg= msg||"(To find out more about Session Profiles, please read "
+msg= msg||"the help topic at the bottom of the Options menu.)"
+
+Call ZocMessageBox msg

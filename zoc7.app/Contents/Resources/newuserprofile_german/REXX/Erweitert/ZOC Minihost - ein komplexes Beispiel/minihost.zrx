@@ -1,0 +1,673 @@
+/*******************************************************************
+*   REXX-Programm zur Simulation einer kleinen Mailbox             *
+*                                                                  *
+*   Funktionsumfang:                                               *
+*   + Einfache Benutzerverwaltung (siehe unten)                    *
+*   + Zwei Userlevel (Admin und Normal)                            *
+*   + Wechseln von Verzeichnissen möglich (nur Admin)              *
+*   + Up-/Downloads                                                *
+*                                                                  *
+*   09-13-2004 Edited by David Rife to speed sending control       *
+*              codes with Zoc version 5.                           *
+*                                                                  *
+*   01-10-2009 Edited by David Rife to work with Zoc 6.x.          *
+*              Changed all ADDRESS CMD lines to use Zoc functions. *
+*                                                                  *
+*******************************************************************/
+
+    /* zum Debuggen des Programms bitte den Kommentar vor TRACE A entfernen */
+
+    /* TRACE A  */
+
+
+    /***********************************/
+    /* nachfolgend die Userliste       */
+    /***********************************/
+
+    curdrive= "C:"       /* Arbeitslaufwerk für alle User */
+
+    user.1= "ADMIN"      /* Username */
+    pass.1= "SECRET"     /* Passwort des Users */
+    home.1= "\"          /* Startverzeichnis des Users */
+    mode.1= 1            /* 1=Superuser, 0=Normaluser (Normaluser kann nicht */
+                         /* suchen und keine Verzeichnisse wechseln) */
+
+    user.2= "GUEST"
+    pass.2= "GUEST"
+    home.2= "HOST\GUEST"
+    mode.2= 0
+
+    user.3= "USERNAME1"
+    pass.3= "PASSWORD1"
+    home.3= "HOST\USER1"
+    mode.3= 0
+
+    user.4= "USERNAME2"
+    pass.4= "PASSWORD2"
+    home.4= "HOST\USER2"
+    mode.4= 0
+
+    user.5= "USERNAME3"
+    pass.5= "PASSWORD3"
+    home.5= "HOST\USER3"
+    mode.5= 0
+
+
+    /***********************************/
+    /* hier beginnt der Programmteil   */
+    /***********************************/
+
+    Call ZocSetOption "ActiveEmulation=1"
+    Call ZocSetOption "Codepage=437"
+
+    /* Operator nach lokalem Modus fragen */
+    localmode= 0
+    x= ZocRequest("Möchten Sie MINIHOST im lokalem Modus starten?", "Ja", "Nein")
+    x= TRANSLATE(x)
+    SELECT 
+        WHEN x="JA" THEN localmode= 1
+        WHEN x="NEIN" THEN localmode= 0
+        WHEN x="##CANCEL##" THEN exit
+        OTHERWISE NOP
+    END /* SELECT */
+
+
+    /* Menüpunkt "Sonstiges, REXX abbrechen" abfangen */
+    SIGNAL ON HALT NAME shutdown2
+
+
+    /* Variable für Return definieren (CR-LF) */
+    CrLf= X2C(0D)||X2C(0A)
+
+    /* Bildschirm löschen */
+    CALL ZocClearScreen
+
+    /* Überprüfen, ob ein gültiges CD-Signal geliefert wird */
+    IF checkcarrier()=="##UNKNOWN##" THEN
+    DO
+        CALL ZocWrite "Bitte schalten Sie im Modem-Device die CD-Pruefung ein"||CrLf||CrLf
+        EXIT
+    END
+
+    /* Modemecho zur Gegenstelle ausschalten */
+    say "Einen Moment bitte..."
+    CALL ZocSetOption "Host=no"
+
+    IF localmode=0 THEN DO
+        CALL ZocSetAutoAnswer 0    
+        CALL ZocDelay 3
+    END
+    ELSE DO
+        CALL ZocMsgBox "Sie können ADMIN/SECRET als Username/Passwort "||,
+                    "versuchen oder in der Online-Hilfe weitere "||,
+                    "Informationen über den MINIHOST erhalten (suchen Sie "||,
+                    "nach dem Stichwort MINIHOST)."
+    END
+
+
+/* -------------------------------------------------------------- */
+/* auf Verbindung warten, abheben und Passwort prüfen             */
+/* -------------------------------------------------------------- */
+allover:
+    /***********************************/
+    /* auf Verbindung warten           */
+    /***********************************/
+
+    IF localmode=1 THEN     /* im lokalen Modus nicht auf CONNECT warten */
+        SIGNAL welcome
+
+    /* Timeout von 60 Sekunden für jede Eingabe */
+    CALL ZocTimeout 60
+
+    /* Anrufe annehmen */
+    CALL ZocSetAutoAnswer 1
+
+    /* Infos auf dem Bilschirm anzeigen */
+    CALL ZocClearScreen
+    CALL ZocWrite "Warte auf Anruf...^M^J^M^J"
+
+
+    /* auf Modem, ISDN oder Fax-Connect warten */
+    found= ZocWaitMux("CONNECT","+FCON")
+    DO WHILE found = 640
+        found= ZocWaitMux("CONNECT","+FCON")
+    END
+
+    /* auf Fax-Connect überprüfen (wird in diesem Programm nicht bearbeitet) */
+    IF found=1 THEN DO          /* found=1 => FAX-Connect */
+        CALL handle_fax_call    /* diese Routine ist ein Dummy */
+        signal allover          /* nach Fax-Empfang Programm neu starten */
+    END
+
+    /* Connect-Nachricht überlesen */
+    CALL ZocWait "^M"
+
+
+
+    /****************************************/
+    /* auf Backspace der Gegenstelle warten */
+    /****************************************/
+
+    CALL ZocTimeout 20
+    CALL wsend X2C(1B)||"[2J"||X2C(1B)||"[1H"
+    CALL wsend "Bitte waehlen Sie ANSI und Zmodem in Ihrem "||CrLf
+    CALL wsend "Terminalprogramm und druecken Sie dann die Taste "||CrLf
+    CALL wsend "BACKSPACE, um MINIHOST zu starten..."||CrLf
+    zocresult= ZocWait("^H")
+
+    /* Überprfen, ob Carrier noch vorhanden */
+    IF checkcarrier()=="##NO##" | zocresult\=0 THEN 
+        SIGNAL endit    /* Programm neu starten, wenn BS nicht gedrückt */
+
+welcome:
+    /***********************************/
+    /* Startbildschirm zeigen          */
+    /***********************************/
+    CALL wsend X2C(1B)||"[2J"||X2C(1B)||"[1H"
+    CALL welcome_screen
+
+
+    /***********************************/
+    /* name/pw lesen und überprüfen    */
+    /***********************************/
+    CALL ZocTimeout 60
+
+    CALL ZocSetOption "Host=yes"    /* Echo für Username einschalten */
+    CALL wsend CrLf
+    username= input("Username: ")
+    username= STRIP(username)
+
+    IF username="##CANCEL##" THEN DO
+        SIGNAL shutdown2
+    END
+    ELSE DO
+        CALL ZocSetOption "Host=no"        /* Echo für Passwort ausschalten */
+        CALL wsend CrLf
+        password= input("Passwort: ")
+        password= STRIP(password)
+    END
+
+    /* Username/Passwort und CD-Signal prüfen */
+    usridx= verify_user()
+    IF usridx=0 THEN DO        /* User nicht gefunden oder Passwort falsch */
+        CALL wsend CrLf||CrLf
+        CALL wsend "Zugang verweigert!"
+        CALL wsend CrLf||CrLf
+        SIGNAL endit
+    END
+    ELSE DO                    /* User #useridx gefunden */
+        IF mode.usridx=1 THEN
+            status= "admin"
+        ELSE
+            status= "guest"
+
+        curdir= home.usridx
+    END
+
+
+    /***********************************/
+    /* Hauptmenü anzeigen              */ 
+    /***********************************/
+menu:
+    /* Echo für Gegenstelle einschalten */
+    CALL ZocSetOption "Host=yes"
+    choice= " "
+
+    CALL showmenu
+    CALL wsend X2C(1B)||"[0m"
+
+    /***********************************/
+    /* Auswahl einlesen und bearbeiten */ 
+    /***********************************/
+menuask:
+    CALL wsend X2C(1B)||"[19;12H"
+    IF status= "admin" THEN
+        choice_msg= "Ihre Wahl (W/L/S/Z/U/D/H/V): "
+    ELSE
+        choice_msg= "Ihre Wahl (L/Z/U/D/V): "
+
+    zocresult= input(choice_msg)
+
+    /* Bei Carrier-Verlust Programm neu starten */
+    IF checkcarrier()="##NO##" THEN 
+        SIGNAL endit
+
+
+    /***********************************/
+    /* Entsprechende Subroutine rufen  */ 
+    /***********************************/
+
+    /* Text-Kosmetik für Benutzereingabe */
+    choice= TRANSLATE(STRIP(zocresult))
+
+    SELECT 
+        /* Verzeichnis auflisten */
+        WHEN choice="L" THEN 
+            CALL showdir ddir
+
+        /* Datei anzeigen */
+        WHEN choice="Z" THEN 
+            CALL type
+
+        /* Zmodem Upload */
+        WHEN choice="U" THEN 
+            CALL upload
+
+        /* Zmodem Download */
+        WHEN choice="D" THEN 
+            CALL download
+
+        /* Datei suchen (nur Superuser) */
+        WHEN choice="S" THEN 
+            CALL search
+
+        /* Verzeichnis wechseln (nur Superuser) */
+        WHEN choice="W" THEN 
+            CALL changedir
+
+        /* Host beenden (nur Superuser) */
+        WHEN choice="H" THEN 
+            CALL shutdown
+
+        /* Host verlassen */
+        WHEN choice="V" THEN DO
+            CALL wsend X2C(1B)||"[21;12H"
+            CALL wsend "Schoenen Tag noch..."||CrLf
+            SIGNAL endit
+        END
+
+        OTHERWISE SIGNAL menuask /* Unbekannter Befehl, erneut versuchen */
+    END /* SELECT */
+
+    SIGNAL menu
+
+
+endit:
+    CALL wsend X2C(1B)||"[22;12H"
+    CALL wsend "Starte erneut..."
+    CALL ZocSetOption "Host=no"
+    CALL ZocDisconnect
+    CALL ZocDelay 3
+    CALL ZocSetAutoAnswer 0
+    SIGNAL allover
+
+
+
+/* ============================================================== */
+/*                                                                */
+/*   SUBROUTINEN (HOST FUNKTIONEN)                                */
+/*                                                                */
+/* ============================================================== */
+
+/* -------------------------------------------------------------- */
+/* Aktuelles Verzeichnis wechseln                                 */
+/* -------------------------------------------------------------- */
+changedir:
+    IF status\="admin" THEN
+        RETURN
+
+    CALL wsend X2C(1B)||"[21;12H"
+    zocresult= input("Bitte vollen Pfad angeben (Laufwerk und Verzeichnis): ")
+
+    IF zocresult\="##TIMEOUT##" THEN
+    DO
+        curdir= zocresult
+        IF RIGHT(curdir, 1) \= "\" THEN curdir= curdir"\"
+        IF SUBSTR(curdir, 2, 1) = ":" THEN
+        DO
+            curdrive= SUBSTR(curdir, 1, 2)
+            curdir= RIGHT(curdir, length(curdir)-2)
+        END
+        IF SUBSTR(curdir, 1, 1) \= "\" THEN curdir= "\"curdir
+    END
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Aktuelles Verzeichnis anzeigen                                 */
+/* -------------------------------------------------------------- */
+showdir: 
+    CALL ZocShell "dir /-P """curdrive||curdir""" >shellout.tmp"
+    CALL sendfile "shellout.tmp"
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Im aktuellen Laufwerk suchen                                   */
+/* -------------------------------------------------------------- */
+search: 
+    IF status\="admin" THEN
+        RETURN
+
+    CALL wsend X2C(1B)||"[21;12H"
+    zocresult= input("Dateiname zur Suche auf Laufwerk "||curdrive)
+
+    IF zocresult\="##TIMEOUT##" THEN
+    DO
+        sname= zocresult
+        sname= STRIP(sname)
+    END
+    ELSE
+        RETURN
+
+    CALL wsend X2C(1B)||"[22;12H"
+    CALL wsend "Suche auf Laufwerk "||curdrive||", bitte warten..."
+    CALL ZocShell "dir /-P """curdrive"\"sname""" /s >shellout.tmp"
+    CALL sendfile "shellout.tmp"
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Datei anzeigen                                                 */
+/* -------------------------------------------------------------- */
+type: 
+    CALL wsend X2C(1B)||"[21;12H"
+    zocresult= input("Welche Datei soll angezeigt werden: "||curdrive||curdir)
+
+    IF zocresult\="##TIMEOUT##" THEN
+    DO
+        sname= zocresult
+        sname= STRIP(sname)
+    END
+    ELSE
+        RETURN
+
+    CALL ZocShell "type """curdrive||curdir||sname""" >shellout.tmp"
+    CALL sendfile "shellout.tmp"
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Upload                                                         */
+/* -------------------------------------------------------------- */
+upload:
+    CALL wsend X2C(1B)||"[21;12H"
+    CALL wsend "Bitte starten Sie Ihren Zmodem Upload"
+    CALL wsend X2C(1B)||"[22;12H"
+
+    IF localmode=0 THEN
+        CALL ZocDownload "ZMODEM", curdrive||curdir 
+     ELSE
+        CALL ZocMsgBox "Upload im lokalen Modus nicht möglich"
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Download                                                       */
+/* -------------------------------------------------------------- */
+download:
+    CALL wsend X2C(1B)||"[21;12H"
+    file= input("Welche Datei soll empfangen werden: "||curdrive||curdir)
+    CALL wsend X2C(1B)||"[22;12H"
+
+    TRACE i
+
+     IF localmode=0 THEN DO    
+        IF file\="##TIMEOUT##" THEN DO
+            file= STRIP(file)
+            IF file \= "" THEN
+                CALL ZocUpload "ZMODEM", curdrive||curdir||file
+        END
+    END
+    ELSE
+        CALL ZocMsgBox "Download im lokalen Modus nicht möglich"
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Host beenden                                                   */
+/* -------------------------------------------------------------- */
+shutdown:
+    IF status\="admin" THEN
+        RETURN
+
+shutdown2:
+    CALL wsend X2C(1B)||"[22;0H"
+    CALL wsend "Beende MINIHOST..."
+    CALL ZocSetOption "Host=no"
+    CALL ZocDisconnect
+    CALL ZocDelay 3
+    CALL ZocSetAutoAnswer 0
+    CALL wsend "beendet!"||CrLf
+    EXIT
+
+
+/* -------------------------------------------------------------- */
+/* Überprüfe Usereintrag                                          */
+/* -------------------------------------------------------------- */
+verify_user: 
+
+    ok= 0
+    IF username\="##TIMEOUT##" & password\="##TIMEOUT##" THEN DO
+        i= 1
+        DO WHILE user.i\="USER."||i   /* loop to end of list */
+            IF translate(username)=translate(user.i) & ,
+                translate(password)=translate(pass.i) then do
+                ok= i
+                LEAVE
+            END
+
+            i= i+1
+        END
+    END
+
+    RETURN ok
+
+
+/* ============================================================== */
+/*                                                                */
+/*    SUBROUTINEN (INTERNE FUNKTIONEN)                            */
+/*                                                                */
+/* ============================================================== */
+
+/* -------------------------------------------------------------- */
+/* Zeichne einen Menüpunkt mit ARG(line, col, shortcut, name)     */
+/* -------------------------------------------------------------- */
+menuitem: PROCEDURE EXPOSE localmode
+
+    CALL wsend X2C(1B)||"["ARG(1)";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47mÚÄÄÄ"||X2C(1B)||"[0;30;47m¿"
+    CALL wsend X2C(1B)||"[1;37mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"||X2C(1B)||"[0;30;47m¿"||X2C(1B)||"[40m"
+
+    CALL wsend X2C(1B)||"["ARG(1)+1";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47m³ "||X2C(1B)||"[0;34;47m"ARG(3)" "||X2C(1B)||"[30m³"
+    CALL wsend X2C(1B)||"[1;37m³"||X2C(1B)||"[0;30;47m"ARG(4)"³"||X2C(1B)||"[40m"
+
+    CALL wsend X2C(1B)||"["ARG(1)+2";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47mÀ"||X2C(1B)||"[0;30;47mÄÄÄÙ"
+    CALL wsend X2C(1B)||"[1;37mÀ"||X2C(1B)||"[0;30;47mÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ"||X2C(1B)||"[40m"
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Zeichne ein Infofeld mit ARG(line, col, text)                  */
+/* -------------------------------------------------------------- */
+infoitem: PROCEDURE EXPOSE localmode
+
+    CALL wsend X2C(1B)||"["ARG(1)";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+    CALL wsend "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"||X2C(1B)||"[0;30;47m¿"
+
+    CALL wsend X2C(1B)||"["ARG(1)+1";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47m³ "||X2C(1B)||"[0;30;47m"ARG(3)" "||X2C(1B)||"[30m³"
+
+    CALL wsend X2C(1B)||"["ARG(1)+2";"ARG(2)"H"
+    CALL wsend X2C(1B)||"[1;37;47mÀ"||X2C(1B)||"[0;30;47mÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"
+    CALL wsend "ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ"
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Zeichne das gesamte Menü mit allen Menü- und Infofeldern       */
+/* -------------------------------------------------------------- */
+SHOWMENU: 
+    CALL wsend X2C(1B)||"[2J"||X2C(1B)||"[1H"
+
+    IF status= "admin" THEN
+    DO
+        CALL menuitem 2,  10, "W", " Verz. (W)echseln   "
+        CALL menuitem 5,  10, "L", " Verz. auf(L)isten  " 
+        CALL menuitem 8,  10, "S", " Datei (S)uchen     "
+        CALL menuitem 11, 10, "Z", " Datei an(Z)eigen   " 
+        CALL menuitem 2,  45, "U", " Datei (U)ploaden   "
+        CALL menuitem 5,  45, "D", " Datei (D)ownloaden "
+        CALL menuitem 8,  45, "H", " (H)ost beenden     "
+        CALL menuitem 11, 45, "V", " Host (V)erlassen   "
+
+    END
+    ELSE
+    DO
+        CALL menuitem 3,  10, "L", " Verz. auf(L)isten  " 
+        CALL menuitem 6,  10, "Z", " Datei an(Z)eigen   " 
+        CALL menuitem 3,  45, "U", " Datei (U)ploaden   "
+        CALL menuitem 6,  45, "D", " Datei (D)ownloaden "
+        CALL menuitem 10, 27, "V", " Host (V)erlassen   "
+    END
+
+    curpath= curdrive||curdir
+    CALL infoitem 15, 10, X2C(1B)||"[0;34;47mAkt.Verz.:"||X2C(1B)||"[30m  "overlay(curpath,"                                              ")
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Begrüßungstext senden                                          */
+/* -------------------------------------------------------------- */
+welcome_screen: PROCEDURE EXPOSE localmode
+    CrLf= X2C(0D)||X2C(0A)
+    CALL wsend ""||CrLf
+    CALL wsend " ___  ___ ___    "||CrLf
+    CALL wsend "|__ || _ | __|   "||CrLf
+    CALL wsend " / /_||_|| |_     ZOC MiniHost-Script V3.0"||CrLf
+    CALL wsend "|____|___|___|   "||CrLf||CrLf||CrLf
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* gleichzeitg senden und lokal anzeigen                         */
+/* -------------------------------------------------------------- */
+wsend: PROCEDURE EXPOSE localmode
+
+    IF localmode=0 THEN
+        CALL ZocSendRaw ARG(1)
+
+    CALL ZocWrite ARG(1)
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Dateiinhalt anzeigen (Hostuser und lokaler User)               */
+/* -------------------------------------------------------------- */
+sendfile: PROCEDURE EXPOSE localmode
+    file= ARG(1)
+    CrLf= X2C(0D)||X2C(0A)
+
+    IF localmode=0 THEN DO         /* Datei zur Gegenstelle senden */
+        CALL wsend X2C(1B)||"[2J"||X2C(1B)||"[1H"
+        CALL ZocUpload "ASCII:1+0", file 
+        CALL ZocFileDelete file
+        CALL wsend CrLf||CrLf
+    END
+    ELSE DO                        /* Datei lokal anzeigen */
+        x= linein(file)
+        DO WHILE stream(file, "S")="READY" 
+            SAY x
+            x= linein(file)
+        END /* WHILE */
+        CALL stream file, "C", "CLOSE"
+        CALL ZocFileDelete file
+    END
+
+    CALL input "Bitte Enter druecken..."
+
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* Eingabe von Hostuser und lokalem User lesen                    */
+/* -------------------------------------------------------------- */
+input: PROCEDURE EXPOSE localmode
+
+    IF localmode=0 THEN DO         /* Input von Gegenstelle lesen */
+        CALL wsend arg(1)
+        zocresult= "##TIMEOUT##"
+        IF checkcarrier()\="##NO##" THEN DO
+            res= ZocWait("^M")
+            IF res\=640 THEN
+                zocresult= ZocLastline()
+        END
+    END
+    ELSE DO                          /* Input lokal lesen */                
+        zocresult= ZocAsk("ø"||ARG(1))  /* 'ø' zeigt Fenster rechts unten */
+    END
+
+    RETURN zocresult
+
+
+/* -------------------------------------------------------------- */
+/* Carrier-Status zurückliefern (liefert OK im lokalen Modus)     */
+/* -------------------------------------------------------------- */
+checkcarrier: PROCEDURE EXPOSE localmode
+    IF localmode=1 THEN 
+        zocresult= "##YES##"
+    ELSE 
+        zocresult= ZocGetInfo("ONLINE")
+
+    RETURN zocresult
+
+
+/**************************************************************************/
+/* ENDE REXX-MODUL                                                        */
+/**************************************************************************/
+
+
+
+/**************************************************************************/
+/*                                                                        */
+/*  DER NACHFOLGENDE CODE WIRD MOMENTAN NICHT AUFGERUFEN                  */
+/*                                                                        */
+/**************************************************************************/
+
+/* -------------------------------------------------------------- */
+/* Modem auf FAX Klasse 2 initialisieren                          */
+/* -------------------------------------------------------------- */
+set_fax_answer_mode:
+    Cr = "^M"
+    TIMEOUT 2
+    CALL ZocSend "AT+fclass= 2"||Cr
+    zocresult= ZocWait("OK")
+    IF zocresult=0 THEN 
+    DO 
+        CALL ZocSend "AT+FCR=1"||Cr
+        CALL ZocWait "OK"
+
+        CALL ZocSend "AT+FDCC=1,5,0,2,0,0,0,0"||Cr
+        CALL ZocWait "OK"
+
+        CALL ZocSend "AT+FCQ=0"||Cr
+        CALL ZocWait "OK"
+
+        CALL ZocSend "AT+FAA=1"||Cr
+        CALL ZocWait "OK"
+
+        CALL ZocWrite Cr||"FAX-MODUS GESETZT..."||Crlf
+    END
+
+    TIMEOUT 60
+    RETURN
+
+
+/* -------------------------------------------------------------- */
+/* FAX-Anruf an ein Fax-Programm weiterleiten                     */
+/* -------------------------------------------------------------- */
+handle_fax_call:
+    /* Der hier benötigte Code hängt vom verwendeten Fax-Programm ab. */
+    /* Da hier kein Fax-Programm unterstützt wird, wird aufgelegt. */
+    CALL ZocDisconnect
+    RETURN
+

@@ -1,0 +1,15 @@
+ZOC 5.00 AT COMMAND PROFILE
+ModemLoadInit=yes
+ModemInitCD=no
+ModemDtrHangup=yes
+MdmIni="AT&F^M"
+MdmDial#00="ATDT ^#^M"
+MdmDial#01="ATDT ^#^M"
+MdmDial#02="ATZ0^M~~~~ATDT ^#^M"
+MdmDial#03="ATZ1^M~~~~ATDT ^#^M"
+MdmHangup="+++~~~~ATH^M"
+MdmAnswerOn="ATS0=1^M"
+MdmAnswerOff="ATS0=0^M"
+MdmDtrOn="+++~~~~AT&D2^M~~ATO^M~~^H^H^H"
+MdmDtrOff="+++~~~~AT&D0^M~~ATO^M~~^H^H^H"
+

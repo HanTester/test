@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Log Einstellungen</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="DLG_WIN_OPTS_LOGGING"></A>
+
+
+<!-- \page -->
+<!-- {\footnote DLG_WIN_OPTS_LOGGING} -->
+<!-- {\footnote Log Einstellungen} -->
+
+<h2>Log Einstellungen</h2><p>
+
+Auf dieser Seite können alle Parameter für die Protokollierung in 
+Datei eingestellt werden. Es handelt sich um die Protokolldatei die 
+im Log Menü und in der Statuszeile gesteuert werden kann. 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Standardname</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Dieser Name wird als Standardname für die Protokollierungsdatei verwendet. Der Name 
+kann optional einen absoluten oder relativen Pfad enthalten (Ordner im Pfad werden bei Bedarf 
+neu erzeugt). <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Es können Platzhalter verwendet werden, um dynamische Namen für den Pfad und die 
+Logdateien zu erzeugen, z.B. Dateinamen die das Datum oder die Bezeichnung 
+der aktuellen Verbindung enthalten. Die Platzhalter (z.B. <font class="example" color="207030" face="Courier New"><span class="example">^1</span></font> bis <font class="example" color="207030" face="Courier New"><span class="example">^8</span></font>) sind im 
+Anhang bei den <a class="link" href=topic-HLP_APXCODES.html>Platzhaltercodes</a> beschrieben. Beispiele sind <font class="example" color="207030" face="Courier New"><span class="example">^+_^1^2^3.log</span></font> 
+or <font class="example" color="207030" face="Courier New"><span class="example">Host_^+\Log_^3_^2_^1.log</span></font> <br><img src='dummy.gif' border='0' width='8' height='8' /><br> 
+Hinweis: Wenn nicht explizit ein Pfad mit dem Namen angegeben ist, wird die Datei in dem 
+Ordner gespeichert, der bei <a class="link" href=topic-DLG_WIN_GLOB_FOLDERS.html>Optionen&rarr;Programmeinstellungen&rarr;Dateiablage</a> 
+angegeben ist. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Log ist aktiviert</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion bewirkt, dass alle ankommenden Daten in der 
+Logdatei gespeichert werden. Diese Funktion entspricht dem 
+Logdatei-Klickfeld in der Statuszeile bzw. dem Menüpunkt <font color="5080A0"><i>Log in Datei</i></font> 
+im Log-Menü. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>An existierende Datei anhängen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Wenn aktiv, werden die empfangenen Daten an existierende Logdateien angehängt, 
+statt ältere Dateien gleichen Namens bei Beginn einer neuen Verbindung zu überschreiben. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Steuercodes für Emulation nicht protokollieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Terminalemulationen senden neben dem angezeigten Text auch 
+unsichtbare Codes, um die Anzeige zu steuern (Farben, Cursorposition, 
+etc.). Mit dieser Option wird festgelegt, ob die Steuercodes 
+im Log mitgeschrieben werden sollen oder nicht. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zeitmarken vor jede Zeile schreiben</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Einstellung schreibt im Log vor jeder Zeile die Uhrzeit damit nachvollzogen 
+werden kann, wann genau die Zeile empfangen wurde. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Verbindungsinformationen protokollieren</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Es werden bei Verbindungsbeginn in die Logdatei mehrere Zeilen mit Informationen 
+über die angewählte Gegenstelle eingefügt (Name, Zeit des Verbindungsaufbaus, usw.). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>DC2/DC4 Steuerung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Einige Gegenstellen sind in der Lage, die 
+Mitprotokollierung der Gegenstelle ein/auszuschalten, indem DC2 (^R) bzw. 
+DC4 (^T) Steuerzeichen gesendet werden (das Klickfeld in der Statuszeile 
+wird dann grau unterlegt, um anzuzeigen, dass die Mitprotokollierung in 
+der Logdatei von der Gegenstelle unterbrochen wurde). Damit werden 
+Meldungen der Gegenstelle (wie z.B. 'Weiter mit Return') nicht mitprotokolliert. 
+Mit dieser Option kann die Fremdsteuerung aktiviert oder deaktiviert werden. 
+</table>&nbsp;<br/> 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+Siehe auch: <a class="link" href=topic-HLP_OPTIONS1.html>Verbindungsprofile</a>, 
+<a class="link" href=topic-HLP_OPTIONS.html>ZOC Konfigurieren</a> und <a class="link" href=topic-IDM_OPTS.html>Optionen-Menü</a> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

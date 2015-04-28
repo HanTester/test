@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Installation und Verteilung für System- und Netzwerkadministratoren</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="HLP_QUICKADMIN"></A>
+
+
+<!-- \page -->
+<!-- {\footnote HLP_QUICKADMIN} -->
+<!-- {\footnote Installation und Verteilung für System- und Netzwerkadministratoren} -->
+
+<h2>Installation und Verteilung für System- und Netzwerkadministratoren</h2><p>
+
+Wenn Sie System- oder Netzwerkadministrator sind und ZOC für die Benutzer 
+in Ihrer Firma installieren und vorkonfigurieren, sind die nachfolgenden 
+Punkte sicher hilfreich für Sie.&nbsp;</p><p> 
+Falls Sie darüber hinaus Informationen benötigen und spezielle Anforderungen 
+haben, kontaktieren Sie bitte unseren Support. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Kommandozeilenparameter</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+ZOC bietet eine Vielzahl von Parametern, um in speziellen Modi zu 
+starten oder beim Starten automatisch bestimmte Funktionen auszuführen. 
+Beim Lesen der <a class="link" href=topic-HLP_STARTUP.html>Kommandozeilenoptionen</a> achten Sie 
+bitte besonders auf die Optionen <font class="example" color="207030" face="Courier New"><span class="example">/CALL</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/RUN</span></font>, 
+<font class="example" color="207030" face="Courier New"><span class="example">/RESTRICT</span></font>, <font class="example" color="207030" face="Courier New"><span class="example">/U</span></font> und <font class="example" color="207030" face="Courier New"><span class="example">/WD</span></font>. Diese Parameter 
+können direkt in die Startverknüpfung von ZOC eingetragen oder in 
+einer Datei namens <a class="link" href=topic-HLP_START_ZOCCFG.html>commandline.ini</a> hinterlegt werden 
+(letztere kann auch ein Teil einer vorkonfigurierten Installation 
+sein, siehe unten). 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Konfigurationsdateien</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Wenn Sie eine ZOC-Konfiguration in der gesamten Firma replizieren 
+wollen, werden hierzu die Dateien <font color="5080A0"><i>HostDirectory.zocini</i></font> (Adressbuch), 
+<font color="5080A0"><i>Standard.zfg</i></font> (Programmoptionen), <font color="5080A0"><i>*.ZOC</i></font> (Verbindungsprofile), 
+<font color="5080A0"><i>*.ZKY</i></font> (Tastaturbelegungen) und eventuell die <font color="5080A0"><i>*.ZRX</i></font> (REXX Skript) 
+Dateien benötigt. Diese liegen im Datenordner von ZOC (siehe 
+<font color="5080A0"><i>Datei-Menü&rarr;Datenordner anzeigen</i></font>). 
+&nbsp;</p><p> 
+Außerdem dürfte die Datei 
+<a class="link" href=topic-HLP_START_WDIR.html>Admin.ini</a> und der Ordner <font color="5080A0"><i>newuserprofile_german</i></font> 
+(im Programmordner) von besonderem Interesse sein. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Lizenzierung</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Normalerweise werden Lizenzcodes in der Windows-Registry unter 
+HKLM/HKCU+Software+EmTec+ZOC7+Registration hinterlegt. 
+Alternativ bietet ZOC aber auch eine dateibasierte Lizenzierung 
+sowohl eine netzwerkbasierte Lizenzüberprüfung für Einzel- 
+und Netzwerk-Installationen (siehe unten) an. Bitte wenden Sie 
+sich an den <a class="link" href=topic-HLP_CONTACT.html>EmTec Support</a> für weitere Details). 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Netzwerkinstallation/Multi-User Installation</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+ZOC kann auf einem Netzlaufwerk installiert werden und kann 
+mit gemeinsamen oder individuellen Konfigurationen sowohl 
+mit als auch ohne Schreibberechtigung eingesetzt werden. 
+Weiterhin kann ZOC anhand der <a class="link" href=topic-HLP_START_WDIR.html>Admin.ini</a> 
+Datei (Beispiel dafür im ZOC-Programmverzeichnis) und anhand der 
+Einstellungen in den Programmoptionen, Adressbuchdateien und 
+Optionsdateien aus beliebigen Verzeichnissen verwenden 
+(siehe auch 
+<a class="link" href=topic-DLG_WIN_WORKDIRNOTFOUND.html>Ordner für Benutzerdaten</a>). 
+Zusätzlich können 
+<a class="link" href=topic-HLP_STARTUP.html>Kommandozeilenoptionen</a> evtl. auch manche 
+Kommandozeilenparameter hierfür nützlich sein, wobei wir die 
+Nutzung der Admin.ini Datei empfehlen. &nbsp;</p><p> 
+Auf Wunsch berät Sie der <a class="link" href=topic-HLP_CONTACT.html>EmTec Support</a> 
+gerne bezüglich der passenden Netzwerk-Installation und dem 
+entsprechenden Lizenzcode-Handling für Ihre Firma. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Erstellen eines benutzerdefinierten Setups</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Die ZOC-Installation kann gemäß Ihren Anforderungen angepasst werden. 
+Die Installationsdatei (zoc_nnn.exe) ist ein selbstentpackendes 
+ZIP-Archiv. Dieses Archiv kann mit jedem UNZIP-Programm in ein temporäres 
+Verzeichnis entpackt werden (z.B. Z:\CDINST). 
+&nbsp;</p><p> 
+Dieses Verzeichnis enthält unter anderem die beiden Dateien <font color="5080A0"><i>SETUP.CFG</i></font> und 
+<font color="5080A0"><i>SETUP.FIL</i></font>. Die Datei SETUP.CFG enthält das Setup-Skripts und steuert den 
+Standard-Verzeichnisnamen sowie die Icons im Windows-Startmenü. SETUP.FIL 
+ist wiederum ein ZIP-Archiv, welches das gesamte ZOC-Verzeichnis und 
+alle Standard-Konfigurationsdateien enthält. Diese Standard-Optionsdateien 
+(im Unterordner <font color="5080A0"><i>newuserprofile_german</i></font>) können auf Wunsch ersetzt 
+sowie weitere Konfigurationsdateien hinzugefügt werden. 
+&nbsp;</p><p> 
+Alternativ kann ein zusätzliches ZIP-Archiv mit dem Namen <font color="5080A0"><i>CUSTOM.FIL</i></font> 
+erzeugt werden, dass während der Installation direkt nach dem Entpacken 
+der Dateien aus dem SETUP.FIL Archiv nachverarbeitet wird. 
+&nbsp;</p><p> 
+Das derart veränderte Verzeichnis Z:\CDINST kann dann auf eine CD 
+gebrannt oder als LAN-Resource den lizenzierten Benutzern im Unternehmen 
+zur Verfügung gestellt werden. In beiden Fällen startet die modifizierte 
+Installation mit dem Ausführen von SETUP.EXE. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Unbeaufsichtigte Installation</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Das ZOC-Setup bietet keine Installation ohne Benutzereingriff an. 
+Allerdings kann das Verzeichnis eines bereits installierten ZOC 
+ohne Probleme auf andere Rechner repliziert werden. Die Icon-Erstellung 
+und Lizenzierung müsste dann allerdings mit den externen Setup-Tools 
+realisiert werden. 
+&nbsp;</p><p>&nbsp;&nbsp;</p><p> 
+&nbsp;<br/><table class="hlbox" width="99%" cellpadding="0" cellspacing="0"><tr class="hlbox"><td class="hlbox"><b>Fragen?</b></td></tr></table><img src="dummy.gif" alt="nil" width="200" height="12" /><br/> 
+Wenn Sie weiterführende Fragen zur Installation oder zur Lizenzierung von 
+ZOC haben, werden Sie sich bitte an Markus Schmidt von 
+<a class="link" href=topic-HLP_CONTACT.html>EmTec</a>. 
+&nbsp;</p><p> 
+&nbsp;</p><p> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

@@ -1,0 +1,199 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <string name="customClass">NSApplication</string>
+  </object>
+  <array count="19" name="allObjects">
+    <object class="IBCarbonWindow" id="180">
+      <string name="windowRect">0 0 190 330 </string>
+      <string name="title"></string>
+      <object name="rootControl" class="IBCarbonRootControl" id="181">
+        <string name="bounds">0 0 190 330 </string>
+        <string name="viewFrame">0 0 330 190 </string>
+      <array count="1" name="subviews">
+      <object class="IBCarbonUserPane" id="182">
+        <string name="bounds">0 0 190 330 </string>
+        <string name="viewFrame">0 0 330 190 </string>
+        <array count="4" name="subviews">
+          <object class="IBCarbonCheckBox" id="183">
+            <string name="bounds">24 2 44 180 </string>
+            <string name="viewFrame">2 24 178 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">1</int>
+            <boolean name="hidden">TRUE</boolean>
+            <string name="title">Extra Debug Info</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="184">
+            <string name="bounds">50 2 70 236 </string>
+            <string name="viewFrame">2 50 234 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">2</int>
+            <boolean name="hidden">TRUE</boolean>
+            <string name="title">Ohne Blockfenster (langsamer)</string>
+          </object>
+          <object class="IBCarbonCheckBox" id="185">
+            <string name="bounds">76 2 96 254 </string>
+            <string name="viewFrame">2 76 252 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">3</int>
+            <boolean name="hidden">TRUE</boolean>
+            <string name="title">Kein ACK (Overdrive-Modus aus)</string>
+          </object>
+          <object class="IBCarbonStaticText" id="186">
+            <string name="bounds">0 4 20 182 </string>
+            <string name="viewFrame">4 0 178 20 </string>
+            <string name="title">Keine Einstellungen (SCP)</string>
+          </object>
+        </array>
+        <int name="featureBits">2</int>
+      </object>
+      </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="scalingMode">1048576</int>
+    </object>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="183"/>
+    <reference idRef="184"/>
+    <reference idRef="185"/>
+    <reference idRef="186"/>
+    <object class="IBCarbonWindow" id="187">
+      <string name="windowRect">0 0 188 662 </string>
+      <string name="title">Dateidownload per SCP (Kopieren von Remote zu Lokal)</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="188">
+        <string name="bounds">0 0 188 662 </string>
+        <string name="viewFrame">0 0 662 188 </string>
+        <array count="10" name="subviews">
+          <object class="IBCarbonStaticText" id="189">
+            <string name="bounds">36 24 70 160 </string>
+            <string name="viewFrame">24 36 136 34 </string>
+            <ostype name="controlSignature">TEXT</ostype>
+            <int name="controlID">4</int>
+            <string name="title">Quelle: &#10;(fremder Rechner)</string>
+          </object>
+          <object class="IBCarbonEditText" id="190">
+            <string name="bounds">40 170 56 488 </string>
+            <string name="viewFrame">170 40 318 16 </string>
+            <ostype name="controlSignature">EDIT</ostype>
+            <int name="controlID">1</int>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonCheckBox" id="191">
+            <string name="bounds">66 166 86 486 </string>
+            <string name="viewFrame">166 66 320 20 </string>
+            <ostype name="controlSignature">CHEC</ostype>
+            <int name="controlID">1</int>
+            <string name="title">Rekursiv (Quelle ist ein Ordner)</string>
+          </object>
+          <object class="IBCarbonStaticText" id="192">
+            <string name="bounds">104 24 138 152 </string>
+            <string name="viewFrame">24 104 128 34 </string>
+            <string name="title">Zielordner:&#10;(lokal)</string>
+          </object>
+          <object class="IBCarbonEditText" id="193">
+            <string name="bounds">108 170 124 442 </string>
+            <string name="viewFrame">170 108 272 16 </string>
+            <ostype name="controlSignature">EDIT</ostype>
+            <int name="controlID">2</int>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonButton" id="194">
+            <string name="bounds">106 454 126 492 </string>
+            <string name="viewFrame">454 106 38 20 </string>
+            <ostype name="controlSignature">PUSH</ostype>
+            <int name="controlID">1</int>
+            <string name="title">...</string>
+          </object>
+          <object class="IBCarbonStaticText" id="195">
+            <string name="bounds">158 24 174 648 </string>
+            <string name="viewFrame">24 158 624 16 </string>
+            <ostype name="controlSignature">TEXT</ostype>
+            <int name="controlID">3</int>
+            <string name="title">scp  remotehost:somefile  localhost:home</string>
+          </object>
+          <object class="IBCarbonButton" id="196">
+            <string name="bounds">20 558 40 648 </string>
+            <string name="viewFrame">558 20 90 20 </string>
+            <ostype name="controlSignature">OKAY</ostype>
+            <string name="title">OK</string>
+            <int name="buttonType">1</int>
+          </object>
+          <object class="IBCarbonButton" id="197">
+            <string name="bounds">54 558 74 648 </string>
+            <string name="viewFrame">558 54 90 20 </string>
+            <ostype name="controlSignature">BACK</ostype>
+            <string name="title">Abbruch</string>
+          </object>
+          <object class="IBCarbonRoundButton" id="198">
+            <string name="bounds">156 627 174 648 </string>
+            <string name="viewFrame">627 156 21 18 </string>
+            <ostype name="controlSignature">HELP</ostype>
+            <int name="contentType">132</int>
+            <int name="iconType">1751477360</int>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="scalingMode">1048576</int>
+    </object>
+    <reference idRef="188"/>
+    <reference idRef="189"/>
+    <reference idRef="190"/>
+    <reference idRef="191"/>
+    <reference idRef="192"/>
+    <reference idRef="193"/>
+    <reference idRef="194"/>
+    <reference idRef="195"/>
+    <reference idRef="196"/>
+    <reference idRef="197"/>
+    <reference idRef="198"/>
+  </array>
+  <array count="19" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="180"/>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="182"/>
+    <reference idRef="1"/>
+    <reference idRef="187"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+    <reference idRef="188"/>
+  </array>
+  <dictionary count="3" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>DLG_SUBSYS_OPTIONS_GERMAN</string>
+    <reference idRef="180"/>
+    <string>DLG_SCP_DOWNLOAD_GERMAN</string>
+    <reference idRef="187"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">199</unsigned_int>
+</object>

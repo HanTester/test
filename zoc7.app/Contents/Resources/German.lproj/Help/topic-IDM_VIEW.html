@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<META HTTP-EQUIV="Content-Style-Type" content="text/css">
+<LINK REL="stylesheet" type="text/css" href="helpfile.css">
+<TITLE>Anzeige-Menü</TITLE>
+
+</HEAD>
+
+<BODY STYLE="FONT-FAMILY: Lucida Grande, Arial, Sans Serif; FONT-SIZE: 10pt;" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<A NAME="IDM_VIEW"></A>
+
+
+<!-- \page -->
+<!-- {\footnote IDM_VIEW} -->
+<!-- {\footnote Anzeige-Menü} -->
+
+<h2>Anzeige-Menü</h2><p>
+
+ZOC verfügt über verschiedene Protokollierungsmethoden um Daten später 
+wieder anzeigen zu können. Alle empfangenen Zeichen seit Programmstart 
+werden im Hauptspeicher mitprotokolliert damit auch Text, der nicht mehr 
+am Bildschirm steht, noch gelesen und verwendet werden kann. Hierfür 
+stehen der Puffer zum Zurückblättern (der die Daten aufnimmt, die oben 
+aus dem Bildschirm "herausrollen" und der sog. Historienpuffer (der die 
+Daten in der Reihenfolge protokolliert, wie sie empfangen werden) zur 
+Verfügung.&nbsp;</p><p> 
+Siehe auch: <a class="link" href=topic-IDM_LOGFILE.html>Protokollierung in Datei</a> 
+<table><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td class="pthead1" colspan=2><b>Zurückblättern</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion zeigt den Inhalt des Anzeigepuffers im ZOC Fenster an 
+und kann auch aktiviert werden, indem der Rollbalken im ZOC Fenster 
+bedient wird. Einstellungen hierzu finden sich in 
+<a class="link" href=topic-HLP_OPTIONS3.html>Optionen&rarr;Programmeinstellungen&rarr;Zurückblättern</a> 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zurückblättern als Fenster</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Alternativ zum Zurückblättern im Hauptfenster kann das Zurückblättern 
+auch in einem eigenen Fenster erfolgen, so dass parallel der alte 
+und der aktuelle Text sichtbar sind. 
+Die Schriftart für dieses Fenster wird in Optionen, Programmeinstellungen, 
+<a class="link" href=topic-DLG_WIN_GLOB_SCROLLBACK.html>Zurückblättern</a> eingestellt. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Löschen Zurückblättern</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Löscht den Anzeigepuffer. Eine Sicherheitsabfrage vor dem Löschen kann 
+in <a class="link" href=topic-DLG_WIN_GLOB_PROMPTS.html>Optionen&rarr;Programmeinstellungen&rarr;Abfragen</a> 
+aktiviert werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Suchen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Funktion zum Suchen von Text innerhalb des Puffers zum Zurückblättern. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Zurückblättern in Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Speichert den gesamten Inhalt des Puffers zum Zurückblättern in Datei und öffnet 
+danach die Datei im Editor. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Historienpuffer anzeigen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Zeigt das Fenster des Historienpuffers an. Der Historienpuffer ist eine alternative 
+Form des Puffers zum Zurückblättern und speichert die Daten in der Reihenfolge wie 
+sie empfangen werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Historienpuffer löschen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Löscht den Historienpuffer (s.o.). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Fenster-Elemente</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Öffnet ein Untermenü, mit dem alle Fensterelemente von ZOC ein- und 
+ausgeschaltet werden können. Dieses Menü hat die gleiche Funktion wie 
+die entsprechenden Optionen auf der Fensterseite der 
+<a class="link" href=topic-HLP_OPTIONS1.html>Verbindungsprofile</a>). 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Schnipsel</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+ZOC überprüft im Hintergrund alle ankommenden Daten auf Dateinamen und 
+Internet-Adressen und stellt diese in einem kleinen Fenster zusammen. 
+Mit dieser Funktion kann das Schnipsel-Fenster angezeigt oder verdeckt 
+werden. Bei angezeigtem Fenster kann durch Doppelklick auf einen 
+entsprechenden Text dieser Text gesendet werden. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Bildschirm löschen/rücksetzen</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion löscht das Terminalfenster und setzt die LEDs 
+in der <a class="link" href=topic-HLP_STATUSLINE.html>Statuszeile</a> auf rot zurück. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Editor</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Ruft den in <a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Optionen&rarr;Programmeinstellungen&rarr;Spez. Dateien</a> 
+angegebenen Editor auf. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Eingabeaufforderung</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Ruft die in <a class="link" href=topic-DLG_WIN_GLOB_SPECIALFILES.html>Optionen&rarr;Programmeinstellungen&rarr;Spez. Dateien</a> 
+angegebene Shell auf. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Chat Modus</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Diese Funktion teilt den Bildschirm horizontal in zwei Teile und zeigt 
+den selbst eingegebenen Text in der oberen Hälfte, den empfangenen Text 
+in der unteren Hälfte des Bildschirms. Dies ist sehr nützlich, wenn zwei 
+Personen sich über eine Modemverbindung miteinander unterhalten. 
+<br/>&nbsp;<br/>
+<b>Hinweis: </b>Diese Funktion sollte nicht verwendet werden, wenn 
+man mit normalen Gegenstellen, z.B. Mailboxen kommuniziert. 
+<br/>&nbsp;</td></tr>
+<tr><td class="pthead1" colspan=2><b>Eingabezeile</b></td></tr>
+<tr><td class="ptindent1">&nbsp;</td>	 <td class="ptbody1"> 
+Die Eingabezeile kann dazu dienen Text im Voraus zu tippen und erst 
+abzuschicken, wenn Return gedrückt wird (das Versenden geschieht entsprechend 
+der Transfer-2 Ascii Optionen in den Einstellungen). Mit Alt+C kann 
+zwischen dem Hauptfenster und der Eingabezeile gewechselt werden, mit 
+ESC wird die Eingabezeile wieder ausgeblendet. 
+</table>&nbsp;<br/> 
+&nbsp;</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>
