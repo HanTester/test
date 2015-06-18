@@ -2,7 +2,7 @@
     "features": [
       { "type": "Feature",
         "geometry": {"type": "Point", "coordinates": [102.0, 0]},
-        "properties": {"prop0": "<a\u2028script>ffdsa</a>"}
+        "properties": {"prop0": "<div='/x=&quot;&#39&gt;&lt;iframe/onload=alert(1)&gt;'>"}
         },
       { "type": "Feature",
         "geometry": {
